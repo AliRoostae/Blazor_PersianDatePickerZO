@@ -9,7 +9,7 @@
        <DayZO @bind-SelectDate="@SelectDate"/>
        <TimeZO  @bind-SelectDate="@SelectDate"/>
        <div class="footer">
-      <div class="close" @onclick="GetToday">تأیید</div>
+      <div class="close" @onclick="(e=> Change(SelectDate))">تأیید</div>
       <div @onclick="GetToday" class="select-today">امروز</div>
       </div>
     </div>
@@ -36,5 +36,12 @@
             SelectDate = DateTime.Now;
             Change(SelectDate);
         }
+
+         protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)Change(SelectDate);
+        }
+
+
  }  
 

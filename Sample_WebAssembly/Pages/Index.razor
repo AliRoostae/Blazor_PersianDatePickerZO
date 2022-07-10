@@ -1,4 +1,54 @@
 ﻿@page "/"
 @using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+<div class="row">
+    <div class="col text-center">
+        <div >@_date</div>
+     <hr class="divider">
+       <div >@_dateFa</div>
+       <hr class="divider">
+       <span>test theme default</span>
+       <hr class="divider">
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" />
+    </div>
+    <div class="col text-center">
+        <div >@_date</div>
+     <hr class="divider">
+       <div >@_dateFa</div>
+       <hr class="divider">
+       <span>test theme darkorange</span>
+       <hr class="divider">
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  ThemePickerZO="ThemeDatePickerZO.darkorange" />
+    </div>
+    <div class="col text-center">
+        <div >@_date</div>
+     <hr class="divider">
+       <div >@_dateFa</div>
+       <hr class="divider">
+       <span>test theme darkblue</span>
+       <hr class="divider">
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+    </div>
+    <div class="col text-center">
+        <div >@_date</div>
+     <hr class="divider">
+       <div >@_dateFa</div>
+       <hr class="divider">
+       <span>test theme darkgreen</span>
+       <hr class="divider">
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  ThemePickerZO="ThemeDatePickerZO.darkgreen" />
+    </div>
+   
+</div>
 
-<ZeroOneDatePicker />
+
+@code{
+    DateTime _date = DateTime.Now;
+    string _dateFa=string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+
+
+}
