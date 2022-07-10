@@ -1,0 +1,17 @@
+﻿@inherits BaseDatePickerZO
+<div class="month">
+         <div class="prev" @onclick="PrevElement">@(@"<")</div>
+          <div class="value">
+
+            @for (int i = _colectForMontStart; i <= _colectForMontStart+2; i++)
+              {
+
+             var select = i ;
+            <span @onclick="@(e => Selected(select))" class="@(i==MonthSelect ?"selected" :string.Empty  )"> @($" {_monthFa[select]} ") </span>
+              }
+      
+          </div>
+          <div class="next" @onclick="NextElement">></div>
+  </div>
+
+

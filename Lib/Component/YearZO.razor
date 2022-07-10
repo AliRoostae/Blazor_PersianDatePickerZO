@@ -1,0 +1,14 @@
+﻿@inherits BaseDatePickerZO
+<div class="year">
+          <div class="prev" @onclick="PrevElement">@(@"<")</div>
+          <div class="value">
+           @for (int i = _startLoop(); i < _startLoop()+3; i++)
+        {
+            var select = i;
+            <span @onclick="@(e => Selected(select))" class="@(select==YearSelect ?"selected" :string.Empty  )">@i</span>
+        }
+           
+          </div>
+          <div class="next" @onclick="NextElement">></div>
+ </div>
+

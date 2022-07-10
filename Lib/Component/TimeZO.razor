@@ -1,0 +1,21 @@
+﻿@inherits BaseDatePickerZO
+ <div class="clock">
+          <div class="hour">
+            <span @onclick="@(e => NextElement(TimeSelect.Hours))" class="add">+</span>
+            <span>@Hours.ToString("D2")</span>
+            <span @onclick="@(e => PrevElement(TimeSelect.Hours))" class="sub">-</span>
+          </div>
+          <div>:</div>
+          <div class="minute">
+            <span @onclick="@(e => NextElement(TimeSelect.Minutes))" class="add">+</span>
+            <span>@Minutes.ToString("D2")</span>
+            <span @onclick="@(e => PrevElement(TimeSelect.Minutes))" class="sub">-</span>
+          </div>
+          <div>:</div>
+          <div class="second">
+            <span @onclick="@(e => NextElement(TimeSelect.Seconds))" class="add">+</span>
+            <span>@Seconds.ToString("D2")</span>
+            <span @onclick="@(e => PrevElement(TimeSelect.Seconds))" class="sub">-</span>
+          </div>
+        </div>
+
