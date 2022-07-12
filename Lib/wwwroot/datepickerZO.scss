@@ -1,0 +1,442 @@
+
+@mixin colorSchema ($backgound, $font_color, $focus_color, $color, $color_light, $color_light_alpha) {
+  border-color: $color_light_alpha;
+  box-shadow: 5px 5px 5px 1px $color_light_alpha;
+  background-color: $backgound;
+  color: $font_color;
+
+  .date-picker-content {
+    .top,
+    .year,
+    .month,
+    .days {
+      border-bottom-color: $color_light_alpha;
+    }
+
+    .top {
+      .title {
+        color: $color;
+      }
+    }
+
+    .month,
+    .year {
+      .next,
+      .prev {
+        color: $color;
+      }
+
+      .value {
+        span {
+          &:hover {
+            color: $color;
+          }
+          &.selected {
+            color: $color;
+          }
+        }
+      }
+    }
+
+    .days {
+      div {
+        span {
+          border: 1px solid transparent;
+          &:nth-child(7n),
+          &.holiday {
+            color: $color;
+          }
+        }
+      }
+
+      .value {
+        span {
+          &:hover {
+            background-color: $color_light_alpha;
+            color: $color;
+            border-color: $color_light;
+          }
+
+          &.selected {
+            color: $focus_color !important;
+            background-color: $color_light;
+            border-color: $color_light;
+          }
+
+          &:nth-child(7n),
+          &.holiday {
+            color: $color;
+            border-color: $color_light;
+          }
+
+          &.other_month_day {
+            color: $color_light_alpha;
+
+            &:hover {
+              background-color: unset;
+              color: $color_light_alpha;
+              border-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .clock {
+      div {
+        .add,
+        .sub {
+          color: $color;
+        }
+      }
+    }
+
+    .footer {
+      border-top-color: $color_light_alpha;
+
+      div {
+        border-color: $color_light;
+        color: $color_light;
+
+        &:hover {
+          color: $color_light;
+          background-color: $color_light_alpha;
+        }
+      }
+    }
+  }
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: vazir fd;
+}
+
+.date-picker-frame {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+  width: 80vw;
+  height: 90vh;
+  margin: 5vh auto;
+
+  color: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px transparent;
+  background-color: transparent;
+
+  .date-picker-content {
+    margin: 1vh 3vh;
+    height: 86vh;
+    text-align: center;
+    vertical-align: baseline;
+
+    div {
+      margin-top: 1.2vh;
+    }
+
+    .top,
+    .year,
+    .month,
+    .days {
+      border-bottom: 1px solid transparent;
+    }
+
+    .top,
+    .year,
+    .month,
+    .clock {
+      height: 7vh;
+    }
+    .days {
+      height: 43vh;
+    }
+
+    .top {
+      .title {
+        direction: rtl;
+        font-weight: bolder;
+        padding-top: 1vh;
+        letter-spacing: 3px;
+        color: transparent;
+      }
+    }
+
+    .month,
+    .year {
+      div {
+        display: inline-block;
+      }
+      .next,
+      .prev {
+        color: transparent;
+        font-weight: bolder;
+        width: 10%;
+        cursor: pointer;
+      }
+
+      .value {
+        width: 70%;
+        span {
+          font-size: smaller;
+          cursor: pointer;
+          margin: 0.5vw;
+          padding: 0 10px;
+
+          &:hover {
+            color: transparent;
+            transition: 0.5s;
+          }
+
+          &.selected {
+            font-weight: bolder;
+            color: transparent;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+
+    .days {
+      div {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        span {
+          min-width: 13%;
+          margin: 0.4rem auto;
+          border: 1px solid transparent;
+          border-radius: 5px;
+
+          &:nth-child(7n),
+          &.holiday {
+            color: transparent;
+          }
+        }
+      }
+
+      .value {
+        span {
+          cursor: pointer;
+          &:hover {
+            background-color: transparent;
+            color: transparent;
+            transition: 0.5s;
+            border-color: transparent;
+          }
+
+          &.selected {
+            font-weight: bolder;
+            color: white !important;
+            background-color: transparent;
+            transition: 0.5s;
+            border: 1px double transparent;
+          }
+
+          &:nth-child(7n),
+          &.holiday {
+            color: transparent;
+            border-color: transparent;
+          }
+
+          &.other_month_day {
+            color: transparent;
+            border-color: transparent;
+
+            &:hover {
+              background-color: unset;
+              color: transparent;
+              border-color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    .clock {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: large;
+        }
+
+        .add,
+        .sub {
+          padding: 0 2vw;
+          cursor: pointer;
+          font-weight: bolder;
+          color: transparent;
+          font-size: small;
+        }
+      }
+    }
+
+    .footer {
+      margin-top: 6vh;
+      text-align: left;
+      border-top: 1px solid transparent;
+
+      div {
+        margin-top: 2vh;
+        width: 15vw;
+        text-align: center;
+        font-size: smaller;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        color: transparent;
+        display: inline-block;
+
+        &:hover {
+          color: transparent;
+          background-color: transparent;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &.lightgreen {
+    @include colorSchema(#fefefe, black, white, #009688, #80CBC4, rgba($color: #80CBC4,$alpha: 0.2))
+  }
+
+  &.lightred {
+    @include colorSchema(#fefefe, black, white, #FF4081, #F48FB1, rgba($color: #F48FB1,$alpha: 0.2))
+  }
+
+  &.lightblue {
+    @include colorSchema(#fefefe, black, white, #0288D1, #4FC3F7, rgba($color: #4FC3F7,$alpha: 0.2))
+  }
+
+  &.lightpurple {
+    @include colorSchema(#fefefe, black, white, #8E24AA, #9575CD, rgba($color: #9575CD,$alpha: 0.2))
+  }
+
+  &.lightorange {
+    @include colorSchema(#fefefe, black, white, #F57C00, #FFB74D, rgba($color: #FFB74D,$alpha: 0.2))
+  }
+
+  &.lightgray{
+    @include colorSchema(#fefefe, black, white, #546E7A, #B0BEC5, rgba($color: #B0BEC5,$alpha: 0.2))
+  }
+
+  &.darkgreen {
+    @include colorSchema(#263238, #CFD8DC, black, #A7FFEB, #00BFA5, rgba($color: #00BFA5,$alpha: 0.2))
+  }
+
+  &.darkred {
+    @include colorSchema(#263238, #CFD8DC, black, #FF80AB, #FF4081, rgba($color: #FF4081,$alpha: 0.2))
+  }
+
+  &.darkblue {
+    @include colorSchema(#263238, #CFD8DC, black, #80D8FF, #0091EA, rgba($color: #0091EA,$alpha: 0.2))
+  }
+
+  &.darkpurple {
+    @include colorSchema(#263238, #CFD8DC, black, #EA80FC, #E040FB, rgba($color: #E040FB,$alpha: 0.2))
+  }
+
+  &.darkorange {
+    @include colorSchema(#263238, #CFD8DC, black, #FFAB40, #FF9100, rgba($color: #FF9100,$alpha: 0.2))
+  }
+
+  &.darkgray{
+    @include colorSchema(#263238, #CFD8DC, black, #ECEFF1, #455A64, rgba($color: #455A64,$alpha: 0.2))
+  }
+
+}
+
+// theme part
+
+@media only screen and (min-width: 600px) {
+  $max_height: 580;
+  $max_width: 350;
+
+  .date-picker-frame {
+    width: $max_width + px;
+    height: $max_height + px;
+    margin: 10px auto;
+
+    .date-picker-content {
+      margin: 10px 20px;
+      height: calc($max_height-20) + px;
+      div {
+        margin-top: 5px;
+      }
+      .top,
+      .year,
+      .month,
+      .clock {
+        height: 45px;
+      }
+      .days {
+        height: 285px;
+      }
+
+      .top {
+        .title {
+          padding-top: 5px;
+          letter-spacing: 3px;
+        }
+      }
+
+      .month,
+      .year {
+        .next,
+        .prev {
+          width: 50px;
+        }
+
+        .value {
+          width: 200px;
+          span {
+            margin: 5px;
+            padding: 0 10px;
+          }
+        }
+      }
+
+      .days {
+        span {
+          min-width: 40px;
+          margin: 0.4rem auto;
+        }
+      }
+
+      .clock {
+        div {
+          .add,
+          .sub {
+            padding: 0 2vw;
+          }
+        }
+      }
+
+      .footer {
+        margin-top: 35px;
+
+        div {
+          margin-top: 12px;
+
+          width: 50px;
+        }
+      }
+    }
+  }
+}

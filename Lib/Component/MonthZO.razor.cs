@@ -17,9 +17,7 @@ namespace Blazor_PersianDatePickerZO.Component
 
             set
             {
-
-                if (value < 1) value = 12;
-                if (value > 12) value = 1;
+                if (!IsActiveMonth(value)) return;
                 Selected(value);
 
 
@@ -48,5 +46,16 @@ namespace Blazor_PersianDatePickerZO.Component
 
             SelectDateChanged.InvokeAsync(SelectDate);
         }
+
+      
+        protected bool IsActiveMonth(int month)
+        {
+
+            int.TryParse($"{SelectDate.YearFa():D2}{month:D2}", out var selectMonth);
+            int.TryParse($"{MinDate.YearFa():D2}{MinDate.MonthFa():D2}", out var min);
+            int.TryParse($"{MaxDate.YearFa():D2}{MaxDate.MonthFa():D2}", out var max);
+            return selectMonth >= min && selectMonth <= max ;
+        }
+
     }
 }

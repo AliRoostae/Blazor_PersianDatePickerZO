@@ -1,47 +1,47 @@
 ﻿@inherits BaseDatePickerZO
-<div class="date-picker-frame @ThemePickerZO"> 
+<div class="date-picker-frame @ThemePickerZO">
     <div class="date-picker-content">
         <div class="top">
-          <div class="title">@_dateFa</div>
+            <div class="title">@_dateFa</div>
         </div>
-       <YearZO @bind-SelectDate="@SelectDate" />
-       <MonthZO  @bind-SelectDate="@SelectDate" />
-       <DayZO @bind-SelectDate="@SelectDate"/>
-       <TimeZO  @bind-SelectDate="@SelectDate"/>
-       <div class="footer">
-      <div class="close" @onclick="(e=> Change(SelectDate))">تأیید</div>
-      <div @onclick="GetToday" class="select-today">امروز</div>
-      </div>
+        <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+        <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+        <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+        <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+        <div class="footer">
+            <div class="close" @onclick="(e=> Change(SelectDate))">تأیید</div>
+            <div @onclick="GetToday" class="select-today">امروز</div>
+        </div>
     </div>
-    </div>
-  
- @code
- {
- [Parameter]
-        public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
+</div>
 
-        [Parameter]
-        public EventCallback<string> DateFa { get; set; }
+@code
+{
+    [Parameter]
+    public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
 
-        string _dateFa => $"{SelectDate.YearFa():D4}/{SelectDate.MonthFa():D2}/{SelectDate.DayFa():D2} {SelectDate.Hour:D2}:{SelectDate.Minute:D2}:{SelectDate.Second:D2}";
+    [Parameter]
+    public EventCallback<string> DateFa { get; set; }
 
-
-        void Change(DateTime argo)
-        {
-            SelectDateChanged.InvokeAsync(SelectDate);
-            DateFa.InvokeAsync(_dateFa);
-        }
-        void GetToday()
-        {
-            SelectDate = DateTime.Now;
-            Change(SelectDate);
-        }
-
-         protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)Change(SelectDate);
-        }
+    string _dateFa => $"{SelectDate.YearFa():D4}/{SelectDate.MonthFa():D2}/{SelectDate.DayFa():D2} {SelectDate.Hour:D2}:{SelectDate.Minute:D2}:{SelectDate.Second:D2}";
 
 
- }  
+    void Change(DateTime argo)
+    {
+        SelectDateChanged.InvokeAsync(SelectDate);
+        DateFa.InvokeAsync(_dateFa);
+    }
+    void GetToday()
+    {
+        SelectDate = DateTime.Now;
+        Change(SelectDate);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender) Change(SelectDate);
+    }
+
+
+ }
 

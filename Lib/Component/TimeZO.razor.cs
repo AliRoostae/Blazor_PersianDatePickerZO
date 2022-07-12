@@ -22,7 +22,9 @@ namespace Blazor_PersianDatePickerZO.Component
                     value = 23;
                 }
                 var tim = new TimeSpan(value, Minutes, Seconds);
-                SelectDate = SelectDate.Date.Add(tim);
+                var temp = SelectDate.Date.Add(tim);
+                if (!IsActiveForTime(temp)) return;
+                SelectDate = temp;
 
             }
         }
@@ -42,7 +44,10 @@ namespace Blazor_PersianDatePickerZO.Component
                     value = 59;
                 }
                 var tim = new TimeSpan(Hours, value, Seconds);
-                SelectDate = SelectDate.Date.Add(tim);
+                var temp = SelectDate.Date.Add(tim);
+                if (!IsActiveForTime(temp)) return;
+                SelectDate = temp;
+               
             }
         }
         int Seconds
@@ -61,7 +66,9 @@ namespace Blazor_PersianDatePickerZO.Component
                     value = 59;
                 }
                 var tim = new TimeSpan(Hours, Minutes, value);
-                SelectDate = SelectDate.Date.Add(tim);
+                var temp = SelectDate.Date.Add(tim);
+                if (!IsActiveForTime(temp)) return;
+                SelectDate = temp;
             }
         }
 
@@ -99,6 +106,11 @@ namespace Blazor_PersianDatePickerZO.Component
             }
 
             SelectDateChanged.InvokeAsync(SelectDate);
+        }
+
+        protected bool IsActiveForTime(DateTime date)
+        {
+            return date > MinDate && date < MaxDate;
         }
     }
 }

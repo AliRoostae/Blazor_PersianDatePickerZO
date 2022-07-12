@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_PersianDatePickerZO", "Lib\Blazor_PersianDatePickerZO.csproj", "{B0A99274-5A98-4805-A96E-9CD9ED06150D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample_WebAssembly", "Sample_WebAssembly\Sample_WebAssembly.csproj", "{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample_WebAssembly", "Sample_WebAssembly\Sample_WebAssembly.csproj", "{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

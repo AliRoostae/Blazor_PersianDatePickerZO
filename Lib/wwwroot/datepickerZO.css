@@ -1,1372 +1,1387 @@
+.NoActive {
+    text-decoration-line: line-through;
+}
 
 .date-picker-frame {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-  width: 80vw;
-  height: 90vh;
-  margin: 5vh auto;
-  color: transparent;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 5px 1px transparent;
-          box-shadow: 5px 5px 5px 1px transparent;
-  background-color: transparent;
-}
-
-.date-picker-frame .date-picker-content {
-  margin: 1vh 3vh;
-  height: 86vh;
-  text-align: center;
-  vertical-align: baseline;
-}
-
-.date-picker-frame .date-picker-content div {
-  margin-top: 1.2vh;
-}
-
-.date-picker-frame .date-picker-content .top,
-.date-picker-frame .date-picker-content .year,
-.date-picker-frame .date-picker-content .month,
-.date-picker-frame .date-picker-content .days {
-  border-bottom: 1px solid transparent;
-}
-
-.date-picker-frame .date-picker-content .top,
-.date-picker-frame .date-picker-content .year,
-.date-picker-frame .date-picker-content .month,
-.date-picker-frame .date-picker-content .clock {
-  height: 7vh;
-}
-
-.date-picker-frame .date-picker-content .days {
-  height: 43vh;
-}
-
-.date-picker-frame .date-picker-content .top .title {
-  direction: rtl;
-  font-weight: bolder;
-  padding-top: 1vh;
-  letter-spacing: 3px;
-  color: transparent;
-}
-
-.date-picker-frame .date-picker-content .month div,
-.date-picker-frame .date-picker-content .year div {
-  display: inline-block;
-}
-
-.date-picker-frame .date-picker-content .month .next,
-.date-picker-frame .date-picker-content .month .prev,
-.date-picker-frame .date-picker-content .year .next,
-.date-picker-frame .date-picker-content .year .prev {
-  color: transparent;
-  font-weight: bolder;
-  width: 10%;
-  cursor: pointer;
-}
-
-.date-picker-frame .date-picker-content .month .value,
-.date-picker-frame .date-picker-content .year .value {
-  width: 70%;
-}
-
-.date-picker-frame .date-picker-content .month .value span,
-.date-picker-frame .date-picker-content .year .value span {
-  font-size: smaller;
-  cursor: pointer;
-  margin: 0.5vw;
-  padding: 0 10px;
-}
-
-.date-picker-frame .date-picker-content .month .value span:hover,
-.date-picker-frame .date-picker-content .year .value span:hover {
-  color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.date-picker-frame .date-picker-content .month .value span.selected,
-.date-picker-frame .date-picker-content .year .value span.selected {
-  font-weight: bolder;
-  color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.date-picker-frame .date-picker-content .days div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.date-picker-frame .date-picker-content .days div span {
-  min-width: 13%;
-  margin: 0.4rem auto;
-  border: 1px solid transparent;
-  border-radius: 5px;
-}
-
-.date-picker-frame .date-picker-content .days div span:nth-child(7n), .date-picker-frame .date-picker-content .days div span.holiday {
-  color: transparent;
-}
-
-.date-picker-frame .date-picker-content .days .value span {
-  cursor: pointer;
-}
-
-.date-picker-frame .date-picker-content .days .value span:hover {
-  background-color: transparent;
-  color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  border-color: transparent;
-}
-
-.date-picker-frame .date-picker-content .days .value span.selected {
-  font-weight: bolder;
-  color: white !important;
-  background-color: transparent;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  border: 1px double transparent;
-}
-
-.date-picker-frame .date-picker-content .days .value span:nth-child(7n), .date-picker-frame .date-picker-content .days .value span.holiday {
-  color: transparent;
-  border-color: transparent;
-}
-
-.date-picker-frame .date-picker-content .days .value span.other_month_day {
-  color: transparent;
-  border-color: transparent;
-}
-
-.date-picker-frame .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: transparent;
-  border-color: transparent;
-}
-
-.date-picker-frame .date-picker-content .clock {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.date-picker-frame .date-picker-content .clock div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.date-picker-frame .date-picker-content .clock div span {
-  font-size: large;
-}
-
-.date-picker-frame .date-picker-content .clock div .add,
-.date-picker-frame .date-picker-content .clock div .sub {
-  padding: 0 2vw;
-  cursor: pointer;
-  font-weight: bolder;
-  color: transparent;
-  font-size: small;
-}
-
-.date-picker-frame .date-picker-content .footer {
-  margin-top: 6vh;
-  text-align: left;
-  border-top: 1px solid transparent;
-}
-
-.date-picker-frame .date-picker-content .footer div {
-  margin-top: 2vh;
-  width: 15vw;
-  text-align: center;
-  font-size: smaller;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  color: transparent;
-  display: inline-block;
-}
-
-.date-picker-frame .date-picker-content .footer div:hover {
-  color: transparent;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.date-picker-frame.lightgreen {
-  border-color: rgba(128, 203, 196, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(128, 203, 196, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(128, 203, 196, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .top,
-.date-picker-frame.lightgreen .date-picker-content .year,
-.date-picker-frame.lightgreen .date-picker-content .month,
-.date-picker-frame.lightgreen .date-picker-content .days {
-  border-bottom-color: rgba(128, 203, 196, 0.2);
-}
-
-.date-picker-frame.lightgreen .date-picker-content .top .title {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .month .next,
-.date-picker-frame.lightgreen .date-picker-content .month .prev,
-.date-picker-frame.lightgreen .date-picker-content .year .next,
-.date-picker-frame.lightgreen .date-picker-content .year .prev {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .month .value span:hover,
-.date-picker-frame.lightgreen .date-picker-content .year .value span:hover {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .month .value span.selected,
-.date-picker-frame.lightgreen .date-picker-content .year .value span.selected {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightgreen .date-picker-content .days div span.holiday {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days .value span:hover {
-  background-color: rgba(128, 203, 196, 0.2);
-  color: #009688;
-  border-color: #80CBC4;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #80CBC4;
-  border-color: #80CBC4;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightgreen .date-picker-content .days .value span.holiday {
-  color: #009688;
-  border-color: #80CBC4;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days .value span.other_month_day {
-  color: rgba(128, 203, 196, 0.2);
-}
-
-.date-picker-frame.lightgreen .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(128, 203, 196, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .clock div .add,
-.date-picker-frame.lightgreen .date-picker-content .clock div .sub {
-  color: #009688;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .footer {
-  border-top-color: rgba(128, 203, 196, 0.2);
-}
-
-.date-picker-frame.lightgreen .date-picker-content .footer div {
-  border-color: #80CBC4;
-  color: #80CBC4;
-}
-
-.date-picker-frame.lightgreen .date-picker-content .footer div:hover {
-  color: #80CBC4;
-  background-color: rgba(128, 203, 196, 0.2);
-}
-
-.date-picker-frame.lightred {
-  border-color: rgba(244, 143, 177, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(244, 143, 177, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(244, 143, 177, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightred .date-picker-content .top,
-.date-picker-frame.lightred .date-picker-content .year,
-.date-picker-frame.lightred .date-picker-content .month,
-.date-picker-frame.lightred .date-picker-content .days {
-  border-bottom-color: rgba(244, 143, 177, 0.2);
-}
-
-.date-picker-frame.lightred .date-picker-content .top .title {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .month .next,
-.date-picker-frame.lightred .date-picker-content .month .prev,
-.date-picker-frame.lightred .date-picker-content .year .next,
-.date-picker-frame.lightred .date-picker-content .year .prev {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .month .value span:hover,
-.date-picker-frame.lightred .date-picker-content .year .value span:hover {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .month .value span.selected,
-.date-picker-frame.lightred .date-picker-content .year .value span.selected {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightred .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightred .date-picker-content .days div span.holiday {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .days .value span:hover {
-  background-color: rgba(244, 143, 177, 0.2);
-  color: #FF4081;
-  border-color: #F48FB1;
-}
-
-.date-picker-frame.lightred .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #F48FB1;
-  border-color: #F48FB1;
-}
-
-.date-picker-frame.lightred .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightred .date-picker-content .days .value span.holiday {
-  color: #FF4081;
-  border-color: #F48FB1;
-}
-
-.date-picker-frame.lightred .date-picker-content .days .value span.other_month_day {
-  color: rgba(244, 143, 177, 0.2);
-}
-
-.date-picker-frame.lightred .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(244, 143, 177, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightred .date-picker-content .clock div .add,
-.date-picker-frame.lightred .date-picker-content .clock div .sub {
-  color: #FF4081;
-}
-
-.date-picker-frame.lightred .date-picker-content .footer {
-  border-top-color: rgba(244, 143, 177, 0.2);
-}
-
-.date-picker-frame.lightred .date-picker-content .footer div {
-  border-color: #F48FB1;
-  color: #F48FB1;
-}
-
-.date-picker-frame.lightred .date-picker-content .footer div:hover {
-  color: #F48FB1;
-  background-color: rgba(244, 143, 177, 0.2);
-}
-
-.date-picker-frame.lightblue {
-  border-color: rgba(79, 195, 247, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(79, 195, 247, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(79, 195, 247, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightblue .date-picker-content .top,
-.date-picker-frame.lightblue .date-picker-content .year,
-.date-picker-frame.lightblue .date-picker-content .month,
-.date-picker-frame.lightblue .date-picker-content .days {
-  border-bottom-color: rgba(79, 195, 247, 0.2);
-}
-
-.date-picker-frame.lightblue .date-picker-content .top .title {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .month .next,
-.date-picker-frame.lightblue .date-picker-content .month .prev,
-.date-picker-frame.lightblue .date-picker-content .year .next,
-.date-picker-frame.lightblue .date-picker-content .year .prev {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .month .value span:hover,
-.date-picker-frame.lightblue .date-picker-content .year .value span:hover {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .month .value span.selected,
-.date-picker-frame.lightblue .date-picker-content .year .value span.selected {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightblue .date-picker-content .days div span.holiday {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days .value span:hover {
-  background-color: rgba(79, 195, 247, 0.2);
-  color: #0288D1;
-  border-color: #4FC3F7;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #4FC3F7;
-  border-color: #4FC3F7;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightblue .date-picker-content .days .value span.holiday {
-  color: #0288D1;
-  border-color: #4FC3F7;
-}
-
-.date-picker-frame.lightblue .date-picker-content .days .value span.other_month_day {
-  color: rgba(79, 195, 247, 0.2);
-}
-
-.date-picker-frame.lightblue .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(79, 195, 247, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightblue .date-picker-content .clock div .add,
-.date-picker-frame.lightblue .date-picker-content .clock div .sub {
-  color: #0288D1;
-}
-
-.date-picker-frame.lightblue .date-picker-content .footer {
-  border-top-color: rgba(79, 195, 247, 0.2);
-}
-
-.date-picker-frame.lightblue .date-picker-content .footer div {
-  border-color: #4FC3F7;
-  color: #4FC3F7;
-}
-
-.date-picker-frame.lightblue .date-picker-content .footer div:hover {
-  color: #4FC3F7;
-  background-color: rgba(79, 195, 247, 0.2);
-}
-
-.date-picker-frame.lightpurple {
-  border-color: rgba(149, 117, 205, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(149, 117, 205, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(149, 117, 205, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .top,
-.date-picker-frame.lightpurple .date-picker-content .year,
-.date-picker-frame.lightpurple .date-picker-content .month,
-.date-picker-frame.lightpurple .date-picker-content .days {
-  border-bottom-color: rgba(149, 117, 205, 0.2);
-}
-
-.date-picker-frame.lightpurple .date-picker-content .top .title {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .month .next,
-.date-picker-frame.lightpurple .date-picker-content .month .prev,
-.date-picker-frame.lightpurple .date-picker-content .year .next,
-.date-picker-frame.lightpurple .date-picker-content .year .prev {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .month .value span:hover,
-.date-picker-frame.lightpurple .date-picker-content .year .value span:hover {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .month .value span.selected,
-.date-picker-frame.lightpurple .date-picker-content .year .value span.selected {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightpurple .date-picker-content .days div span.holiday {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days .value span:hover {
-  background-color: rgba(149, 117, 205, 0.2);
-  color: #8E24AA;
-  border-color: #9575CD;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #9575CD;
-  border-color: #9575CD;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightpurple .date-picker-content .days .value span.holiday {
-  color: #8E24AA;
-  border-color: #9575CD;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days .value span.other_month_day {
-  color: rgba(149, 117, 205, 0.2);
-}
-
-.date-picker-frame.lightpurple .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(149, 117, 205, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .clock div .add,
-.date-picker-frame.lightpurple .date-picker-content .clock div .sub {
-  color: #8E24AA;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .footer {
-  border-top-color: rgba(149, 117, 205, 0.2);
-}
-
-.date-picker-frame.lightpurple .date-picker-content .footer div {
-  border-color: #9575CD;
-  color: #9575CD;
-}
-
-.date-picker-frame.lightpurple .date-picker-content .footer div:hover {
-  color: #9575CD;
-  background-color: rgba(149, 117, 205, 0.2);
-}
-
-.date-picker-frame.lightorange {
-  border-color: rgba(255, 183, 77, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 183, 77, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(255, 183, 77, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightorange .date-picker-content .top,
-.date-picker-frame.lightorange .date-picker-content .year,
-.date-picker-frame.lightorange .date-picker-content .month,
-.date-picker-frame.lightorange .date-picker-content .days {
-  border-bottom-color: rgba(255, 183, 77, 0.2);
-}
-
-.date-picker-frame.lightorange .date-picker-content .top .title {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .month .next,
-.date-picker-frame.lightorange .date-picker-content .month .prev,
-.date-picker-frame.lightorange .date-picker-content .year .next,
-.date-picker-frame.lightorange .date-picker-content .year .prev {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .month .value span:hover,
-.date-picker-frame.lightorange .date-picker-content .year .value span:hover {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .month .value span.selected,
-.date-picker-frame.lightorange .date-picker-content .year .value span.selected {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightorange .date-picker-content .days div span.holiday {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days .value span:hover {
-  background-color: rgba(255, 183, 77, 0.2);
-  color: #F57C00;
-  border-color: #FFB74D;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #FFB74D;
-  border-color: #FFB74D;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightorange .date-picker-content .days .value span.holiday {
-  color: #F57C00;
-  border-color: #FFB74D;
-}
-
-.date-picker-frame.lightorange .date-picker-content .days .value span.other_month_day {
-  color: rgba(255, 183, 77, 0.2);
-}
-
-.date-picker-frame.lightorange .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(255, 183, 77, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightorange .date-picker-content .clock div .add,
-.date-picker-frame.lightorange .date-picker-content .clock div .sub {
-  color: #F57C00;
-}
-
-.date-picker-frame.lightorange .date-picker-content .footer {
-  border-top-color: rgba(255, 183, 77, 0.2);
-}
-
-.date-picker-frame.lightorange .date-picker-content .footer div {
-  border-color: #FFB74D;
-  color: #FFB74D;
-}
-
-.date-picker-frame.lightorange .date-picker-content .footer div:hover {
-  color: #FFB74D;
-  background-color: rgba(255, 183, 77, 0.2);
-}
-
-.date-picker-frame.lightgray {
-  border-color: rgba(176, 190, 197, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(176, 190, 197, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(176, 190, 197, 0.2);
-  background-color: #fefefe;
-  color: black;
-}
-
-.date-picker-frame.lightgray .date-picker-content .top,
-.date-picker-frame.lightgray .date-picker-content .year,
-.date-picker-frame.lightgray .date-picker-content .month,
-.date-picker-frame.lightgray .date-picker-content .days {
-  border-bottom-color: rgba(176, 190, 197, 0.2);
-}
-
-.date-picker-frame.lightgray .date-picker-content .top .title {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .month .next,
-.date-picker-frame.lightgray .date-picker-content .month .prev,
-.date-picker-frame.lightgray .date-picker-content .year .next,
-.date-picker-frame.lightgray .date-picker-content .year .prev {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .month .value span:hover,
-.date-picker-frame.lightgray .date-picker-content .year .value span:hover {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .month .value span.selected,
-.date-picker-frame.lightgray .date-picker-content .year .value span.selected {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightgray .date-picker-content .days div span.holiday {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days .value span:hover {
-  background-color: rgba(176, 190, 197, 0.2);
-  color: #546E7A;
-  border-color: #B0BEC5;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days .value span.selected {
-  color: white !important;
-  background-color: #B0BEC5;
-  border-color: #B0BEC5;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightgray .date-picker-content .days .value span.holiday {
-  color: #546E7A;
-  border-color: #B0BEC5;
-}
-
-.date-picker-frame.lightgray .date-picker-content .days .value span.other_month_day {
-  color: rgba(176, 190, 197, 0.2);
-}
-
-.date-picker-frame.lightgray .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(176, 190, 197, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.lightgray .date-picker-content .clock div .add,
-.date-picker-frame.lightgray .date-picker-content .clock div .sub {
-  color: #546E7A;
-}
-
-.date-picker-frame.lightgray .date-picker-content .footer {
-  border-top-color: rgba(176, 190, 197, 0.2);
-}
-
-.date-picker-frame.lightgray .date-picker-content .footer div {
-  border-color: #B0BEC5;
-  color: #B0BEC5;
-}
-
-.date-picker-frame.lightgray .date-picker-content .footer div:hover {
-  color: #B0BEC5;
-  background-color: rgba(176, 190, 197, 0.2);
-}
-
-.date-picker-frame.darkgreen {
-  border-color: rgba(0, 191, 165, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 191, 165, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(0, 191, 165, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .top,
-.date-picker-frame.darkgreen .date-picker-content .year,
-.date-picker-frame.darkgreen .date-picker-content .month,
-.date-picker-frame.darkgreen .date-picker-content .days {
-  border-bottom-color: rgba(0, 191, 165, 0.2);
-}
-
-.date-picker-frame.darkgreen .date-picker-content .top .title {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .month .next,
-.date-picker-frame.darkgreen .date-picker-content .month .prev,
-.date-picker-frame.darkgreen .date-picker-content .year .next,
-.date-picker-frame.darkgreen .date-picker-content .year .prev {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .month .value span:hover,
-.date-picker-frame.darkgreen .date-picker-content .year .value span:hover {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .month .value span.selected,
-.date-picker-frame.darkgreen .date-picker-content .year .value span.selected {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkgreen .date-picker-content .days div span.holiday {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days .value span:hover {
-  background-color: rgba(0, 191, 165, 0.2);
-  color: #A7FFEB;
-  border-color: #00BFA5;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #00BFA5;
-  border-color: #00BFA5;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkgreen .date-picker-content .days .value span.holiday {
-  color: #A7FFEB;
-  border-color: #00BFA5;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days .value span.other_month_day {
-  color: rgba(0, 191, 165, 0.2);
-}
-
-.date-picker-frame.darkgreen .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(0, 191, 165, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .clock div .add,
-.date-picker-frame.darkgreen .date-picker-content .clock div .sub {
-  color: #A7FFEB;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .footer {
-  border-top-color: rgba(0, 191, 165, 0.2);
-}
-
-.date-picker-frame.darkgreen .date-picker-content .footer div {
-  border-color: #00BFA5;
-  color: #00BFA5;
-}
-
-.date-picker-frame.darkgreen .date-picker-content .footer div:hover {
-  color: #00BFA5;
-  background-color: rgba(0, 191, 165, 0.2);
-}
-
-.date-picker-frame.darkred {
-  border-color: rgba(255, 64, 129, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 64, 129, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(255, 64, 129, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkred .date-picker-content .top,
-.date-picker-frame.darkred .date-picker-content .year,
-.date-picker-frame.darkred .date-picker-content .month,
-.date-picker-frame.darkred .date-picker-content .days {
-  border-bottom-color: rgba(255, 64, 129, 0.2);
-}
-
-.date-picker-frame.darkred .date-picker-content .top .title {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .month .next,
-.date-picker-frame.darkred .date-picker-content .month .prev,
-.date-picker-frame.darkred .date-picker-content .year .next,
-.date-picker-frame.darkred .date-picker-content .year .prev {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .month .value span:hover,
-.date-picker-frame.darkred .date-picker-content .year .value span:hover {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .month .value span.selected,
-.date-picker-frame.darkred .date-picker-content .year .value span.selected {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkred .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkred .date-picker-content .days div span.holiday {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .days .value span:hover {
-  background-color: rgba(255, 64, 129, 0.2);
-  color: #FF80AB;
-  border-color: #FF4081;
-}
-
-.date-picker-frame.darkred .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #FF4081;
-  border-color: #FF4081;
-}
-
-.date-picker-frame.darkred .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkred .date-picker-content .days .value span.holiday {
-  color: #FF80AB;
-  border-color: #FF4081;
-}
-
-.date-picker-frame.darkred .date-picker-content .days .value span.other_month_day {
-  color: rgba(255, 64, 129, 0.2);
-}
-
-.date-picker-frame.darkred .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(255, 64, 129, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkred .date-picker-content .clock div .add,
-.date-picker-frame.darkred .date-picker-content .clock div .sub {
-  color: #FF80AB;
-}
-
-.date-picker-frame.darkred .date-picker-content .footer {
-  border-top-color: rgba(255, 64, 129, 0.2);
-}
-
-.date-picker-frame.darkred .date-picker-content .footer div {
-  border-color: #FF4081;
-  color: #FF4081;
-}
-
-.date-picker-frame.darkred .date-picker-content .footer div:hover {
-  color: #FF4081;
-  background-color: rgba(255, 64, 129, 0.2);
-}
-
-.date-picker-frame.darkblue {
-  border-color: rgba(0, 145, 234, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 145, 234, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(0, 145, 234, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkblue .date-picker-content .top,
-.date-picker-frame.darkblue .date-picker-content .year,
-.date-picker-frame.darkblue .date-picker-content .month,
-.date-picker-frame.darkblue .date-picker-content .days {
-  border-bottom-color: rgba(0, 145, 234, 0.2);
-}
-
-.date-picker-frame.darkblue .date-picker-content .top .title {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .month .next,
-.date-picker-frame.darkblue .date-picker-content .month .prev,
-.date-picker-frame.darkblue .date-picker-content .year .next,
-.date-picker-frame.darkblue .date-picker-content .year .prev {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .month .value span:hover,
-.date-picker-frame.darkblue .date-picker-content .year .value span:hover {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .month .value span.selected,
-.date-picker-frame.darkblue .date-picker-content .year .value span.selected {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkblue .date-picker-content .days div span.holiday {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days .value span:hover {
-  background-color: rgba(0, 145, 234, 0.2);
-  color: #80D8FF;
-  border-color: #0091EA;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #0091EA;
-  border-color: #0091EA;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkblue .date-picker-content .days .value span.holiday {
-  color: #80D8FF;
-  border-color: #0091EA;
-}
-
-.date-picker-frame.darkblue .date-picker-content .days .value span.other_month_day {
-  color: rgba(0, 145, 234, 0.2);
-}
-
-.date-picker-frame.darkblue .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(0, 145, 234, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkblue .date-picker-content .clock div .add,
-.date-picker-frame.darkblue .date-picker-content .clock div .sub {
-  color: #80D8FF;
-}
-
-.date-picker-frame.darkblue .date-picker-content .footer {
-  border-top-color: rgba(0, 145, 234, 0.2);
-}
-
-.date-picker-frame.darkblue .date-picker-content .footer div {
-  border-color: #0091EA;
-  color: #0091EA;
-}
-
-.date-picker-frame.darkblue .date-picker-content .footer div:hover {
-  color: #0091EA;
-  background-color: rgba(0, 145, 234, 0.2);
-}
-
-.date-picker-frame.darkpurple {
-  border-color: rgba(224, 64, 251, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(224, 64, 251, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(224, 64, 251, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .top,
-.date-picker-frame.darkpurple .date-picker-content .year,
-.date-picker-frame.darkpurple .date-picker-content .month,
-.date-picker-frame.darkpurple .date-picker-content .days {
-  border-bottom-color: rgba(224, 64, 251, 0.2);
-}
-
-.date-picker-frame.darkpurple .date-picker-content .top .title {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .month .next,
-.date-picker-frame.darkpurple .date-picker-content .month .prev,
-.date-picker-frame.darkpurple .date-picker-content .year .next,
-.date-picker-frame.darkpurple .date-picker-content .year .prev {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .month .value span:hover,
-.date-picker-frame.darkpurple .date-picker-content .year .value span:hover {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .month .value span.selected,
-.date-picker-frame.darkpurple .date-picker-content .year .value span.selected {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkpurple .date-picker-content .days div span.holiday {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days .value span:hover {
-  background-color: rgba(224, 64, 251, 0.2);
-  color: #EA80FC;
-  border-color: #E040FB;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #E040FB;
-  border-color: #E040FB;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkpurple .date-picker-content .days .value span.holiday {
-  color: #EA80FC;
-  border-color: #E040FB;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days .value span.other_month_day {
-  color: rgba(224, 64, 251, 0.2);
-}
-
-.date-picker-frame.darkpurple .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(224, 64, 251, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .clock div .add,
-.date-picker-frame.darkpurple .date-picker-content .clock div .sub {
-  color: #EA80FC;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .footer {
-  border-top-color: rgba(224, 64, 251, 0.2);
-}
-
-.date-picker-frame.darkpurple .date-picker-content .footer div {
-  border-color: #E040FB;
-  color: #E040FB;
-}
-
-.date-picker-frame.darkpurple .date-picker-content .footer div:hover {
-  color: #E040FB;
-  background-color: rgba(224, 64, 251, 0.2);
-}
-
-.date-picker-frame.darkorange {
-  border-color: rgba(255, 145, 0, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 145, 0, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(255, 145, 0, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkorange .date-picker-content .top,
-.date-picker-frame.darkorange .date-picker-content .year,
-.date-picker-frame.darkorange .date-picker-content .month,
-.date-picker-frame.darkorange .date-picker-content .days {
-  border-bottom-color: rgba(255, 145, 0, 0.2);
-}
-
-.date-picker-frame.darkorange .date-picker-content .top .title {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .month .next,
-.date-picker-frame.darkorange .date-picker-content .month .prev,
-.date-picker-frame.darkorange .date-picker-content .year .next,
-.date-picker-frame.darkorange .date-picker-content .year .prev {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .month .value span:hover,
-.date-picker-frame.darkorange .date-picker-content .year .value span:hover {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .month .value span.selected,
-.date-picker-frame.darkorange .date-picker-content .year .value span.selected {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkorange .date-picker-content .days div span.holiday {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days .value span:hover {
-  background-color: rgba(255, 145, 0, 0.2);
-  color: #FFAB40;
-  border-color: #FF9100;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #FF9100;
-  border-color: #FF9100;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkorange .date-picker-content .days .value span.holiday {
-  color: #FFAB40;
-  border-color: #FF9100;
-}
-
-.date-picker-frame.darkorange .date-picker-content .days .value span.other_month_day {
-  color: rgba(255, 145, 0, 0.2);
-}
-
-.date-picker-frame.darkorange .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(255, 145, 0, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkorange .date-picker-content .clock div .add,
-.date-picker-frame.darkorange .date-picker-content .clock div .sub {
-  color: #FFAB40;
-}
-
-.date-picker-frame.darkorange .date-picker-content .footer {
-  border-top-color: rgba(255, 145, 0, 0.2);
-}
-
-.date-picker-frame.darkorange .date-picker-content .footer div {
-  border-color: #FF9100;
-  color: #FF9100;
-}
-
-.date-picker-frame.darkorange .date-picker-content .footer div:hover {
-  color: #FF9100;
-  background-color: rgba(255, 145, 0, 0.2);
-}
-
-.date-picker-frame.darkgray {
-  border-color: rgba(69, 90, 100, 0.2);
-  -webkit-box-shadow: 5px 5px 5px 1px rgba(69, 90, 100, 0.2);
-          box-shadow: 5px 5px 5px 1px rgba(69, 90, 100, 0.2);
-  background-color: #263238;
-  color: #CFD8DC;
-}
-
-.date-picker-frame.darkgray .date-picker-content .top,
-.date-picker-frame.darkgray .date-picker-content .year,
-.date-picker-frame.darkgray .date-picker-content .month,
-.date-picker-frame.darkgray .date-picker-content .days {
-  border-bottom-color: rgba(69, 90, 100, 0.2);
-}
-
-.date-picker-frame.darkgray .date-picker-content .top .title {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .month .next,
-.date-picker-frame.darkgray .date-picker-content .month .prev,
-.date-picker-frame.darkgray .date-picker-content .year .next,
-.date-picker-frame.darkgray .date-picker-content .year .prev {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .month .value span:hover,
-.date-picker-frame.darkgray .date-picker-content .year .value span:hover {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .month .value span.selected,
-.date-picker-frame.darkgray .date-picker-content .year .value span.selected {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days div span {
-  border: 1px solid transparent;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkgray .date-picker-content .days div span.holiday {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days .value span:hover {
-  background-color: rgba(69, 90, 100, 0.2);
-  color: #ECEFF1;
-  border-color: #455A64;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days .value span.selected {
-  color: black !important;
-  background-color: #455A64;
-  border-color: #455A64;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkgray .date-picker-content .days .value span.holiday {
-  color: #ECEFF1;
-  border-color: #455A64;
-}
-
-.date-picker-frame.darkgray .date-picker-content .days .value span.other_month_day {
-  color: rgba(69, 90, 100, 0.2);
-}
-
-.date-picker-frame.darkgray .date-picker-content .days .value span.other_month_day:hover {
-  background-color: unset;
-  color: rgba(69, 90, 100, 0.2);
-  border-color: transparent;
-}
-
-.date-picker-frame.darkgray .date-picker-content .clock div .add,
-.date-picker-frame.darkgray .date-picker-content .clock div .sub {
-  color: #ECEFF1;
-}
-
-.date-picker-frame.darkgray .date-picker-content .footer {
-  border-top-color: rgba(69, 90, 100, 0.2);
-}
-
-.date-picker-frame.darkgray .date-picker-content .footer div {
-  border-color: #455A64;
-  color: #455A64;
-}
-
-.date-picker-frame.darkgray .date-picker-content .footer div:hover {
-  color: #455A64;
-  background-color: rgba(69, 90, 100, 0.2);
-}
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    width: 80vw;
+    height: 90vh;
+    margin: 5vh auto;
+    color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px 1px transparent;
+    box-shadow: 5px 5px 5px 1px transparent;
+    background-color: transparent;
+}
+
+    .date-picker-frame .date-picker-content {
+        margin: 1vh 3vh;
+        height: 86vh;
+        text-align: center;
+        vertical-align: baseline;
+    }
+
+        .date-picker-frame .date-picker-content div {
+            margin-top: 1.2vh;
+        }
+
+        .date-picker-frame .date-picker-content .top,
+        .date-picker-frame .date-picker-content .year,
+        .date-picker-frame .date-picker-content .month,
+        .date-picker-frame .date-picker-content .days {
+            border-bottom: 1px solid transparent;
+        }
+
+        .date-picker-frame .date-picker-content .top,
+        .date-picker-frame .date-picker-content .year,
+        .date-picker-frame .date-picker-content .month,
+        .date-picker-frame .date-picker-content .clock {
+            height: 7vh;
+        }
+
+        .date-picker-frame .date-picker-content .days {
+            height: 43vh;
+        }
+
+        .date-picker-frame .date-picker-content .top .title {
+            direction: ltr;
+            font-weight: bolder;
+            padding-top: 1vh;
+            letter-spacing: 3px;
+            color: transparent;
+        }
+
+        .date-picker-frame .date-picker-content .month div,
+        .date-picker-frame .date-picker-content .year div {
+            display: inline-block;
+        }
+
+        .date-picker-frame .date-picker-content .month .next,
+        .date-picker-frame .date-picker-content .month .prev,
+        .date-picker-frame .date-picker-content .year .next,
+        .date-picker-frame .date-picker-content .year .prev {
+            color: transparent;
+            font-weight: bolder;
+            width: 10%;
+            cursor: pointer;
+        }
+
+        .date-picker-frame .date-picker-content .month .value,
+        .date-picker-frame .date-picker-content .year .value {
+            width: 70%;
+        }
+
+            .date-picker-frame .date-picker-content .month .value span,
+            .date-picker-frame .date-picker-content .year .value span {
+                font-size: smaller;
+                cursor: pointer;
+                margin: 0.5vw;
+                padding: 0 10px;
+            }
+
+                .date-picker-frame .date-picker-content .month .value span:hover,
+                .date-picker-frame .date-picker-content .year .value span:hover {
+                    color: transparent;
+                    -webkit-transition: 0.5s;
+                    transition: 0.5s;
+                }
+
+                .date-picker-frame .date-picker-content .month .value span.selected,
+                .date-picker-frame .date-picker-content .year .value span.selected {
+                    font-weight: bolder;
+                    color: transparent;
+                    -webkit-transition: 0.5s;
+                    transition: 0.5s;
+                }
+
+        .date-picker-frame .date-picker-content .days div {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+            .date-picker-frame .date-picker-content .days div span {
+                min-width: 13%;
+                margin: 0.4rem auto;
+                border: 1px solid transparent;
+                border-radius: 5px;
+            }
+
+                .date-picker-frame .date-picker-content .days div span:nth-child(7n), .date-picker-frame .date-picker-content .days div span.holiday {
+                    color: transparent;
+                }
+
+        .date-picker-frame .date-picker-content .days .value span {
+            cursor: pointer;
+        }
+
+            .date-picker-frame .date-picker-content .days .value span:hover {
+                background-color: transparent;
+                color: transparent;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                border-color: transparent;
+            }
+
+            .date-picker-frame .date-picker-content .days .value span.selected {
+                font-weight: bolder;
+                color: white !important;
+                background-color: transparent;
+                -webkit-transition: 0.5s;
+                transition: 0.5s;
+                border: 1px double transparent;
+            }
+
+            .date-picker-frame .date-picker-content .days .value span:nth-child(7n), .date-picker-frame .date-picker-content .days .value span.holiday {
+                color: transparent;
+                border-color: transparent;
+            }
+
+            .date-picker-frame .date-picker-content .days .value span.other_month_day {
+                color: transparent;
+                border-color: transparent;
+            }
+
+                .date-picker-frame .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: transparent;
+                    border-color: transparent;
+                }
+
+        .date-picker-frame .date-picker-content .clock {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+            .date-picker-frame .date-picker-content .clock div {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+            }
+
+                .date-picker-frame .date-picker-content .clock div span {
+                    font-size: large;
+                }
+
+                .date-picker-frame .date-picker-content .clock div .add,
+                .date-picker-frame .date-picker-content .clock div .sub {
+                    padding: 0 2vw;
+                    cursor: pointer;
+                    font-weight: bolder;
+                    color: transparent;
+                    font-size: small;
+                }
+
+        .date-picker-frame .date-picker-content .footer {
+            margin-top: 6vh;
+            text-align: left;
+            border-top: 1px solid transparent;
+        }
+
+            .date-picker-frame .date-picker-content .footer div {
+                margin-top: 2vh;
+                width: 15vw;
+                text-align: center;
+                font-size: smaller;
+                border-radius: 5px;
+                border: 1px solid transparent;
+                color: transparent;
+                display: inline-block;
+            }
+
+                .date-picker-frame .date-picker-content .footer div:hover {
+                    color: transparent;
+                    background-color: transparent;
+                    cursor: pointer;
+                }
+
+    .date-picker-frame.lightgreen {
+        border-color: rgba(128, 203, 196, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(128, 203, 196, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(128, 203, 196, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightgreen .date-picker-content .top,
+        .date-picker-frame.lightgreen .date-picker-content .year,
+        .date-picker-frame.lightgreen .date-picker-content .month,
+        .date-picker-frame.lightgreen .date-picker-content .days {
+            border-bottom-color: rgba(128, 203, 196, 0.2);
+        }
+
+            .date-picker-frame.lightgreen .date-picker-content .top .title {
+                color: #009688;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .month .next,
+            .date-picker-frame.lightgreen .date-picker-content .month .prev,
+            .date-picker-frame.lightgreen .date-picker-content .year .next,
+            .date-picker-frame.lightgreen .date-picker-content .year .prev {
+                color: #009688;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightgreen .date-picker-content .year .value span:hover {
+                color: #009688;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightgreen .date-picker-content .year .value span.selected {
+                color: #009688;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightgreen .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightgreen .date-picker-content .days div span.holiday {
+                    color: #009688;
+                }
+
+            .date-picker-frame.lightgreen .date-picker-content .days .value span:hover {
+                background-color: rgba(128, 203, 196, 0.2);
+                color: #009688;
+                border-color: #80CBC4;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #80CBC4;
+                border-color: #80CBC4;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightgreen .date-picker-content .days .value span.holiday {
+                color: #009688;
+                border-color: #80CBC4;
+            }
+
+            .date-picker-frame.lightgreen .date-picker-content .days .value span.other_month_day {
+                color: rgba(128, 203, 196, 0.2);
+            }
+
+                .date-picker-frame.lightgreen .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(128, 203, 196, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightgreen .date-picker-content .clock div .add,
+        .date-picker-frame.lightgreen .date-picker-content .clock div .sub {
+            color: #009688;
+        }
+
+        .date-picker-frame.lightgreen .date-picker-content .footer {
+            border-top-color: rgba(128, 203, 196, 0.2);
+        }
+
+            .date-picker-frame.lightgreen .date-picker-content .footer div {
+                border-color: #80CBC4;
+                color: #80CBC4;
+            }
+
+                .date-picker-frame.lightgreen .date-picker-content .footer div:hover {
+                    color: #80CBC4;
+                    background-color: rgba(128, 203, 196, 0.2);
+                }
+
+    .date-picker-frame.lightred {
+        border-color: rgba(244, 143, 177, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(244, 143, 177, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(244, 143, 177, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightred .date-picker-content .top,
+        .date-picker-frame.lightred .date-picker-content .year,
+        .date-picker-frame.lightred .date-picker-content .month,
+        .date-picker-frame.lightred .date-picker-content .days {
+            border-bottom-color: rgba(244, 143, 177, 0.2);
+        }
+
+            .date-picker-frame.lightred .date-picker-content .top .title {
+                color: #FF4081;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .month .next,
+            .date-picker-frame.lightred .date-picker-content .month .prev,
+            .date-picker-frame.lightred .date-picker-content .year .next,
+            .date-picker-frame.lightred .date-picker-content .year .prev {
+                color: #FF4081;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightred .date-picker-content .year .value span:hover {
+                color: #FF4081;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightred .date-picker-content .year .value span.selected {
+                color: #FF4081;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightred .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightred .date-picker-content .days div span.holiday {
+                    color: #FF4081;
+                }
+
+            .date-picker-frame.lightred .date-picker-content .days .value span:hover {
+                background-color: rgba(244, 143, 177, 0.2);
+                color: #FF4081;
+                border-color: #F48FB1;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #F48FB1;
+                border-color: #F48FB1;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightred .date-picker-content .days .value span.holiday {
+                color: #FF4081;
+                border-color: #F48FB1;
+            }
+
+            .date-picker-frame.lightred .date-picker-content .days .value span.other_month_day {
+                color: rgba(244, 143, 177, 0.2);
+            }
+
+                .date-picker-frame.lightred .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(244, 143, 177, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightred .date-picker-content .clock div .add,
+        .date-picker-frame.lightred .date-picker-content .clock div .sub {
+            color: #FF4081;
+        }
+
+        .date-picker-frame.lightred .date-picker-content .footer {
+            border-top-color: rgba(244, 143, 177, 0.2);
+        }
+
+            .date-picker-frame.lightred .date-picker-content .footer div {
+                border-color: #F48FB1;
+                color: #F48FB1;
+            }
+
+                .date-picker-frame.lightred .date-picker-content .footer div:hover {
+                    color: #F48FB1;
+                    background-color: rgba(244, 143, 177, 0.2);
+                }
+
+    .date-picker-frame.lightblue {
+        border-color: rgba(79, 195, 247, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(79, 195, 247, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(79, 195, 247, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightblue .date-picker-content .top,
+        .date-picker-frame.lightblue .date-picker-content .year,
+        .date-picker-frame.lightblue .date-picker-content .month,
+        .date-picker-frame.lightblue .date-picker-content .days {
+            border-bottom-color: rgba(79, 195, 247, 0.2);
+        }
+
+            .date-picker-frame.lightblue .date-picker-content .top .title {
+                color: #0288D1;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .month .next,
+            .date-picker-frame.lightblue .date-picker-content .month .prev,
+            .date-picker-frame.lightblue .date-picker-content .year .next,
+            .date-picker-frame.lightblue .date-picker-content .year .prev {
+                color: #0288D1;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightblue .date-picker-content .year .value span:hover {
+                color: #0288D1;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightblue .date-picker-content .year .value span.selected {
+                color: #0288D1;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightblue .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightblue .date-picker-content .days div span.holiday {
+                    color: #0288D1;
+                }
+
+            .date-picker-frame.lightblue .date-picker-content .days .value span:hover {
+                background-color: rgba(79, 195, 247, 0.2);
+                color: #0288D1;
+                border-color: #4FC3F7;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #4FC3F7;
+                border-color: #4FC3F7;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightblue .date-picker-content .days .value span.holiday {
+                color: #0288D1;
+                border-color: #4FC3F7;
+            }
+
+            .date-picker-frame.lightblue .date-picker-content .days .value span.other_month_day {
+                color: rgba(79, 195, 247, 0.2);
+            }
+
+                .date-picker-frame.lightblue .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(79, 195, 247, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightblue .date-picker-content .clock div .add,
+        .date-picker-frame.lightblue .date-picker-content .clock div .sub {
+            color: #0288D1;
+        }
+
+        .date-picker-frame.lightblue .date-picker-content .footer {
+            border-top-color: rgba(79, 195, 247, 0.2);
+        }
+
+            .date-picker-frame.lightblue .date-picker-content .footer div {
+                border-color: #4FC3F7;
+                color: #4FC3F7;
+            }
+
+                .date-picker-frame.lightblue .date-picker-content .footer div:hover {
+                    color: #4FC3F7;
+                    background-color: rgba(79, 195, 247, 0.2);
+                }
+
+    .date-picker-frame.lightpurple {
+        border-color: rgba(149, 117, 205, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(149, 117, 205, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(149, 117, 205, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightpurple .date-picker-content .top,
+        .date-picker-frame.lightpurple .date-picker-content .year,
+        .date-picker-frame.lightpurple .date-picker-content .month,
+        .date-picker-frame.lightpurple .date-picker-content .days {
+            border-bottom-color: rgba(149, 117, 205, 0.2);
+        }
+
+            .date-picker-frame.lightpurple .date-picker-content .top .title {
+                color: #8E24AA;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .month .next,
+            .date-picker-frame.lightpurple .date-picker-content .month .prev,
+            .date-picker-frame.lightpurple .date-picker-content .year .next,
+            .date-picker-frame.lightpurple .date-picker-content .year .prev {
+                color: #8E24AA;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightpurple .date-picker-content .year .value span:hover {
+                color: #8E24AA;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightpurple .date-picker-content .year .value span.selected {
+                color: #8E24AA;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightpurple .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightpurple .date-picker-content .days div span.holiday {
+                    color: #8E24AA;
+                }
+
+            .date-picker-frame.lightpurple .date-picker-content .days .value span:hover {
+                background-color: rgba(149, 117, 205, 0.2);
+                color: #8E24AA;
+                border-color: #9575CD;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #9575CD;
+                border-color: #9575CD;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightpurple .date-picker-content .days .value span.holiday {
+                color: #8E24AA;
+                border-color: #9575CD;
+            }
+
+            .date-picker-frame.lightpurple .date-picker-content .days .value span.other_month_day {
+                color: rgba(149, 117, 205, 0.2);
+            }
+
+                .date-picker-frame.lightpurple .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(149, 117, 205, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightpurple .date-picker-content .clock div .add,
+        .date-picker-frame.lightpurple .date-picker-content .clock div .sub {
+            color: #8E24AA;
+        }
+
+        .date-picker-frame.lightpurple .date-picker-content .footer {
+            border-top-color: rgba(149, 117, 205, 0.2);
+        }
+
+            .date-picker-frame.lightpurple .date-picker-content .footer div {
+                border-color: #9575CD;
+                color: #9575CD;
+            }
+
+                .date-picker-frame.lightpurple .date-picker-content .footer div:hover {
+                    color: #9575CD;
+                    background-color: rgba(149, 117, 205, 0.2);
+                }
+
+    .date-picker-frame.lightorange {
+        border-color: rgba(255, 183, 77, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 183, 77, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(255, 183, 77, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightorange .date-picker-content .top,
+        .date-picker-frame.lightorange .date-picker-content .year,
+        .date-picker-frame.lightorange .date-picker-content .month,
+        .date-picker-frame.lightorange .date-picker-content .days {
+            border-bottom-color: rgba(255, 183, 77, 0.2);
+        }
+
+            .date-picker-frame.lightorange .date-picker-content .top .title {
+                color: #F57C00;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .month .next,
+            .date-picker-frame.lightorange .date-picker-content .month .prev,
+            .date-picker-frame.lightorange .date-picker-content .year .next,
+            .date-picker-frame.lightorange .date-picker-content .year .prev {
+                color: #F57C00;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightorange .date-picker-content .year .value span:hover {
+                color: #F57C00;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightorange .date-picker-content .year .value span.selected {
+                color: #F57C00;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightorange .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightorange .date-picker-content .days div span.holiday {
+                    color: #F57C00;
+                }
+
+            .date-picker-frame.lightorange .date-picker-content .days .value span:hover {
+                background-color: rgba(255, 183, 77, 0.2);
+                color: #F57C00;
+                border-color: #FFB74D;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #FFB74D;
+                border-color: #FFB74D;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightorange .date-picker-content .days .value span.holiday {
+                color: #F57C00;
+                border-color: #FFB74D;
+            }
+
+            .date-picker-frame.lightorange .date-picker-content .days .value span.other_month_day {
+                color: rgba(255, 183, 77, 0.2);
+            }
+
+                .date-picker-frame.lightorange .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(255, 183, 77, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightorange .date-picker-content .clock div .add,
+        .date-picker-frame.lightorange .date-picker-content .clock div .sub {
+            color: #F57C00;
+        }
+
+        .date-picker-frame.lightorange .date-picker-content .footer {
+            border-top-color: rgba(255, 183, 77, 0.2);
+        }
+
+            .date-picker-frame.lightorange .date-picker-content .footer div {
+                border-color: #FFB74D;
+                color: #FFB74D;
+            }
+
+                .date-picker-frame.lightorange .date-picker-content .footer div:hover {
+                    color: #FFB74D;
+                    background-color: rgba(255, 183, 77, 0.2);
+                }
+
+    .date-picker-frame.lightgray {
+        border-color: rgba(176, 190, 197, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(176, 190, 197, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(176, 190, 197, 0.2);
+        background-color: #fefefe;
+        color: black;
+    }
+
+        .date-picker-frame.lightgray .date-picker-content .top,
+        .date-picker-frame.lightgray .date-picker-content .year,
+        .date-picker-frame.lightgray .date-picker-content .month,
+        .date-picker-frame.lightgray .date-picker-content .days {
+            border-bottom-color: rgba(176, 190, 197, 0.2);
+        }
+
+            .date-picker-frame.lightgray .date-picker-content .top .title {
+                color: #546E7A;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .month .next,
+            .date-picker-frame.lightgray .date-picker-content .month .prev,
+            .date-picker-frame.lightgray .date-picker-content .year .next,
+            .date-picker-frame.lightgray .date-picker-content .year .prev {
+                color: #546E7A;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .month .value span:hover,
+            .date-picker-frame.lightgray .date-picker-content .year .value span:hover {
+                color: #546E7A;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .month .value span.selected,
+            .date-picker-frame.lightgray .date-picker-content .year .value span.selected {
+                color: #546E7A;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.lightgray .date-picker-content .days div span:nth-child(7n), .date-picker-frame.lightgray .date-picker-content .days div span.holiday {
+                    color: #546E7A;
+                }
+
+            .date-picker-frame.lightgray .date-picker-content .days .value span:hover {
+                background-color: rgba(176, 190, 197, 0.2);
+                color: #546E7A;
+                border-color: #B0BEC5;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .days .value span.selected {
+                color: white !important;
+                background-color: #B0BEC5;
+                border-color: #B0BEC5;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.lightgray .date-picker-content .days .value span.holiday {
+                color: #546E7A;
+                border-color: #B0BEC5;
+            }
+
+            .date-picker-frame.lightgray .date-picker-content .days .value span.other_month_day {
+                color: rgba(176, 190, 197, 0.2);
+            }
+
+                .date-picker-frame.lightgray .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(176, 190, 197, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.lightgray .date-picker-content .clock div .add,
+        .date-picker-frame.lightgray .date-picker-content .clock div .sub {
+            color: #546E7A;
+        }
+
+        .date-picker-frame.lightgray .date-picker-content .footer {
+            border-top-color: rgba(176, 190, 197, 0.2);
+        }
+
+            .date-picker-frame.lightgray .date-picker-content .footer div {
+                border-color: #B0BEC5;
+                color: #B0BEC5;
+            }
+
+                .date-picker-frame.lightgray .date-picker-content .footer div:hover {
+                    color: #B0BEC5;
+                    background-color: rgba(176, 190, 197, 0.2);
+                }
+
+    .date-picker-frame.darkgreen {
+        border-color: rgba(0, 191, 165, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 191, 165, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(0, 191, 165, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkgreen .date-picker-content .top,
+        .date-picker-frame.darkgreen .date-picker-content .year,
+        .date-picker-frame.darkgreen .date-picker-content .month,
+        .date-picker-frame.darkgreen .date-picker-content .days {
+            border-bottom-color: rgba(0, 191, 165, 0.2);
+        }
+
+            .date-picker-frame.darkgreen .date-picker-content .top .title {
+                color: #A7FFEB;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .month .next,
+            .date-picker-frame.darkgreen .date-picker-content .month .prev,
+            .date-picker-frame.darkgreen .date-picker-content .year .next,
+            .date-picker-frame.darkgreen .date-picker-content .year .prev {
+                color: #A7FFEB;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkgreen .date-picker-content .year .value span:hover {
+                color: #A7FFEB;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkgreen .date-picker-content .year .value span.selected {
+                color: #A7FFEB;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkgreen .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkgreen .date-picker-content .days div span.holiday {
+                    color: #A7FFEB;
+                }
+
+            .date-picker-frame.darkgreen .date-picker-content .days .value span:hover {
+                background-color: rgba(0, 191, 165, 0.2);
+                color: #A7FFEB;
+                border-color: #00BFA5;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #00BFA5;
+                border-color: #00BFA5;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkgreen .date-picker-content .days .value span.holiday {
+                color: #A7FFEB;
+                border-color: #00BFA5;
+            }
+
+            .date-picker-frame.darkgreen .date-picker-content .days .value span.other_month_day {
+                color: rgba(0, 191, 165, 0.2);
+            }
+
+                .date-picker-frame.darkgreen .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(0, 191, 165, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkgreen .date-picker-content .clock div .add,
+        .date-picker-frame.darkgreen .date-picker-content .clock div .sub {
+            color: #A7FFEB;
+        }
+
+        .date-picker-frame.darkgreen .date-picker-content .footer {
+            border-top-color: rgba(0, 191, 165, 0.2);
+        }
+
+            .date-picker-frame.darkgreen .date-picker-content .footer div {
+                border-color: #00BFA5;
+                color: #00BFA5;
+            }
+
+                .date-picker-frame.darkgreen .date-picker-content .footer div:hover {
+                    color: #00BFA5;
+                    background-color: rgba(0, 191, 165, 0.2);
+                }
+
+    .date-picker-frame.darkred {
+        border-color: rgba(255, 64, 129, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 64, 129, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(255, 64, 129, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkred .date-picker-content .top,
+        .date-picker-frame.darkred .date-picker-content .year,
+        .date-picker-frame.darkred .date-picker-content .month,
+        .date-picker-frame.darkred .date-picker-content .days {
+            border-bottom-color: rgba(255, 64, 129, 0.2);
+        }
+
+            .date-picker-frame.darkred .date-picker-content .top .title {
+                color: #FF80AB;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .month .next,
+            .date-picker-frame.darkred .date-picker-content .month .prev,
+            .date-picker-frame.darkred .date-picker-content .year .next,
+            .date-picker-frame.darkred .date-picker-content .year .prev {
+                color: #FF80AB;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkred .date-picker-content .year .value span:hover {
+                color: #FF80AB;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkred .date-picker-content .year .value span.selected {
+                color: #FF80AB;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkred .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkred .date-picker-content .days div span.holiday {
+                    color: #FF80AB;
+                }
+
+            .date-picker-frame.darkred .date-picker-content .days .value span:hover {
+                background-color: rgba(255, 64, 129, 0.2);
+                color: #FF80AB;
+                border-color: #FF4081;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #FF4081;
+                border-color: #FF4081;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkred .date-picker-content .days .value span.holiday {
+                color: #FF80AB;
+                border-color: #FF4081;
+            }
+
+            .date-picker-frame.darkred .date-picker-content .days .value span.other_month_day {
+                color: rgba(255, 64, 129, 0.2);
+            }
+
+                .date-picker-frame.darkred .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(255, 64, 129, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkred .date-picker-content .clock div .add,
+        .date-picker-frame.darkred .date-picker-content .clock div .sub {
+            color: #FF80AB;
+        }
+
+        .date-picker-frame.darkred .date-picker-content .footer {
+            border-top-color: rgba(255, 64, 129, 0.2);
+        }
+
+            .date-picker-frame.darkred .date-picker-content .footer div {
+                border-color: #FF4081;
+                color: #FF4081;
+            }
+
+                .date-picker-frame.darkred .date-picker-content .footer div:hover {
+                    color: #FF4081;
+                    background-color: rgba(255, 64, 129, 0.2);
+                }
+
+    .date-picker-frame.darkblue {
+        border-color: rgba(0, 145, 234, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(0, 145, 234, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(0, 145, 234, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkblue .date-picker-content .top,
+        .date-picker-frame.darkblue .date-picker-content .year,
+        .date-picker-frame.darkblue .date-picker-content .month,
+        .date-picker-frame.darkblue .date-picker-content .days {
+            border-bottom-color: rgba(0, 145, 234, 0.2);
+        }
+
+            .date-picker-frame.darkblue .date-picker-content .top .title {
+                color: #80D8FF;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .month .next,
+            .date-picker-frame.darkblue .date-picker-content .month .prev,
+            .date-picker-frame.darkblue .date-picker-content .year .next,
+            .date-picker-frame.darkblue .date-picker-content .year .prev {
+                color: #80D8FF;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkblue .date-picker-content .year .value span:hover {
+                color: #80D8FF;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkblue .date-picker-content .year .value span.selected {
+                color: #80D8FF;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkblue .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkblue .date-picker-content .days div span.holiday {
+                    color: #80D8FF;
+                }
+
+            .date-picker-frame.darkblue .date-picker-content .days .value span:hover {
+                background-color: rgba(0, 145, 234, 0.2);
+                color: #80D8FF;
+                border-color: #0091EA;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #0091EA;
+                border-color: #0091EA;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkblue .date-picker-content .days .value span.holiday {
+                color: #80D8FF;
+                border-color: #0091EA;
+            }
+
+            .date-picker-frame.darkblue .date-picker-content .days .value span.other_month_day {
+                color: rgba(0, 145, 234, 0.2);
+            }
+
+                .date-picker-frame.darkblue .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(0, 145, 234, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkblue .date-picker-content .clock div .add,
+        .date-picker-frame.darkblue .date-picker-content .clock div .sub {
+            color: #80D8FF;
+        }
+
+        .date-picker-frame.darkblue .date-picker-content .footer {
+            border-top-color: rgba(0, 145, 234, 0.2);
+        }
+
+            .date-picker-frame.darkblue .date-picker-content .footer div {
+                border-color: #0091EA;
+                color: #0091EA;
+            }
+
+                .date-picker-frame.darkblue .date-picker-content .footer div:hover {
+                    color: #0091EA;
+                    background-color: rgba(0, 145, 234, 0.2);
+                }
+
+    .date-picker-frame.darkpurple {
+        border-color: rgba(224, 64, 251, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(224, 64, 251, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(224, 64, 251, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkpurple .date-picker-content .top,
+        .date-picker-frame.darkpurple .date-picker-content .year,
+        .date-picker-frame.darkpurple .date-picker-content .month,
+        .date-picker-frame.darkpurple .date-picker-content .days {
+            border-bottom-color: rgba(224, 64, 251, 0.2);
+        }
+
+            .date-picker-frame.darkpurple .date-picker-content .top .title {
+                color: #EA80FC;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .month .next,
+            .date-picker-frame.darkpurple .date-picker-content .month .prev,
+            .date-picker-frame.darkpurple .date-picker-content .year .next,
+            .date-picker-frame.darkpurple .date-picker-content .year .prev {
+                color: #EA80FC;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkpurple .date-picker-content .year .value span:hover {
+                color: #EA80FC;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkpurple .date-picker-content .year .value span.selected {
+                color: #EA80FC;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkpurple .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkpurple .date-picker-content .days div span.holiday {
+                    color: #EA80FC;
+                }
+
+            .date-picker-frame.darkpurple .date-picker-content .days .value span:hover {
+                background-color: rgba(224, 64, 251, 0.2);
+                color: #EA80FC;
+                border-color: #E040FB;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #E040FB;
+                border-color: #E040FB;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkpurple .date-picker-content .days .value span.holiday {
+                color: #EA80FC;
+                border-color: #E040FB;
+            }
+
+            .date-picker-frame.darkpurple .date-picker-content .days .value span.other_month_day {
+                color: rgba(224, 64, 251, 0.2);
+            }
+
+                .date-picker-frame.darkpurple .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(224, 64, 251, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkpurple .date-picker-content .clock div .add,
+        .date-picker-frame.darkpurple .date-picker-content .clock div .sub {
+            color: #EA80FC;
+        }
+
+        .date-picker-frame.darkpurple .date-picker-content .footer {
+            border-top-color: rgba(224, 64, 251, 0.2);
+        }
+
+            .date-picker-frame.darkpurple .date-picker-content .footer div {
+                border-color: #E040FB;
+                color: #E040FB;
+            }
+
+                .date-picker-frame.darkpurple .date-picker-content .footer div:hover {
+                    color: #E040FB;
+                    background-color: rgba(224, 64, 251, 0.2);
+                }
+
+    .date-picker-frame.darkorange {
+        border-color: rgba(255, 145, 0, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(255, 145, 0, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(255, 145, 0, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkorange .date-picker-content .top,
+        .date-picker-frame.darkorange .date-picker-content .year,
+        .date-picker-frame.darkorange .date-picker-content .month,
+        .date-picker-frame.darkorange .date-picker-content .days {
+            border-bottom-color: rgba(255, 145, 0, 0.2);
+        }
+
+            .date-picker-frame.darkorange .date-picker-content .top .title {
+                color: #FFAB40;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .month .next,
+            .date-picker-frame.darkorange .date-picker-content .month .prev,
+            .date-picker-frame.darkorange .date-picker-content .year .next,
+            .date-picker-frame.darkorange .date-picker-content .year .prev {
+                color: #FFAB40;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkorange .date-picker-content .year .value span:hover {
+                color: #FFAB40;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkorange .date-picker-content .year .value span.selected {
+                color: #FFAB40;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkorange .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkorange .date-picker-content .days div span.holiday {
+                    color: #FFAB40;
+                }
+
+            .date-picker-frame.darkorange .date-picker-content .days .value span:hover {
+                background-color: rgba(255, 145, 0, 0.2);
+                color: #FFAB40;
+                border-color: #FF9100;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #FF9100;
+                border-color: #FF9100;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkorange .date-picker-content .days .value span.holiday {
+                color: #FFAB40;
+                border-color: #FF9100;
+            }
+
+            .date-picker-frame.darkorange .date-picker-content .days .value span.other_month_day {
+                color: rgba(255, 145, 0, 0.2);
+            }
+
+                .date-picker-frame.darkorange .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(255, 145, 0, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkorange .date-picker-content .clock div .add,
+        .date-picker-frame.darkorange .date-picker-content .clock div .sub {
+            color: #FFAB40;
+        }
+
+        .date-picker-frame.darkorange .date-picker-content .footer {
+            border-top-color: rgba(255, 145, 0, 0.2);
+        }
+
+            .date-picker-frame.darkorange .date-picker-content .footer div {
+                border-color: #FF9100;
+                color: #FF9100;
+            }
+
+                .date-picker-frame.darkorange .date-picker-content .footer div:hover {
+                    color: #FF9100;
+                    background-color: rgba(255, 145, 0, 0.2);
+                }
+
+    .date-picker-frame.darkgray {
+        border-color: rgba(69, 90, 100, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 1px rgba(69, 90, 100, 0.2);
+        box-shadow: 5px 5px 5px 1px rgba(69, 90, 100, 0.2);
+        background-color: #263238;
+        color: #CFD8DC;
+    }
+
+        .date-picker-frame.darkgray .date-picker-content .top,
+        .date-picker-frame.darkgray .date-picker-content .year,
+        .date-picker-frame.darkgray .date-picker-content .month,
+        .date-picker-frame.darkgray .date-picker-content .days {
+            border-bottom-color: rgba(69, 90, 100, 0.2);
+        }
+
+            .date-picker-frame.darkgray .date-picker-content .top .title {
+                color: #ECEFF1;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .month .next,
+            .date-picker-frame.darkgray .date-picker-content .month .prev,
+            .date-picker-frame.darkgray .date-picker-content .year .next,
+            .date-picker-frame.darkgray .date-picker-content .year .prev {
+                color: #ECEFF1;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .month .value span:hover,
+            .date-picker-frame.darkgray .date-picker-content .year .value span:hover {
+                color: #ECEFF1;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .month .value span.selected,
+            .date-picker-frame.darkgray .date-picker-content .year .value span.selected {
+                color: #ECEFF1;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .days div span {
+                border: 1px solid transparent;
+            }
+
+                .date-picker-frame.darkgray .date-picker-content .days div span:nth-child(7n), .date-picker-frame.darkgray .date-picker-content .days div span.holiday {
+                    color: #ECEFF1;
+                }
+
+            .date-picker-frame.darkgray .date-picker-content .days .value span:hover {
+                background-color: rgba(69, 90, 100, 0.2);
+                color: #ECEFF1;
+                border-color: #455A64;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .days .value span.selected {
+                color: black !important;
+                background-color: #455A64;
+                border-color: #455A64;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .days .value span:nth-child(7n), .date-picker-frame.darkgray .date-picker-content .days .value span.holiday {
+                color: #ECEFF1;
+                border-color: #455A64;
+            }
+
+            .date-picker-frame.darkgray .date-picker-content .days .value span.other_month_day {
+                color: rgba(69, 90, 100, 0.2);
+            }
+
+                .date-picker-frame.darkgray .date-picker-content .days .value span.other_month_day:hover {
+                    background-color: unset;
+                    color: rgba(69, 90, 100, 0.2);
+                    border-color: transparent;
+                }
+
+        .date-picker-frame.darkgray .date-picker-content .clock div .add,
+        .date-picker-frame.darkgray .date-picker-content .clock div .sub {
+            color: #ECEFF1;
+        }
+
+        .date-picker-frame.darkgray .date-picker-content .footer {
+            border-top-color: rgba(69, 90, 100, 0.2);
+        }
+
+            .date-picker-frame.darkgray .date-picker-content .footer div {
+                border-color: #455A64;
+                color: #455A64;
+            }
+
+                .date-picker-frame.darkgray .date-picker-content .footer div:hover {
+                    color: #455A64;
+                    background-color: rgba(69, 90, 100, 0.2);
+                }
 
 @media only screen and (min-width: 600px) {
-  .date-picker-frame {
-    width: 350px;
-    height: 580px;
-    margin: 10px auto;
-  }
-  .date-picker-frame .date-picker-content {
-    margin: 10px 20px;
-    height: calc($max_height-20)px;
-  }
-  .date-picker-frame .date-picker-content div {
-    margin-top: 5px;
-  }
-  .date-picker-frame .date-picker-content .top,
-  .date-picker-frame .date-picker-content .year,
-  .date-picker-frame .date-picker-content .month,
-  .date-picker-frame .date-picker-content .clock {
-    height: 45px;
-  }
-  .date-picker-frame .date-picker-content .days {
-    height: 285px;
-  }
-  .date-picker-frame .date-picker-content .top .title {
-    padding-top: 5px;
-    letter-spacing: 3px;
-  }
-  .date-picker-frame .date-picker-content .month .next,
-  .date-picker-frame .date-picker-content .month .prev,
-  .date-picker-frame .date-picker-content .year .next,
-  .date-picker-frame .date-picker-content .year .prev {
-    width: 45px;
-  }
-  .date-picker-frame .date-picker-content .month .value,
-  .date-picker-frame .date-picker-content .year .value {
-    width: 200px;
-  }
-  .date-picker-frame .date-picker-content .month .value span,
-  .date-picker-frame .date-picker-content .year .value span {
-    margin: 5px;
-    padding: 0 8px;
-  }
-  .date-picker-frame .date-picker-content .days span {
-    min-width: 40px;
-    margin: 0.4rem auto;
-  }
-  .date-picker-frame .date-picker-content .clock div .add,
-  .date-picker-frame .date-picker-content .clock div .sub {
-    padding: 0 2vw;
-  }
-  .date-picker-frame .date-picker-content .footer {
-    margin-top: 35px;
-  }
-  .date-picker-frame .date-picker-content .footer div {
-    margin-top: 12px;
-    width: 50px;
-  }
+    .date-picker-frame {
+        width: 350px;
+        height: 580px;
+        margin: 10px auto;
+    }
+
+        .date-picker-frame .date-picker-content {
+            margin: 10px 20px;
+            height: calc($max_height-20)px;
+        }
+
+            .date-picker-frame .date-picker-content div {
+                margin-top: 5px;
+            }
+
+            .date-picker-frame .date-picker-content .top,
+            .date-picker-frame .date-picker-content .year,
+            .date-picker-frame .date-picker-content .month,
+            .date-picker-frame .date-picker-content .clock {
+                height: 45px;
+            }
+
+            .date-picker-frame .date-picker-content .days {
+                height: 285px;
+            }
+
+            .date-picker-frame .date-picker-content .top .title {
+                padding-top: 5px;
+                letter-spacing: 3px;
+            }
+
+            .date-picker-frame .date-picker-content .month .next,
+            .date-picker-frame .date-picker-content .month .prev,
+            .date-picker-frame .date-picker-content .year .next,
+            .date-picker-frame .date-picker-content .year .prev {
+                width: 45px;
+            }
+
+            .date-picker-frame .date-picker-content .month .value,
+            .date-picker-frame .date-picker-content .year .value {
+                width: 200px;
+            }
+
+                .date-picker-frame .date-picker-content .month .value span,
+                .date-picker-frame .date-picker-content .year .value span {
+                    margin: 5px;
+                    padding: 0 8px;
+                }
+
+            .date-picker-frame .date-picker-content .days span {
+                min-width: 40px;
+                margin: 0.4rem auto;
+            }
+
+            .date-picker-frame .date-picker-content .clock div .add,
+            .date-picker-frame .date-picker-content .clock div .sub {
+                padding: 0 2vw;
+            }
+
+            .date-picker-frame .date-picker-content .footer {
+                margin-top: 35px;
+            }
+
+                .date-picker-frame .date-picker-content .footer div {
+                    margin-top: 12px;
+                    width: 50px;
+                }
 }
 /*# sourceMappingURL=datepicker.css.map */

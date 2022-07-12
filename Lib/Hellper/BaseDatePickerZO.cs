@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Hellper
 {
@@ -32,10 +33,10 @@ namespace Blazor_PersianDatePickerZO.Hellper
                 if (value < _minFaFix) value = _minFaFix;
                 if (value > _maxFaFix) value = _maxFaFix;
                 _minFa = value;
+
             }
         }
-        [Parameter]
-        public EventCallback<DateTime> MinDateChanged { get; set; }
+
 
 
         DateTime _maxFa;
@@ -49,10 +50,10 @@ namespace Blazor_PersianDatePickerZO.Hellper
                 if (value < _minFaFix) value = _minFaFix;
                 if (value > _maxFaFix) value = _maxFaFix;
                 _maxFa = value;
+
             }
         }
-        [Parameter]
-        public EventCallback<DateTime> MaxDateChanged { get; set; }
+
 
 
 
@@ -64,12 +65,10 @@ namespace Blazor_PersianDatePickerZO.Hellper
         protected int _maxYearFa => MaxDate.YearFa();
 
         DateTime _selectDate = DateTime.Now;
-        protected int CalculateYear(int argo)
-        {
-            if (argo < _minYearFa) return _maxYearFa;
-            if (argo > _maxYearFa) return _minYearFa;
-            return argo;
-        }
+       
+
+
+
 
     }
 }

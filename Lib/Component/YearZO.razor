@@ -5,7 +5,15 @@
            @for (int i = _startLoop(); i < _startLoop()+3; i++)
         {
             var select = i;
-            <span @onclick="@(e => Selected(select))" class="@(select==YearSelect ?"selected" :string.Empty  )">@i</span>
+            if (IsActiveYear(select))
+            {
+                <span @onclick="@(e => Selected(select))" class="@(select==YearSelect ?"selected" :string.Empty  )">@i</span>
+            }
+            else
+            {
+                 <span class="NoActive">@i</span>
+            }
+
         }
            
           </div>

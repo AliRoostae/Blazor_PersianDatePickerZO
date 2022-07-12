@@ -14,11 +14,26 @@ namespace Blazor_PersianDatePickerZO.Component
 
         void Selected(int day)
         {
+            if (!IsActiveDay(day)) return;
             SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
 
             SelectDateChanged.InvokeAsync(SelectDate);
 
 
         }
+
+        protected int CalculateYear(int argo)
+        {
+            if (argo < _minYearFa) return _maxYearFa;
+            if (argo > _maxYearFa) return _minYearFa;
+            return argo;
+        }
+
+         bool IsActiveDay(int day)
+        {
+            var temp = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
+            return temp > MinDate && temp < MaxDate;
+        }
+      
     }
 }
