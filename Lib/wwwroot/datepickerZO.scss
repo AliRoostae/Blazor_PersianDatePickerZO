@@ -40,11 +40,12 @@
 
     .days {
       div {
+
         span {
-          border: 1px solid transparent;
-          &:nth-child(7n),
-          &.holiday {
-            color: $color;
+          border-color: transparent;
+
+          &:nth-child(7n) {
+              color: $color;
           }
         }
       }
@@ -52,30 +53,26 @@
       .value {
         span {
           &:hover {
-            background-color: $color_light_alpha;
-            color: $color;
-            border-color: $color_light;
+            &:not(.other_month_day) {
+              text-decoration-color:  $color_light;
+            }
           }
-
+          &.NoActive {
+            text-decoration-color: $color;
+            &:hover {
+              text-decoration-color: $color;
+            }
+          }
           &.selected {
-            color: $focus_color !important;
+            color: white !important;
             background-color: $color_light;
-            border-color: $color_light;
+            border-color: $color;
           }
 
           &:nth-child(7n),
           &.holiday {
-            color: $color;
-            border-color: $color_light;
-          }
-
-          &.other_month_day {
-            color: $color_light_alpha;
-
-            &:hover {
-              background-color: unset;
-              color: $color_light_alpha;
-              border-color: transparent;
+            &:not(.other_month_day) {
+              color: $color;
             }
           }
         }
@@ -105,11 +102,6 @@
       }
     }
   }
-}
-
-body {
-  background-color: whitesmoke;
-  font-family: vazir fd;
 }
 
 .date-picker-frame {
@@ -163,7 +155,7 @@ body {
         direction: rtl;
         font-weight: bolder;
         padding-top: 1vh;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         color: transparent;
       }
     }
@@ -217,9 +209,8 @@ body {
           border: 1px solid transparent;
           border-radius: 5px;
 
-          &:nth-child(7n),
-          &.holiday {
-            color: transparent;
+          &:nth-child(7n) {
+              color: transparent;
           }
         }
       }
@@ -228,34 +219,35 @@ body {
         span {
           cursor: pointer;
           &:hover {
-            background-color: transparent;
-            color: transparent;
-            transition: 0.5s;
-            border-color: transparent;
+            &:not(.other_month_day) {
+              text-decoration: underline overline transparent 1px;
+              font-weight: bold;
+            }
           }
-
+          &.other_month_day {
+            opacity: .1;
+            cursor: unset;
+          }
+          &.NoActive {
+            text-decoration: line-through transparent 2px;
+            opacity: .7;
+            cursor: no-drop;
+            &:hover {
+              text-decoration: line-through transparent 2px;
+            }
+          }
           &.selected {
+            text-decoration: none;
             font-weight: bolder;
             color: white !important;
             background-color: transparent;
-            transition: 0.5s;
             border: 1px double transparent;
           }
 
           &:nth-child(7n),
           &.holiday {
-            color: transparent;
-            border-color: transparent;
-          }
-
-          &.other_month_day {
-            color: transparent;
-            border-color: transparent;
-
-            &:hover {
-              background-color: unset;
+            &:not(.other_month_day) {
               color: transparent;
-              border-color: transparent;
             }
           }
         }
@@ -362,7 +354,6 @@ body {
 
 }
 
-// theme part
 
 @media only screen and (min-width: 600px) {
   $max_height: 580;
@@ -392,7 +383,6 @@ body {
       .top {
         .title {
           padding-top: 5px;
-          letter-spacing: 3px;
         }
       }
 
