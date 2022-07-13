@@ -1318,7 +1318,7 @@
   .date-picker-frame .date-picker-content .month .prev,
   .date-picker-frame .date-picker-content .year .next,
   .date-picker-frame .date-picker-content .year .prev {
-    width: 50px;
+    width: 45px;
   }
   .date-picker-frame .date-picker-content .month .value,
   .date-picker-frame .date-picker-content .year .value {
@@ -1326,8 +1326,8 @@
   }
   .date-picker-frame .date-picker-content .month .value span,
   .date-picker-frame .date-picker-content .year .value span {
-    margin: 5px;
-    padding: 0 10px;
+    margin: 4px;
+    padding: 0 8px;
   }
   .date-picker-frame .date-picker-content .days span {
     min-width: 40px;
@@ -1345,4 +1345,4 @@
     width: 50px;
   }
 }
-/*# sourceMappingURL=datepicker.css.map */
+/*# sourceMappingURL=datepickerZO.css.map */
