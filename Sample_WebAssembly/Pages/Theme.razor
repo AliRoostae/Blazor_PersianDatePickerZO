@@ -3,7 +3,9 @@
 @using Blazor_PersianDatePickerZO.Hellper
 <div class="row">
     <div class="col text-center">
-        <div >@_date</div>
+           <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" />
+       <hr class="divider"> 
+       <div >@_date</div>
      <hr class="divider">
        <div >@_dateFa</div>
        <hr class="divider">
@@ -12,6 +14,8 @@
      <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" />
     </div>
     <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.lightorange"/>
+       <hr class="divider">
         <div >@_date</div>
      <hr class="divider">
        <div >@_dateFa</div>
@@ -21,6 +25,8 @@
      <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  ThemePickerZO="ThemeDatePickerZO.darkorange" />
     </div>
     <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.lightblue"/>
+       <hr class="divider">
         <div >@_date</div>
      <hr class="divider">
        <div >@_dateFa</div>
@@ -30,6 +36,8 @@
      <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.darkblue" />
     </div>
     <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
+       <hr class="divider">
         <div >@_date</div>
      <hr class="divider">
        <div >@_dateFa</div>

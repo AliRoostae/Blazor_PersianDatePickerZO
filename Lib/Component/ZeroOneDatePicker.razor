@@ -1,45 +1,99 @@
 ﻿@inherits BaseDatePickerZO
-<div class="date-picker-frame @ThemePickerZO">
-    <div class="date-picker-content">
-        <div class="top">
-            <div class="title">@_dateFa</div>
-        </div>
-        <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-        <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-        <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-        <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-        <div class="footer">
-            <div class="close" @onclick="(e=> Change(SelectDate))">تأیید</div>
-            <div @onclick="GetToday" class="select-today">امروز</div>
+@if (PupupDatePickerZO)
+{
+    <div class="datepicker-input-group">
+        <input readonly class="picker-text-input" value="@_dateFa" @onclick="ShowPicker">
+        <span class="show-picker-btn">&#x1F4C5;</span>
+        <div  class="frame-popup" style="position: absolute;z-index: 999999;">
+            @if (_show)
+            {
+                <div class="date-picker-frame @ThemePickerZO">
+                    <div class="date-picker-content">
+                        <div class="top">
+                            <div class="title">@_dateFa</div>
+                        </div>
+                        <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+                        <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+                        <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+                        <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+                        <div class="footer">
+                            <div class="close" @onclick="ColsePopup">تأیید</div>
+                            <div @onclick="GetToday" class="select-today">امروز</div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
         </div>
     </div>
-</div>
+}
+else
+{
+
+    <div class="date-picker-frame @ThemePickerZO">
+        <div class="date-picker-content">
+            <div class="top">
+                <div class="title">@_dateFa</div>
+            </div>
+            <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <div class="footer">
+                <div class="close" @onclick="Change">تأیید</div>
+                <div @onclick="GetToday" class="select-today">امروز</div>
+            </div>
+        </div>
+    </div>
+
+}
 
 @code
 {
     [Parameter]
     public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
+    [Parameter]
+    public bool PupupDatePickerZO { get; set; }
 
     [Parameter]
     public EventCallback<string> DateFa { get; set; }
 
     string _dateFa => $"{SelectDate.YearFa():D4}/{SelectDate.MonthFa():D2}/{SelectDate.DayFa():D2} {SelectDate.Hour:D2}:{SelectDate.Minute:D2}:{SelectDate.Second:D2}";
-
-
-    void Change(DateTime argo)
+    DateTime _olddate;
+    bool _show;
+    void ShowPicker()
     {
+        _show = !_show;
+        SelectDate = _olddate;
+        Change();
+    }
+
+    void ColsePopup()
+    {
+         _show = false;
+         Change();
+    }
+    void Change()
+    {
+       
         SelectDateChanged.InvokeAsync(SelectDate);
         DateFa.InvokeAsync(_dateFa);
     }
     void GetToday()
     {
         SelectDate = DateTime.Now;
-        Change(SelectDate);
+        Change();
     }
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender) Change(SelectDate);
+        if (firstRender)
+        {
+
+            Change();
+            _olddate = SelectDate;
+        }
     }
 
 
