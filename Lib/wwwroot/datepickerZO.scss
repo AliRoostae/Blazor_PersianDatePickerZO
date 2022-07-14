@@ -1,5 +1,20 @@
+@mixin NoSelect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
 
-@mixin colorSchema ($backgound, $font_color, $focus_color, $color, $color_light, $color_light_alpha) {
+@mixin colorSchema(
+  $backgound,
+  $font_color,
+  $focus_color,
+  $color,
+  $color_light,
+  $color_light_alpha
+) {
   border-color: $color_light_alpha;
   box-shadow: 5px 5px 5px 1px $color_light_alpha;
   background-color: $backgound;
@@ -40,12 +55,11 @@
 
     .days {
       div {
-
         span {
           border-color: transparent;
 
           &:nth-child(7n) {
-              color: $color;
+            color: $color;
           }
         }
       }
@@ -54,7 +68,7 @@
         span {
           &:hover {
             &:not(.other_month_day) {
-              text-decoration-color:  $color_light;
+              text-decoration-color: $color_light;
             }
           }
           &.NoActive {
@@ -105,13 +119,7 @@
 }
 
 .date-picker-frame {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-
+  @include NoSelect();
   width: 80vw;
   height: 90vh;
   margin: 5vh auto;
@@ -210,7 +218,7 @@
           border-radius: 5px;
 
           &:nth-child(7n) {
-              color: transparent;
+            color: transparent;
           }
         }
       }
@@ -225,12 +233,12 @@
             }
           }
           &.other_month_day {
-            opacity: .1;
+            opacity: 0.1;
             cursor: unset;
           }
           &.NoActive {
             text-decoration: line-through transparent 2px;
-            opacity: .7;
+            opacity: 0.7;
             cursor: no-drop;
             &:hover {
               text-decoration: line-through transparent 2px;
@@ -305,55 +313,166 @@
   }
 
   &.lightgreen {
-    @include colorSchema(#fefefe, black, white, #009688, #80CBC4, rgba($color: #80CBC4,$alpha: 0.2))
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #009688,
+      #80cbc4,
+      rgba($color: #80cbc4, $alpha: 0.2)
+    );
   }
 
   &.lightred {
-    @include colorSchema(#fefefe, black, white, #FF4081, #F48FB1, rgba($color: #F48FB1,$alpha: 0.2))
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #ff4081,
+      #f48fb1,
+      rgba($color: #f48fb1, $alpha: 0.2)
+    );
   }
 
   &.lightblue {
-    @include colorSchema(#fefefe, black, white, #0288D1, #4FC3F7, rgba($color: #4FC3F7,$alpha: 0.2))
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #0288d1,
+      #4fc3f7,
+      rgba($color: #4fc3f7, $alpha: 0.2)
+    );
   }
 
   &.lightpurple {
-    @include colorSchema(#fefefe, black, white, #8E24AA, #9575CD, rgba($color: #9575CD,$alpha: 0.2))
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #8e24aa,
+      #9575cd,
+      rgba($color: #9575cd, $alpha: 0.2)
+    );
   }
 
   &.lightorange {
-    @include colorSchema(#fefefe, black, white, #F57C00, #FFB74D, rgba($color: #FFB74D,$alpha: 0.2))
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #f57c00,
+      #ffb74d,
+      rgba($color: #ffb74d, $alpha: 0.2)
+    );
   }
 
-  &.lightgray{
-    @include colorSchema(#fefefe, black, white, #546E7A, #B0BEC5, rgba($color: #B0BEC5,$alpha: 0.2))
+  &.lightgray {
+    @include colorSchema(
+      #fefefe,
+      black,
+      white,
+      #546e7a,
+      #b0bec5,
+      rgba($color: #b0bec5, $alpha: 0.2)
+    );
   }
 
   &.darkgreen {
-    @include colorSchema(#263238, #CFD8DC, black, #A7FFEB, #00BFA5, rgba($color: #00BFA5,$alpha: 0.2))
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #a7ffeb,
+      #00bfa5,
+      rgba($color: #00bfa5, $alpha: 0.2)
+    );
   }
 
   &.darkred {
-    @include colorSchema(#263238, #CFD8DC, black, #FF80AB, #FF4081, rgba($color: #FF4081,$alpha: 0.2))
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #ff80ab,
+      #ff4081,
+      rgba($color: #ff4081, $alpha: 0.2)
+    );
   }
 
   &.darkblue {
-    @include colorSchema(#263238, #CFD8DC, black, #80D8FF, #0091EA, rgba($color: #0091EA,$alpha: 0.2))
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #80d8ff,
+      #0091ea,
+      rgba($color: #0091ea, $alpha: 0.2)
+    );
   }
 
   &.darkpurple {
-    @include colorSchema(#263238, #CFD8DC, black, #EA80FC, #E040FB, rgba($color: #E040FB,$alpha: 0.2))
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #ea80fc,
+      #e040fb,
+      rgba($color: #e040fb, $alpha: 0.2)
+    );
   }
 
   &.darkorange {
-    @include colorSchema(#263238, #CFD8DC, black, #FFAB40, #FF9100, rgba($color: #FF9100,$alpha: 0.2))
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #ffab40,
+      #ff9100,
+      rgba($color: #ff9100, $alpha: 0.2)
+    );
   }
 
-  &.darkgray{
-    @include colorSchema(#263238, #CFD8DC, black, #ECEFF1, #455A64, rgba($color: #455A64,$alpha: 0.2))
+  &.darkgray {
+    @include colorSchema(
+      #263238,
+      #cfd8dc,
+      black,
+      #eceff1,
+      #455a64,
+      rgba($color: #455a64, $alpha: 0.2)
+    );
   }
-
 }
 
+.datepicker-input-group {
+
+  margin: auto;
+  text-align: center;
+  width: 90%;
+  .picker-text-input {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  .show-picker-btn {
+    @include NoSelect();
+    font-size: small;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -8%;
+    cursor: pointer;
+  }
+  .frame-popup {
+    z-index: 99999;
+    position: absolute;
+
+    .date-picker-frame {
+      margin: 0.5vh 0;
+    }
+  }
+}
 
 @media only screen and (min-width: 600px) {
   $max_height: 580;
@@ -425,6 +544,29 @@
 
           width: 50px;
         }
+      }
+    }
+  }
+
+  .datepicker-input-group {
+    display: block;
+    float: left;
+
+    margin: unset;
+    text-align: center;
+    width: 375px;
+    .picker-text-input {
+      width: 340px;
+    }
+    .show-picker-btn {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      left: -35px;
+    }
+    .frame-popup {
+      .date-picker-frame {
+        margin: 0 0;
       }
     }
   }

@@ -2,9 +2,9 @@
 @if (PupupDatePickerZO)
 {
     <div class="datepicker-input-group">
-        <input readonly class="picker-text-input" value="@_dateFa" @onclick="ShowPicker">
-        <span class="show-picker-btn">&#x1F4C5;</span>
-        <div  class="frame-popup" style="position: absolute;z-index: 999999;">
+        <input readonly class="picker-text-input" value="@_dateFa">
+        <span class="show-picker-btn" @onclick="ShowPicker">&#x1F4C5;</span>
+        <div  class="frame-popup">
             @if (_show)
             {
                 <div class="date-picker-frame @ThemePickerZO">
@@ -76,7 +76,7 @@ else
     }
     void Change()
     {
-       
+
         SelectDateChanged.InvokeAsync(SelectDate);
         DateFa.InvokeAsync(_dateFa);
     }
