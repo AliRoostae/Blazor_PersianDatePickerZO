@@ -6,7 +6,7 @@ namespace Blazor_PersianDatePickerZO.Component
 {
     partial class MonthZO: BaseDatePickerZO
     {
-        string[] _monthFa => new[] { "", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذز", "دی", "بهمن", "اسفند" };
+        
 
         int _colectForMontStart => MonthSelect <= 1 ? 1 : MonthSelect > 10 ? 10 : MonthSelect - 1;
 

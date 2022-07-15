@@ -50,8 +50,8 @@ namespace Blazor_PersianDatePickerZO.Component
 
         protected int CalculateYear(int argo)
         {
-            if (argo < _minYearFa) return _maxYearFa;
-            if (argo > _maxYearFa) return _minYearFa;
+            if (argo < _minYearFa) return _minYearFa;
+            if (argo > _maxYearFa) return _maxYearFa;
             return argo;
         }
 

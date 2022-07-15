@@ -1,0 +1,53 @@
+﻿@page "/FormatDate"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+
+
+<ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="yy/MM/dd" />
+<hr class="divider">
+<br />
+<ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
+<hr class="divider">
+<br />
+<ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="ddd D MMM" ThemePickerZO="ThemeDatePickerZO.lightorange" />
+<hr class="divider">
+<br />
+<ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="ddd D MMM سال yyyy ساعت hh:mm:ss" ThemePickerZO="ThemeDatePickerZO.lightblue" />
+<hr class="divider">
+<br />
+<div class="row">
+    <p>
+        <span>yyyy/MM/dd hh:mm:ss         1359/04/09 21:00:00  </span>
+        <hr class="divider"> <br />
+        <span>  yy/MM/dd hh:mm:ss            59/09/04 21:00:00   </span>
+        <hr class="divider"> <br />
+        <span>  yyyy/M/d hh:mm:ss            1359/4/9 21:00:00     </span>
+        <hr class="divider"> <br />
+        <span>  MMM                           تیر   </span>
+        <hr class="divider"> <br />
+        <span>ddd                           یک شنبه  </span>
+        <hr class="divider"> <br />
+        <span>D                                نهم  </span>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@code {
+    DateTime _date = DateTime.Now;
+    string _dateFa = string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+
+}

@@ -1,20 +1,16 @@
-﻿@page "/RangeDate"
+﻿@page "/RangeDateManual"
 @using Blazor_PersianDatePickerZO.Component
 @using Blazor_PersianDatePickerZO.Hellper
 <div class="row">
     <div class="col text-center">
-       @* <div >@_date</div>
-     <hr class="divider">
-       <div >@_dateFa</div>*@
+       <ZeroOneDatePicker  @bind-SelectDate="@dateFirst"  MaxDate="@dateLast" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.darkblue" />
        <hr class="divider">
        <span>Start</span>
        <hr class="divider">
      <ZeroOneDatePicker  @bind-SelectDate="@dateFirst"  MaxDate="@dateLast" ThemePickerZO="ThemeDatePickerZO.darkblue" />
     </div>
     <div class="col text-center">
-       @* <div >@_date</div>
-     <hr class="divider">
-       <div >@_dateFa</div>*@
+       <ZeroOneDatePicker @bind-SelectDate="@dateLast"  MinDate="@dateFirst" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.darkblue" />
        <hr class="divider">
        <span>End</span>
        <hr class="divider">
@@ -22,9 +18,18 @@
     </div>
 
    
+
+   
 </div>
-
-
+<div class="row">
+ <div class="col text-center">
+       <ZeroOneDatePickerRange @bind-SelectDate="@dateLast"  MinDate="@dateFirst" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+       <hr class="divider">
+       <span>End</span>
+       <hr class="divider">
+     <ZeroOneDatePickerRange @bind-SelectDate="@dateLast"  MinDate="@dateFirst" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+    </div>
+</div>
 @code{
 
 

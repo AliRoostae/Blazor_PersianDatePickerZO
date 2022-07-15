@@ -8,13 +8,13 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
 
         [Parameter]
-        public DateTime SelectDate
+        public  DateTime SelectDate
         {
             get => _selectDate; set
             {
 
-                if (value < MinDate) value = MaxDate;
-                if (value > MaxDate) value = MinDate;
+                if (value < MinDate) value = MinDate;
+                if (value > MaxDate) value = MaxDate;
                 _selectDate = value;
 
             }
@@ -24,7 +24,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
         DateTime _minFa;
         [Parameter]
-        public DateTime MinDate
+        public  DateTime MinDate
         {
             get => _minFa < _minFaFix || _minFa > _maxFaFix ? _minFaFix : _minFa;
             set

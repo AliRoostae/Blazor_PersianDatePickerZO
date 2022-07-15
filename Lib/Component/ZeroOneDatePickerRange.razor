@@ -21,7 +21,9 @@
                             <div @onclick="GetToday" class="select-today">امروز</div>
                         </div>
                     </div>
+                   
                 </div>
+               
             }
 
 
@@ -45,7 +47,23 @@ else
                 <div @onclick="GetToday" class="select-today">امروز</div>
             </div>
         </div>
-    </div>
+   </div> 
+   <div class="date-picker-frame @ThemePickerZO">
+        <div class="date-picker-content">
+            <div class="top">
+                <div class="title">@_dateFa</div>
+            </div>
+            <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
+            <div class="footer">
+                <div class="close" @onclick="Change">تأیید</div>
+                <div @onclick="GetToday" class="select-today">امروز</div>
+            </div>
+        </div>
+   </div> 
+ 
 
 }
 
