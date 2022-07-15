@@ -1,0 +1,28 @@
+﻿@inherits BaseDatePickerRangeZO 
+ <div class="top">
+                <div class="title">@_dateFa</div>
+            </div>
+<div class="date-picker-frame @ThemePickerZO">
+        <div class="date-picker-content">
+           <div class="top">
+                            <div class="title">@_dateFaFirst</div>
+                        </div>
+            <YearZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
+            <MonthZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
+            <DayZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
+            <TimeZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
+         
+        </div>
+   </div> 
+   <div class="date-picker-frame @ThemePickerZO">
+        <div class="date-picker-content">
+         <div class="top">
+                            <div class="title">@_dateFaLast</div>
+                        </div>
+            <YearZO @bind-SelectDate="@SelectDateLast"  MaxDate="@SelectDateFirst" MinDate="@MinDate" />
+            <MonthZO @bind-SelectDate="@SelectDateLast" MaxDate="@SelectDateFirst" MinDate="@MinDate" />
+            <DayZO @bind-SelectDate="@SelectDateLast"   MaxDate="@SelectDateFirst" MinDate="@MinDate" />
+            <TimeZO @bind-SelectDate="@SelectDateLast"  MaxDate="@SelectDateFirst" MinDate="@MinDate" />
+          
+        </div>
+   </div>

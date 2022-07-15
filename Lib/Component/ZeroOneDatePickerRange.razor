@@ -1,4 +1,4 @@
-﻿@inherits BaseDatePickerZO
+﻿@inherits BaseDatePickerRangeZO 
 @if (PupupDatePickerZO)
 {
     <div class="datepicker-input-group">
@@ -7,161 +7,32 @@
         <div  class="frame-popup">
             @if (_show)
             {
-               @* <div class="date-picker-frame @ThemePickerZO">
-                    <div class="date-picker-content">
-                        <div class="top">
-                            <div class="title">@_dateFa</div>
-                        </div>
-                        <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <div class="footer">
-                            <div class="close" @onclick="ColsePopup">تأیید</div>
-                            <div @onclick="GetToday" class="select-today">امروز</div>
-                        </div>
-                    </div>
-                   
-                </div>*@
-               
+                <PickerRange @bind-SelectDateFirst="@SelectDateFirst"  @bind-SelectDateLast="@SelectDateLast" ThemePickerZO="@ThemePickerZO" />  
+                <div class="footer">
+                <button  class="close" @onclick="ColsePopup">تأیید</button>
+                <button  @onclick="GetDayRange" class="select-today">یک روزه</button>
+                <button  @onclick="GetWeekRange" class="select-today">یک هفته</button>
+                <button  @onclick="GetMonthRange" class="select-today">یک ماه</button>
+                <button  @onclick="GetYearRange" class="select-today">یک سال</button>
+            </div>
             }
 
-
+          
         </div>
     </div>
 }
 else
 {
-
-    <div class="date-picker-frame @ThemePickerZO">
-        <div class="date-picker-content">
-            <div class="top">
-                <div class="title">@_dateFa</div>
+    <PickerRange @bind-SelectDateFirst="@SelectDateFirst"  @bind-SelectDateLast="@SelectDateLast" ThemePickerZO="@ThemePickerZO" />
+    <div class="footer">
+                <button  class="close" @onclick="Change">تأیید</button>
+                <button  @onclick="GetDayRange" class="select-today">یک روزه</button>
+                <button  @onclick="GetWeekRange" class="select-today">یک هفته</button>
+                <button  @onclick="GetMonthRange" class="select-today">یک ماه</button>
+                <button  @onclick="GetYearRange" class="select-today">یک سال</button>
             </div>
-            <YearZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
-            <MonthZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
-            <DayZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
-            <TimeZO @bind-SelectDate="@SelectDateFirst" MaxDate="@MaxDate" MinDate="@SelectDateLast" />
-            <div class="footer">
-                <div class="close" @onclick="Change">تأیید</div>
-            </div>
-        </div>
-   </div> 
-   <div class="date-picker-frame @ThemePickerZO">
-        <div class="date-picker-content">
-            <div class="top">
-                <div class="title">@_dateFa</div>
-            </div>
-            <YearZO @bind-SelectDate="@SelectDateLast"  MaxDate="@SelectDateFirst" MinDate="@MinDate" />
-            <MonthZO @bind-SelectDate="@SelectDateLast" MaxDate="@SelectDateFirst" MinDate="@MinDate" />
-            <DayZO @bind-SelectDate="@SelectDateLast"   MaxDate="@SelectDateFirst" MinDate="@MinDate" />
-            <TimeZO @bind-SelectDate="@SelectDateLast"  MaxDate="@SelectDateFirst" MinDate="@MinDate" />
-            <div class="footer">
-                <div class="close" @onclick="Change">تأیید</div>
-            </div>
-        </div>
-   </div> 
- 
-
 }
 
-@code
-{
-
-    private new DateTime SelectDate { get; set; } 
-    private new EventCallback<DateTime> SelectDateChanged { get; set; } 
-    private new DateTime MinDate { get; set; } = DatePickerZeroOneHellper.Persian.MinSupportedDateTime;
-    private new DateTime MaxDate { get; set; } = DatePickerZeroOneHellper.Persian.MaxSupportedDateTime;
-
-    DateTime _selectDateFirst=DateTime.Now.AddDays(-1);
-    [Parameter]
-    public   DateTime SelectDateFirst
-    {
-        get => _selectDateFirst; 
-        set
-        {
-            if (value < MinDate) value = MinDate;
-            if (value > MaxDate) value = MaxDate.AddMinutes(-1);
-            _selectDateFirst = value;
-        }
-    }
-
-    [Parameter]
-    public virtual EventCallback<DateTime> SelectDateFirstChanged { get; set; }
-
-    DateTime _selectDateLast=DateTime.Now.AddDays(1);
-    [Parameter]
-    public   DateTime SelectDateLast
-    {
-        get => _selectDateLast; 
-        set
-        {
-            if (value < MinDate) value = MinDate.AddMinutes(1);
-            if (value > MaxDate) value = MaxDate; 
-            _selectDateLast = value;
-        }
-    }
-
-    [Parameter]
-    public virtual EventCallback<DateTime> SelectDateLastChanged { get; set; }
 
 
-
-    [Parameter]
-    public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
-    [Parameter]
-    public bool PupupDatePickerZO { get; set; }
-
-    [Parameter]
-    public EventCallback<string> DateFa { get; set; }
-
-    // yyyy/MM/dd hh:mm:ss 1359/04/09 21:00:00
-    // yy/MM/dd hh:mm:ss   59/09/04 21:00:00
-    // yyyy/M/d hh:mm:ss 1359/4/9 21:00:00
-    // MMM تیر
-    //ddd یک شنبه
-    //D  نهم
-
-    [Parameter]
-    public string Format { get; set; } = "yyyy/MM/dd hh:mm";
-
-    string _dateFa => $"{ SelectDateFirst.FormatDate(Format)} ~ { SelectDateLast.FormatDate(Format)}"; 
-    DateTime _olddateFirst;
-    DateTime _olddateLast;
-    bool _show;
-    void ShowPicker()
-    {
-        _show = !_show;
-        SelectDateFirst = _olddateFirst;
-        SelectDateLast =  _olddateLast;
-        Change();
-    }
-
-    void ColsePopup()
-    {
-        _show = false;
-        Change();
-    }
-    void Change()
-    {
-
-        SelectDateFirstChanged.InvokeAsync(SelectDateFirst);
-        SelectDateLastChanged.InvokeAsync(SelectDateLast);
-        DateFa.InvokeAsync(_dateFa);
-    }
-
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-
-            Change();
-            _olddateFirst = SelectDateFirst;
-            _olddateLast = SelectDateLast;
-        }
-    }
-
-
- }
 
