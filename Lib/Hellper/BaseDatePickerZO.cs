@@ -8,7 +8,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
 
         [Parameter]
-        public  DateTime SelectDate
+        public virtual  DateTime SelectDate
         {
             get => _selectDate; set
             {
@@ -20,11 +20,11 @@ namespace Blazor_PersianDatePickerZO.Hellper
             }
         }
         [Parameter]
-        public EventCallback<DateTime> SelectDateChanged { get; set; }
+        public virtual EventCallback<DateTime> SelectDateChanged { get; set; }
 
         DateTime _minFa;
         [Parameter]
-        public  DateTime MinDate
+        public virtual DateTime MinDate
         {
             get => _minFa < _minFaFix || _minFa > _maxFaFix ? _minFaFix : _minFa;
             set
@@ -41,7 +41,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
         DateTime _maxFa;
         [Parameter]
-        public DateTime MaxDate
+        public virtual DateTime MaxDate
         {
             get => _maxFa < _minFaFix || _maxFa > _maxFaFix ? _maxFaFix : _maxFa;
             set
@@ -64,7 +64,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
         protected int _minYearFa => MinDate.YearFa();
         protected int _maxYearFa => MaxDate.YearFa();
 
-        DateTime _selectDate = DateTime.Now;
+        protected DateTime _selectDate = DateTime.Now;
        
 
 
