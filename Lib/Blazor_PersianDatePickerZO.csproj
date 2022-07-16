@@ -9,6 +9,7 @@
     <PackageIcon>1894518-200.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
