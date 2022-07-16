@@ -4,9 +4,9 @@ using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class MonthZO: BaseDatePickerZO
+    partial class MonthZO : BaseDatePickerZO
     {
-        
+
 
         int _colectForMontStart => MonthSelect <= 1 ? 1 : MonthSelect > 10 ? 10 : MonthSelect - 1;
 
@@ -47,10 +47,10 @@ namespace Blazor_PersianDatePickerZO.Component
             SelectDateChanged.InvokeAsync(SelectDate);
         }
 
-      
+
         protected bool IsActiveMonth(int month)
         {
-
+            if (month < 1 || month > 12) return false;
             int.TryParse($"{SelectDate.YearFa():D2}{month:D2}", out var selectMonth);
             int.TryParse($"{MinDate.YearFa():D2}{MinDate.MonthFa():D2}", out var min);
             int.TryParse($"{MaxDate.YearFa():D2}{MaxDate.MonthFa():D2}", out var max);
