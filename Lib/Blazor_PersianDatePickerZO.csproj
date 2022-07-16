@@ -4,7 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>1894518-200.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageIcon>1894518-200.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="1894518-200.ico" />
+  </ItemGroup>
 
 
   <ItemGroup>
@@ -13,6 +22,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="1894518-200.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

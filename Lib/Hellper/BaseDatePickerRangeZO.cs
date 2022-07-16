@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor_PersianDatePickerZO.Hellper
 {
-    public abstract class BaseDatePickerRangeZO: BaseDatePickerZO
+    public abstract class BaseDatePickerRangeZO : BaseDatePickerZO
     {
         private new DateTime SelectDate { get; set; }
         private new EventCallback<DateTime> SelectDateChanged { get; set; }

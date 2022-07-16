@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    public partial class DayZO: BaseDatePickerZO
+    public partial class DayZO : BaseDatePickerZO
     {
 
         int _usInmont = 0;
@@ -29,11 +29,11 @@ namespace Blazor_PersianDatePickerZO.Component
             return argo;
         }
 
-         bool IsActiveDay(int day)
+        bool IsActiveDay(int day)
         {
             var temp = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
             return temp > MinDate && temp < MaxDate;
         }
-      
+
     }
 }

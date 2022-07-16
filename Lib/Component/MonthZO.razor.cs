@@ -1,5 +1,4 @@
 ﻿using Blazor_PersianDatePickerZO.Hellper;
-using Microsoft.AspNetCore.Components;
 using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Component
@@ -54,7 +53,7 @@ namespace Blazor_PersianDatePickerZO.Component
             int.TryParse($"{SelectDate.YearFa():D2}{month:D2}", out var selectMonth);
             int.TryParse($"{MinDate.YearFa():D2}{MinDate.MonthFa():D2}", out var min);
             int.TryParse($"{MaxDate.YearFa():D2}{MaxDate.MonthFa():D2}", out var max);
-            return selectMonth >= min && selectMonth <= max ;
+            return selectMonth >= min && selectMonth <= max;
         }
 
     }

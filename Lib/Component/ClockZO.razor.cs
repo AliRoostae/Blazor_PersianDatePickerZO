@@ -1,10 +1,5 @@
 ﻿using Blazor_PersianDatePickerZO.Hellper;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
@@ -13,31 +8,31 @@ namespace Blazor_PersianDatePickerZO.Component
 
         [Parameter]
         public virtual TimeSpan SelectTime { get; set; } = DateTime.Now.TimeOfDay;
-          [Parameter]
-        public virtual bool NoChangeClock { get; set; } 
-   
+        [Parameter]
+        public virtual bool NoChangeClock { get; set; }
+
         [Parameter]
         public virtual EventCallback<TimeSpan> SelectTimeChanged { get; set; }
 
         [Parameter]
         public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
 
-        double _dgH => SelectTime.TotalHours * 30 +90;
-        double _dgM => SelectTime.Minutes * 6 +90;
-        double _dgS => SelectTime.Seconds * 6 +90;
+        double _dgH => SelectTime.TotalHours * 30 + 90;
+        double _dgM => SelectTime.Minutes * 6 + 90;
+        double _dgS => SelectTime.Seconds * 6 + 90;
 
 
 
         ClockHand _defultSelected = ClockHand.NoSelect;
 
-        string _classEditTime => _defultSelected == ClockHand.NoSelect   ? string.Empty : "triangle";
+        string _classEditTime => _defultSelected == ClockHand.NoSelect ? string.Empty : "triangle";
         void SetDef(ClockHand argo)
-        {   
+        {
             if (NoChangeClock) return;
             _defultSelected = argo;
-            
+
         }
-   
+
 
         void SetTimeByClockHand(int i)
         {
@@ -48,13 +43,13 @@ namespace Blazor_PersianDatePickerZO.Component
                     SelectTime = new TimeSpan((int)(i / 5), SelectTime.Minutes, SelectTime.Seconds);
                     break;
                 case ClockHand.Minute:
-                    SelectTime = new TimeSpan(SelectTime.Hours, i , SelectTime.Seconds);
+                    SelectTime = new TimeSpan(SelectTime.Hours, i, SelectTime.Seconds);
                     break;
                 case ClockHand.Second:
-                    SelectTime = new TimeSpan(SelectTime.Hours, SelectTime.Minutes, i );
+                    SelectTime = new TimeSpan(SelectTime.Hours, SelectTime.Minutes, i);
                     break;
             }
-           SelectTimeChanged.InvokeAsync(SelectTime);
+            SelectTimeChanged.InvokeAsync(SelectTime);
             _defultSelected = ClockHand.NoSelect;
         }
 

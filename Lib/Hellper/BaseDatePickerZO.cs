@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Hellper
 {
@@ -8,7 +7,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
 
         [Parameter]
-        public virtual  DateTime SelectDate
+        public virtual DateTime SelectDate
         {
             get => _selectDate; set
             {
@@ -65,7 +64,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
         protected int _maxYearFa => MaxDate.YearFa();
 
         protected DateTime _selectDate = DateTime.Now;
-       
+
 
 
 

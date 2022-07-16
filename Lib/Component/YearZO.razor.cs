@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class YearZO: BaseDatePickerZO
+    partial class YearZO : BaseDatePickerZO
     {
 
         int _startLoop()
@@ -22,14 +22,14 @@ namespace Blazor_PersianDatePickerZO.Component
 
         void NextElement()
         {
-            
+
             ++YearSelect;
             Selected(YearSelect);
         }
 
         void PrevElement()
         {
-           
+
             --YearSelect;
             Selected(YearSelect);
 
@@ -55,7 +55,7 @@ namespace Blazor_PersianDatePickerZO.Component
             return argo;
         }
 
-       
+
         protected bool IsActiveYear(int year)
         {
             return year >= MinDate.YearFa() && year <= MaxDate.YearFa();

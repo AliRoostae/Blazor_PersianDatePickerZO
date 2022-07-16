@@ -3,7 +3,7 @@
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class TimeZO: BaseDatePickerZO
+    partial class TimeZO : BaseDatePickerZO
     {
 
         int Hours
@@ -47,7 +47,7 @@ namespace Blazor_PersianDatePickerZO.Component
                 var temp = SelectDate.Date.Add(tim);
                 if (!IsActiveForTime(temp)) return;
                 SelectDate = temp;
-               
+
             }
         }
         int Seconds
