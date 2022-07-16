@@ -1,0 +1,271 @@
+$clock_size: 250;
+
+@mixin theme($face_bg, $border_color, $mark_color, $hm_hand, $s_hand) {
+  border-color: $border_color;
+  box-shadow: 0 0 15px -2px rgba($color: $s_hand, $alpha: 0.8);
+  
+
+  .outer-clock-face {
+    background: $face_bg;
+
+    &::after,
+    &::before,
+    .marking {
+      background: $mark_color;
+    }
+    .marking {
+      background: $border_color;
+    }
+  }
+
+  .inner-clock-face {
+    background: $face_bg;
+    &::before {
+      background: $border_color;
+    }
+
+    .hand {
+      background: $hm_hand;
+
+      &.second-hand {
+        background: $s_hand;
+      }
+    }
+  }
+
+  .triangle {
+    border-top-color: rgba($color: $mark_color, $alpha: 0.05);
+    &:hover {
+      border-top-color: $mark_color;
+    }
+  }
+
+  .clock-values {
+    color: #aaa;
+    background-color: $face_bg;
+    border: 1px solid $border_color;
+    span {
+      color: $border_color;
+    }
+
+    .ok, .clear {
+      color: $mark_color;
+    }
+  }
+}
+
+.clock {
+  float: left;
+  width: $clock_size + px;
+  height: $clock_size + px;
+  position: relative;
+  padding: 0;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 15px -2px transparent;
+
+  .outer-clock-face {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+
+    &::after {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+    &::after,
+    &::before,
+    .marking {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+      left: 49%;
+    }
+    .marking {
+      background: transparent;
+      width: 3px;
+    }
+    .marking.marking-one {
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+
+    .marking.marking-two {
+      -webkit-transform: rotate(60deg);
+      -moz-transform: rotate(60deg);
+      transform: rotate(60deg);
+    }
+
+    .marking.marking-three {
+      -webkit-transform: rotate(120deg);
+      -moz-transform: rotate(120deg);
+      transform: rotate(120deg);
+    }
+    .marking.marking-four {
+      -webkit-transform: rotate(150deg);
+      -moz-transform: rotate(150deg);
+      transform: rotate(150deg);
+    }
+  }
+
+  .inner-clock-face {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 210px;
+    height: 210px;
+    background: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 18px;
+      margin-left: -9px;
+      margin-top: -6px;
+      background: transparent;
+      z-index: 11;
+    }
+
+    .hand {
+      width: 50%;
+      right: 50%;
+      height: 6px;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      border-radius: 6px;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+      &.hour-hand {
+        width: 30%;
+        z-index: 3;
+      }
+
+      &.min-hand {
+        height: 3px;
+        z-index: 10;
+        width: 40%;
+      }
+
+      &.second-hand {
+        background: transparent;
+        width: 45%;
+        height: 2px;
+      }
+    }
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 100px solid transparent;
+    position: absolute;
+    top: 25px;
+    left: 120px;
+    z-index: 2;
+
+    &:hover {
+      border-top-color: transparent;
+      cursor: pointer;
+    }
+
+    @for $i from 0 through 59 {
+      &.t#{$i} {
+        transform: rotate(($i * 6) + deg);
+        transform-origin: bottom;
+      }
+    }
+  }
+
+  .clock-values {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-weight: bold;
+
+    color: #aaa;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    span {
+      color: transparent;
+    }
+
+    .ok, .clear {
+      color: transparent;
+      cursor: pointer;
+    }
+  }
+
+
+
+  &.lightgreen {
+    @include theme(#fefefe, #999, #80cbc4, #009688, #80cbc4);
+  }
+
+  &.lightred {
+    @include theme(#fefefe, #999, #f48fb1, #ff4081, #f48fb1);
+  }
+
+  &.lightblue {
+    @include theme(#fefefe, #999, #4fc3f7, #0288d1, #4fc3f7);
+  }
+
+  &.lightpurple {
+    @include theme(#fefefe, #999, #9575cd, #8e24aa, #9575cd);
+  }
+
+  &.lightorange {
+    @include theme(#fefefe, #999, #ffb74d, #f57c00, #ffb74d);
+  }
+
+  &.lightgray {
+    @include theme(#fefefe, #999, #767f83, #43555e, #767f83);
+  }
+
+  &.darkgreen {
+    @include theme(#263238, #cfd8dc, #009688, #80cbc4, #009688);
+  }
+
+  &.darkred {
+    @include theme(#263238, #cfd8dc, #ff4081, #ff80ab, #ff4081);
+  }
+
+  &.darkblue {
+    @include theme(#263238, #cfd8dc, #0091ea, #80d8ff, #0091ea);
+  }
+
+  &.darkpurple {
+    @include theme(#263238, #cfd8dc, #e040fb, #ea80fc, #e040fb);
+  }
+
+  &.darkorange {
+    @include theme(#263238, #cfd8dc, #ff9100, #ffab40, #ff9100);
+  }
+
+  &.darkgray {
+    @include theme(#263238, #cfd8dc, #cfd8dc, #eceff1, #999);
+  }
+}

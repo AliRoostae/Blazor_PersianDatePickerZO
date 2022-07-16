@@ -1,0 +1,62 @@
+﻿@page "/Clock"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+<h2>@_clock0</h2>
+<br/>
+<h2>@_clock</h2>
+<br/>
+
+
+
+
+<ClockZO @bind-SelectTime="@_clock0" ThemePickerZO="ThemeDatePickerZO.darkblue" NoChangeClock="true"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.darkgray"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.darkgreen"/>
+
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.darkorange"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.darkpurple"/>
+<ClockZO @bind-SelectTime="@_clock0" ThemePickerZO="ThemeDatePickerZO.darkred"/>
+
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.lightblue"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.lightgray"/>
+<ClockZO @bind-SelectTime="@_clock0" ThemePickerZO="ThemeDatePickerZO.lightgreen"/>
+<ClockZO @bind-SelectTime="@_clock0" ThemePickerZO="ThemeDatePickerZO.lightorange"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.lightpurple"/>
+<ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.lightred"/>
+
+
+
+
+
+
+
+
+
+
+@code {
+    TimeSpan _clock0 = DateTime.Now.TimeOfDay;
+    TimeSpan _clock = DateTime.Now.TimeOfDay;
+
+   
+
+    private  System.Timers.Timer _timer;
+    private int counter = 60;
+    void StartTimer()
+    {
+        _timer = new System.Timers.Timer(1000);
+        _timer.Enabled = true;
+        _timer.Elapsed += NewTimeSet;
+    }
+
+     void NewTimeSet(Object source, System.Timers.ElapsedEventArgs e)
+    {
+       _clock0 = DateTime.Now.TimeOfDay;
+       InvokeAsync(StateHasChanged);
+    }
+      protected override void OnAfterRender(bool firstRender)
+    {
+
+        if (firstRender) StartTimer();
+       
+    }
+}

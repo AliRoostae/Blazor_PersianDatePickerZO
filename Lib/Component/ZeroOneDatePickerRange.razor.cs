@@ -16,7 +16,7 @@ namespace Blazor_PersianDatePickerZO.Component
         [Parameter]
         public EventCallback<string> DateFa { get; set; }
 
-        
+
 
         DateTime _olddateFirst;
         DateTime _olddateLast;
@@ -42,7 +42,7 @@ namespace Blazor_PersianDatePickerZO.Component
             DateFa.InvokeAsync(_dateFa);
         }
 
-   
+
         void GetDayRange()
         {
             SelectDateFirst = DateTime.Now.AddDays(-1);
@@ -68,7 +68,7 @@ namespace Blazor_PersianDatePickerZO.Component
             Change();
         }
 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override void OnAfterRender(bool firstRender)
         {
             if (firstRender)
             {

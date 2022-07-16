@@ -1,0 +1,29 @@
+﻿
+<div class="clock @ThemePickerZO" id="clockface1">
+
+    <div class="outer-clock-face">
+        <div class="marking marking-one"></div>
+        <div class="marking marking-two"></div>
+        <div class="marking marking-three"></div>
+        <div class="marking marking-four"></div>
+    </div>
+    <div class="inner-clock-face">
+        <div class="hand hour-hand" @onclick="(e=> SetDef(ClockHand.Hourse))"     style="transform: @($"rotate({_dgH}deg)") ; z-index:99999"></div>
+        <div class="hand min-hand" @onclick="(e=> SetDef(ClockHand.Minute))"     style= "transform: @($"rotate({_dgM}deg)") ; z-index:99998"  ></div>
+        <div class="hand second-hand" @onclick="(e=> SetDef(ClockHand.Second))"   style="transform: @($"rotate({_dgS}deg)") ; z-index:99997"  ></div>
+    </div>
+    @for (int i = 0; i < 60; i++)
+    {
+        var pSelect = i;
+        <div class="@_classEditTime @($"t{pSelect}")" @onclick="(e=> SetTimeByClockHand(pSelect))"></div>
+    }
+ @*   <div class="clock-values">
+        <span class="ok" onclick="showClock('${container}')">✓</span>
+        <span class="lbl-hour">@_time.Hours</span>:
+        <span class="lbl-minute">@_time.Minutes</span>:
+        <span class="lbl-second">@_time.Seconds</span>
+        <span class="clear" onclick="clearClock('${container}')">⨉</span>
+    </div>*@
+
+
+</div>

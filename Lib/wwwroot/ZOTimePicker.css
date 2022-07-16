@@ -1,0 +1,885 @@
+.clock {
+  float: left;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  padding: 0;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 15px -2px transparent;
+}
+.clock .outer-clock-face {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.clock .outer-clock-face::after {
+  transform: rotate(90deg);
+}
+.clock .outer-clock-face::after, .clock .outer-clock-face::before,
+.clock .outer-clock-face .marking {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  left: 49%;
+}
+.clock .outer-clock-face .marking {
+  background: transparent;
+  width: 3px;
+}
+.clock .outer-clock-face .marking.marking-one {
+  transform: rotate(30deg);
+}
+.clock .outer-clock-face .marking.marking-two {
+  transform: rotate(60deg);
+}
+.clock .outer-clock-face .marking.marking-three {
+  transform: rotate(120deg);
+}
+.clock .outer-clock-face .marking.marking-four {
+  transform: rotate(150deg);
+}
+.clock .inner-clock-face {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 210px;
+  height: 210px;
+  background: transparent;
+  border-radius: 100%;
+  z-index: 1;
+}
+.clock .inner-clock-face::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: transparent;
+  z-index: 11;
+}
+.clock .inner-clock-face .hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.clock .inner-clock-face .hand.hour-hand {
+  width: 30%;
+  z-index: 3;
+}
+.clock .inner-clock-face .hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 40%;
+}
+.clock .inner-clock-face .hand.second-hand {
+  background: transparent;
+  width: 45%;
+  height: 2px;
+}
+.clock .triangle {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 100px solid transparent;
+  position: absolute;
+  top: 25px;
+  left: 120px;
+  z-index: 2;
+}
+.clock .triangle:hover {
+  border-top-color: transparent;
+  cursor: pointer;
+}
+.clock .triangle.t0 {
+  transform: rotate(0deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t1 {
+  transform: rotate(6deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t2 {
+  transform: rotate(12deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t3 {
+  transform: rotate(18deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t4 {
+  transform: rotate(24deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t5 {
+  transform: rotate(30deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t6 {
+  transform: rotate(36deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t7 {
+  transform: rotate(42deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t8 {
+  transform: rotate(48deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t9 {
+  transform: rotate(54deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t10 {
+  transform: rotate(60deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t11 {
+  transform: rotate(66deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t12 {
+  transform: rotate(72deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t13 {
+  transform: rotate(78deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t14 {
+  transform: rotate(84deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t15 {
+  transform: rotate(90deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t16 {
+  transform: rotate(96deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t17 {
+  transform: rotate(102deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t18 {
+  transform: rotate(108deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t19 {
+  transform: rotate(114deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t20 {
+  transform: rotate(120deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t21 {
+  transform: rotate(126deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t22 {
+  transform: rotate(132deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t23 {
+  transform: rotate(138deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t24 {
+  transform: rotate(144deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t25 {
+  transform: rotate(150deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t26 {
+  transform: rotate(156deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t27 {
+  transform: rotate(162deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t28 {
+  transform: rotate(168deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t29 {
+  transform: rotate(174deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t30 {
+  transform: rotate(180deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t31 {
+  transform: rotate(186deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t32 {
+  transform: rotate(192deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t33 {
+  transform: rotate(198deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t34 {
+  transform: rotate(204deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t35 {
+  transform: rotate(210deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t36 {
+  transform: rotate(216deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t37 {
+  transform: rotate(222deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t38 {
+  transform: rotate(228deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t39 {
+  transform: rotate(234deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t40 {
+  transform: rotate(240deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t41 {
+  transform: rotate(246deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t42 {
+  transform: rotate(252deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t43 {
+  transform: rotate(258deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t44 {
+  transform: rotate(264deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t45 {
+  transform: rotate(270deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t46 {
+  transform: rotate(276deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t47 {
+  transform: rotate(282deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t48 {
+  transform: rotate(288deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t49 {
+  transform: rotate(294deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t50 {
+  transform: rotate(300deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t51 {
+  transform: rotate(306deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t52 {
+  transform: rotate(312deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t53 {
+  transform: rotate(318deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t54 {
+  transform: rotate(324deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t55 {
+  transform: rotate(330deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t56 {
+  transform: rotate(336deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t57 {
+  transform: rotate(342deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t58 {
+  transform: rotate(348deg);
+  transform-origin: bottom;
+}
+.clock .triangle.t59 {
+  transform: rotate(354deg);
+  transform-origin: bottom;
+}
+.clock .clock-values {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-weight: bold;
+  color: #aaa;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.clock .clock-values span {
+  color: transparent;
+}
+.clock .clock-values .ok, .clock .clock-values .clear {
+  color: transparent;
+  cursor: pointer;
+}
+.clock.lightgreen {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(128, 203, 196, 0.8);
+}
+.clock.lightgreen .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightgreen .outer-clock-face::after, .clock.lightgreen .outer-clock-face::before,
+.clock.lightgreen .outer-clock-face .marking {
+  background: #80cbc4;
+}
+.clock.lightgreen .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightgreen .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightgreen .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightgreen .inner-clock-face .hand {
+  background: #009688;
+}
+.clock.lightgreen .inner-clock-face .hand.second-hand {
+  background: #80cbc4;
+}
+.clock.lightgreen .triangle {
+  border-top-color: rgba(128, 203, 196, 0.05);
+}
+.clock.lightgreen .triangle:hover {
+  border-top-color: #80cbc4;
+}
+.clock.lightgreen .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightgreen .clock-values span {
+  color: #999;
+}
+.clock.lightgreen .clock-values .ok, .clock.lightgreen .clock-values .clear {
+  color: #80cbc4;
+}
+.clock.lightred {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(244, 143, 177, 0.8);
+}
+.clock.lightred .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightred .outer-clock-face::after, .clock.lightred .outer-clock-face::before,
+.clock.lightred .outer-clock-face .marking {
+  background: #f48fb1;
+}
+.clock.lightred .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightred .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightred .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightred .inner-clock-face .hand {
+  background: #ff4081;
+}
+.clock.lightred .inner-clock-face .hand.second-hand {
+  background: #f48fb1;
+}
+.clock.lightred .triangle {
+  border-top-color: rgba(244, 143, 177, 0.05);
+}
+.clock.lightred .triangle:hover {
+  border-top-color: #f48fb1;
+}
+.clock.lightred .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightred .clock-values span {
+  color: #999;
+}
+.clock.lightred .clock-values .ok, .clock.lightred .clock-values .clear {
+  color: #f48fb1;
+}
+.clock.lightblue {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(79, 195, 247, 0.8);
+}
+.clock.lightblue .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightblue .outer-clock-face::after, .clock.lightblue .outer-clock-face::before,
+.clock.lightblue .outer-clock-face .marking {
+  background: #4fc3f7;
+}
+.clock.lightblue .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightblue .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightblue .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightblue .inner-clock-face .hand {
+  background: #0288d1;
+}
+.clock.lightblue .inner-clock-face .hand.second-hand {
+  background: #4fc3f7;
+}
+.clock.lightblue .triangle {
+  border-top-color: rgba(79, 195, 247, 0.05);
+}
+.clock.lightblue .triangle:hover {
+  border-top-color: #4fc3f7;
+}
+.clock.lightblue .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightblue .clock-values span {
+  color: #999;
+}
+.clock.lightblue .clock-values .ok, .clock.lightblue .clock-values .clear {
+  color: #4fc3f7;
+}
+.clock.lightpurple {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(149, 117, 205, 0.8);
+}
+.clock.lightpurple .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightpurple .outer-clock-face::after, .clock.lightpurple .outer-clock-face::before,
+.clock.lightpurple .outer-clock-face .marking {
+  background: #9575cd;
+}
+.clock.lightpurple .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightpurple .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightpurple .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightpurple .inner-clock-face .hand {
+  background: #8e24aa;
+}
+.clock.lightpurple .inner-clock-face .hand.second-hand {
+  background: #9575cd;
+}
+.clock.lightpurple .triangle {
+  border-top-color: rgba(149, 117, 205, 0.05);
+}
+.clock.lightpurple .triangle:hover {
+  border-top-color: #9575cd;
+}
+.clock.lightpurple .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightpurple .clock-values span {
+  color: #999;
+}
+.clock.lightpurple .clock-values .ok, .clock.lightpurple .clock-values .clear {
+  color: #9575cd;
+}
+.clock.lightorange {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(255, 183, 77, 0.8);
+}
+.clock.lightorange .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightorange .outer-clock-face::after, .clock.lightorange .outer-clock-face::before,
+.clock.lightorange .outer-clock-face .marking {
+  background: #ffb74d;
+}
+.clock.lightorange .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightorange .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightorange .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightorange .inner-clock-face .hand {
+  background: #f57c00;
+}
+.clock.lightorange .inner-clock-face .hand.second-hand {
+  background: #ffb74d;
+}
+.clock.lightorange .triangle {
+  border-top-color: rgba(255, 183, 77, 0.05);
+}
+.clock.lightorange .triangle:hover {
+  border-top-color: #ffb74d;
+}
+.clock.lightorange .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightorange .clock-values span {
+  color: #999;
+}
+.clock.lightorange .clock-values .ok, .clock.lightorange .clock-values .clear {
+  color: #ffb74d;
+}
+.clock.lightgray {
+  border-color: #999;
+  box-shadow: 0 0 15px -2px rgba(118, 127, 131, 0.8);
+}
+.clock.lightgray .outer-clock-face {
+  background: #fefefe;
+}
+.clock.lightgray .outer-clock-face::after, .clock.lightgray .outer-clock-face::before,
+.clock.lightgray .outer-clock-face .marking {
+  background: #767f83;
+}
+.clock.lightgray .outer-clock-face .marking {
+  background: #999;
+}
+.clock.lightgray .inner-clock-face {
+  background: #fefefe;
+}
+.clock.lightgray .inner-clock-face::before {
+  background: #999;
+}
+.clock.lightgray .inner-clock-face .hand {
+  background: #43555e;
+}
+.clock.lightgray .inner-clock-face .hand.second-hand {
+  background: #767f83;
+}
+.clock.lightgray .triangle {
+  border-top-color: rgba(118, 127, 131, 0.05);
+}
+.clock.lightgray .triangle:hover {
+  border-top-color: #767f83;
+}
+.clock.lightgray .clock-values {
+  color: #aaa;
+  background-color: #fefefe;
+  border: 1px solid #999;
+}
+.clock.lightgray .clock-values span {
+  color: #999;
+}
+.clock.lightgray .clock-values .ok, .clock.lightgray .clock-values .clear {
+  color: #767f83;
+}
+.clock.darkgreen {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(0, 150, 136, 0.8);
+}
+.clock.darkgreen .outer-clock-face {
+  background: #263238;
+}
+.clock.darkgreen .outer-clock-face::after, .clock.darkgreen .outer-clock-face::before,
+.clock.darkgreen .outer-clock-face .marking {
+  background: #009688;
+}
+.clock.darkgreen .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkgreen .inner-clock-face {
+  background: #263238;
+}
+.clock.darkgreen .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkgreen .inner-clock-face .hand {
+  background: #80cbc4;
+}
+.clock.darkgreen .inner-clock-face .hand.second-hand {
+  background: #009688;
+}
+.clock.darkgreen .triangle {
+  border-top-color: rgba(0, 150, 136, 0.05);
+}
+.clock.darkgreen .triangle:hover {
+  border-top-color: #009688;
+}
+.clock.darkgreen .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkgreen .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkgreen .clock-values .ok, .clock.darkgreen .clock-values .clear {
+  color: #009688;
+}
+.clock.darkred {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(255, 64, 129, 0.8);
+}
+.clock.darkred .outer-clock-face {
+  background: #263238;
+}
+.clock.darkred .outer-clock-face::after, .clock.darkred .outer-clock-face::before,
+.clock.darkred .outer-clock-face .marking {
+  background: #ff4081;
+}
+.clock.darkred .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkred .inner-clock-face {
+  background: #263238;
+}
+.clock.darkred .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkred .inner-clock-face .hand {
+  background: #ff80ab;
+}
+.clock.darkred .inner-clock-face .hand.second-hand {
+  background: #ff4081;
+}
+.clock.darkred .triangle {
+  border-top-color: rgba(255, 64, 129, 0.05);
+}
+.clock.darkred .triangle:hover {
+  border-top-color: #ff4081;
+}
+.clock.darkred .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkred .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkred .clock-values .ok, .clock.darkred .clock-values .clear {
+  color: #ff4081;
+}
+.clock.darkblue {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(0, 145, 234, 0.8);
+}
+.clock.darkblue .outer-clock-face {
+  background: #263238;
+}
+.clock.darkblue .outer-clock-face::after, .clock.darkblue .outer-clock-face::before,
+.clock.darkblue .outer-clock-face .marking {
+  background: #0091ea;
+}
+.clock.darkblue .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkblue .inner-clock-face {
+  background: #263238;
+}
+.clock.darkblue .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkblue .inner-clock-face .hand {
+  background: #80d8ff;
+}
+.clock.darkblue .inner-clock-face .hand.second-hand {
+  background: #0091ea;
+}
+.clock.darkblue .triangle {
+  border-top-color: rgba(0, 145, 234, 0.05);
+}
+.clock.darkblue .triangle:hover {
+  border-top-color: #0091ea;
+}
+.clock.darkblue .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkblue .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkblue .clock-values .ok, .clock.darkblue .clock-values .clear {
+  color: #0091ea;
+}
+.clock.darkpurple {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(224, 64, 251, 0.8);
+}
+.clock.darkpurple .outer-clock-face {
+  background: #263238;
+}
+.clock.darkpurple .outer-clock-face::after, .clock.darkpurple .outer-clock-face::before,
+.clock.darkpurple .outer-clock-face .marking {
+  background: #e040fb;
+}
+.clock.darkpurple .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkpurple .inner-clock-face {
+  background: #263238;
+}
+.clock.darkpurple .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkpurple .inner-clock-face .hand {
+  background: #ea80fc;
+}
+.clock.darkpurple .inner-clock-face .hand.second-hand {
+  background: #e040fb;
+}
+.clock.darkpurple .triangle {
+  border-top-color: rgba(224, 64, 251, 0.05);
+}
+.clock.darkpurple .triangle:hover {
+  border-top-color: #e040fb;
+}
+.clock.darkpurple .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkpurple .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkpurple .clock-values .ok, .clock.darkpurple .clock-values .clear {
+  color: #e040fb;
+}
+.clock.darkorange {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(255, 145, 0, 0.8);
+}
+.clock.darkorange .outer-clock-face {
+  background: #263238;
+}
+.clock.darkorange .outer-clock-face::after, .clock.darkorange .outer-clock-face::before,
+.clock.darkorange .outer-clock-face .marking {
+  background: #ff9100;
+}
+.clock.darkorange .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkorange .inner-clock-face {
+  background: #263238;
+}
+.clock.darkorange .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkorange .inner-clock-face .hand {
+  background: #ffab40;
+}
+.clock.darkorange .inner-clock-face .hand.second-hand {
+  background: #ff9100;
+}
+.clock.darkorange .triangle {
+  border-top-color: rgba(255, 145, 0, 0.05);
+}
+.clock.darkorange .triangle:hover {
+  border-top-color: #ff9100;
+}
+.clock.darkorange .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkorange .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkorange .clock-values .ok, .clock.darkorange .clock-values .clear {
+  color: #ff9100;
+}
+.clock.darkgray {
+  border-color: #cfd8dc;
+  box-shadow: 0 0 15px -2px rgba(153, 153, 153, 0.8);
+}
+.clock.darkgray .outer-clock-face {
+  background: #263238;
+}
+.clock.darkgray .outer-clock-face::after, .clock.darkgray .outer-clock-face::before,
+.clock.darkgray .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkgray .outer-clock-face .marking {
+  background: #cfd8dc;
+}
+.clock.darkgray .inner-clock-face {
+  background: #263238;
+}
+.clock.darkgray .inner-clock-face::before {
+  background: #cfd8dc;
+}
+.clock.darkgray .inner-clock-face .hand {
+  background: #eceff1;
+}
+.clock.darkgray .inner-clock-face .hand.second-hand {
+  background: #999;
+}
+.clock.darkgray .triangle {
+  border-top-color: rgba(207, 216, 220, 0.05);
+}
+.clock.darkgray .triangle:hover {
+  border-top-color: #cfd8dc;
+}
+.clock.darkgray .clock-values {
+  color: #aaa;
+  background-color: #263238;
+  border: 1px solid #cfd8dc;
+}
+.clock.darkgray .clock-values span {
+  color: #cfd8dc;
+}
+.clock.darkgray .clock-values .ok, .clock.darkgray .clock-values .clear {
+  color: #cfd8dc;
+}/*# sourceMappingURL=ZOTimePicker.css.map */
