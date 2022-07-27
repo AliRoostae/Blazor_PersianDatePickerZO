@@ -4,7 +4,8 @@ namespace Blazor_PersianDatePickerZO.Hellper
 {
     public abstract class BaseDatePickerZO : ComponentBase
     {
-
+        [Parameter]
+        public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
 
         [Parameter]
         public virtual DateTime SelectDate

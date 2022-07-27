@@ -7,8 +7,7 @@ namespace Blazor_PersianDatePickerZO.Component
     {
 
 
-        [Parameter]
-        public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
+        
         [Parameter]
         public bool PupupDatePickerZO { get; set; }
 

@@ -1,4 +1,7 @@
 ﻿@inherits BaseDatePickerZO
+   <div class="picker-pack">
+<div class="picker-box"> 
+@* 
 @if (PupupDatePickerZO)
 {
     <div class="datepicker-input-group">
@@ -29,24 +32,27 @@
     </div>
 }
 else
-{
+{  <div class="input-group-picker">
+          <input type="text" value="@_dateFa"/>
+          <span>&#128197;</span>
+        </div>*@
+ <div class="frame @ThemePickerZO">
 
-    <div class="date-picker-frame @ThemePickerZO">
-        <div class="date-picker-content">
-            <div class="top">
                 <div class="title">@_dateFa</div>
-            </div>
-            <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-            <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-            <div class="footer">
-                <div class="close" @onclick="Change">تأیید</div>
-                <div @onclick="GetToday" class="select-today">امروز</div>
+        
+           @* <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />*@
+            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO"/>
+            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate"  ThemePickerZO="@ThemePickerZO"/>
+            <div class="btn-list">
+                <button  @onclick="Change">تأیید</button>
+                <button @onclick="GetToday" >امروز</button>
             </div>
         </div>
+   
+  
+
+@*}*@
+ </div>
     </div>
-
-}
-
 

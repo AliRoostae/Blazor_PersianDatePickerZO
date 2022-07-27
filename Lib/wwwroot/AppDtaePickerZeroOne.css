@@ -1,0 +1,16 @@
+@import "css/picker.css"; 
+@import "css/Vazirmatn-FD-font-face.css"; 
+
+body {
+  background-color: whitesmoke;
+  font-family: "Vazirmatn FD";
+}
+
+button {
+  font-family: "Vazirmatn FD";
+}
+
+.picker-pack {
+  float: left;
+  margin: 10px;
+}

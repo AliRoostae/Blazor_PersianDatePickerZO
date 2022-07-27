@@ -1,0 +1,1966 @@
+.picker-box,
+.picker-box-range {
+  text-align: center;
+}
+.picker-box .input-group-picker span,
+.picker-box-range .input-group-picker span {
+  font-size: small;
+  margin-left: -30px;
+}
+
+.picker-box .input-group-picker input {
+  width: 265px;
+}
+
+.picker-box-range {
+  color: transparent;
+}
+.picker-box-range .input-group-picker input {
+  width: 555px;
+}
+.picker-box-range .frame-box {
+  display: flex;
+  flex-direction: row;
+}
+.picker-box-range .title-range,
+.picker-box-range .range-btn-list {
+  margin: 7px 0 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.picker-box-range .title-range {
+  font-size: large;
+}
+.picker-box-range .range-btn-list {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+.picker-box-range .range-btn-list button {
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.picker-box-range .range-btn-list button:hover {
+  cursor: pointer;
+  color: transparent;
+  box-shadow: 0 0 10px -5px transparent;
+}
+.picker-box-range.lightgreen {
+  color: #009688;
+}
+.picker-box-range.lightgreen .title-range,
+.picker-box-range.lightgreen .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightgreen .range-btn-list button {
+  color: #009688;
+  border-color: rgba(38, 166, 154, 0.6);
+}
+.picker-box-range.lightgreen .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #009688;
+}
+.picker-box-range.lightred {
+  color: #D81B60;
+}
+.picker-box-range.lightred .title-range,
+.picker-box-range.lightred .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightred .range-btn-list button {
+  color: #D81B60;
+  border-color: rgba(244, 143, 177, 0.6);
+}
+.picker-box-range.lightred .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #D81B60;
+}
+.picker-box-range.lightblue {
+  color: #4fc3f7;
+}
+.picker-box-range.lightblue .title-range,
+.picker-box-range.lightblue .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightblue .range-btn-list button {
+  color: #4fc3f7;
+  border-color: rgba(2, 136, 209, 0.6);
+}
+.picker-box-range.lightblue .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #4fc3f7;
+}
+.picker-box-range.lightpurple {
+  color: #5E35B1;
+}
+.picker-box-range.lightpurple .title-range,
+.picker-box-range.lightpurple .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightpurple .range-btn-list button {
+  color: #5E35B1;
+  border-color: rgba(179, 157, 219, 0.6);
+}
+.picker-box-range.lightpurple .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #5E35B1;
+}
+.picker-box-range.lightorange {
+  color: #f57c00;
+}
+.picker-box-range.lightorange .title-range,
+.picker-box-range.lightorange .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightorange .range-btn-list button {
+  color: #f57c00;
+  border-color: rgba(255, 183, 77, 0.6);
+}
+.picker-box-range.lightorange .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #f57c00;
+}
+.picker-box-range.lightgray {
+  color: #546E7A;
+}
+.picker-box-range.lightgray .title-range,
+.picker-box-range.lightgray .range-btn-list {
+  background-color: white;
+  border-color: #ccc;
+}
+.picker-box-range.lightgray .range-btn-list button {
+  color: #546E7A;
+  border-color: rgba(207, 216, 220, 0.6);
+}
+.picker-box-range.lightgray .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #546E7A;
+}
+.picker-box-range.darkgreen {
+  color: #80cbc4;
+}
+.picker-box-range.darkgreen .title-range,
+.picker-box-range.darkgreen .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkgreen .range-btn-list button {
+  color: #80cbc4;
+  border-color: rgba(0, 105, 92, 0.6);
+}
+.picker-box-range.darkgreen .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #80cbc4;
+}
+.picker-box-range.darkred {
+  color: #F48FB1;
+}
+.picker-box-range.darkred .title-range,
+.picker-box-range.darkred .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkred .range-btn-list button {
+  color: #F48FB1;
+  border-color: rgba(216, 27, 96, 0.6);
+}
+.picker-box-range.darkred .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #F48FB1;
+}
+.picker-box-range.darkblue {
+  color: #0091ea;
+}
+.picker-box-range.darkblue .title-range,
+.picker-box-range.darkblue .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkblue .range-btn-list button {
+  color: #0091ea;
+  border-color: rgba(0, 145, 234, 0.6);
+}
+.picker-box-range.darkblue .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #0091ea;
+}
+.picker-box-range.darkpurple {
+  color: #B39DDB;
+}
+.picker-box-range.darkpurple .title-range,
+.picker-box-range.darkpurple .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkpurple .range-btn-list button {
+  color: #B39DDB;
+  border-color: rgba(94, 53, 177, 0.6);
+}
+.picker-box-range.darkpurple .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #B39DDB;
+}
+.picker-box-range.darkorange {
+  color: #ffb74d;
+}
+.picker-box-range.darkorange .title-range,
+.picker-box-range.darkorange .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkorange .range-btn-list button {
+  color: #ffb74d;
+  border-color: rgba(255, 145, 0, 0.6);
+}
+.picker-box-range.darkorange .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #ffb74d;
+}
+.picker-box-range.darkgray {
+  color: #eceff1;
+}
+.picker-box-range.darkgray .title-range,
+.picker-box-range.darkgray .range-btn-list {
+  background-color: #263238;
+  border-color: #cfd8dc;
+}
+.picker-box-range.darkgray .range-btn-list button {
+  color: #eceff1;
+  border-color: rgba(84, 110, 122, 0.6);
+}
+.picker-box-range.darkgray .range-btn-list button:hover {
+  box-shadow: 0 0 10px -3px #eceff1;
+}
+
+.frame {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  width: 300px;
+  height: 100%;
+  margin-top: 5px;
+  padding: 0 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: transparent;
+  border-radius: 5px;
+}
+.frame .title {
+  border-bottom: 1px solid transparent;
+  letter-spacing: 2px;
+  padding: 5px 0;
+  color: transparent;
+  font-weight: bolder;
+}
+.frame .selector-year-month {
+  border-bottom: 1px solid transparent;
+}
+.frame .selector-year-month .current {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px 0;
+}
+.frame .selector-year-month .current div {
+  width: 120px;
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+  font-weight: bolder;
+}
+.frame .selector-year-month .current div:hover {
+  cursor: pointer;
+  color: transparent;
+  font-weight: bolder;
+}
+.frame .selector-year-month .year-month-list {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+.frame .selector-year-month .year-month-list div.prev, .frame .selector-year-month .year-month-list div.next {
+  width: 50px;
+  font-weight: bolder;
+}
+.frame .selector-year-month .year-month-list div.prev:hover, .frame .selector-year-month .year-month-list div.next:hover {
+  cursor: pointer;
+  color: transparent;
+}
+.frame .selector-year-month .year-month-list div.options {
+  width: 250px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.frame .selector-year-month .year-month-list div.options span {
+  width: 25%;
+  padding: 5px;
+  margin: 2px auto;
+  font-size: small;
+}
+.frame .selector-year-month .year-month-list div.options span:hover {
+  cursor: pointer;
+  color: transparent;
+  font-weight: bolder;
+}
+.frame .days {
+  padding: 5px 0;
+  border-bottom: 1px solid transparent;
+}
+.frame .days span {
+  width: 42px;
+  padding: 3px 0;
+}
+.frame .days .names {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  font-weight: bolder;
+}
+.frame .days .values {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.frame .days .values span {
+  cursor: pointer;
+}
+.frame .days .values span.other_month_day {
+  opacity: 0.2;
+}
+.frame .days .values span:nth-of-type(7n), .frame .days .values span.holiday {
+  color: transparent;
+}
+.frame .days .values span.noActive {
+  -webkit-text-decoration: line-through 2px transparent;
+          text-decoration: line-through 2px transparent;
+  color: transparent;
+  cursor: no-drop;
+}
+.frame .days .values span.selected {
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+}
+.frame .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: transparent;
+  -webkit-text-decoration: overline underline 2px transparent;
+          text-decoration: overline underline 2px transparent;
+}
+.frame .clock-numeric {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid transparent;
+  padding: 10px 0;
+}
+.frame .clock-numeric div {
+  display: flex;
+  flex-direction: column;
+}
+.frame .clock-numeric span {
+  font-weight: bolder;
+  padding: 2px 20px;
+}
+.frame .clock-numeric span.add:hover, .frame .clock-numeric span.sub:hover {
+  color: transparent;
+  cursor: pointer;
+}
+.frame .clock-analogue {
+  padding: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+}
+.frame .clock-analogue .clock {
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border: 4px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 10px -2px transparent;
+}
+.frame .clock-analogue .clock .outer-clock-face {
+  position: relative;
+  background: transparent;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.frame .clock-analogue .clock .outer-clock-face::after {
+  transform: rotate(90deg);
+}
+.frame .clock-analogue .clock .outer-clock-face::after, .frame .clock-analogue .clock .outer-clock-face::before,
+.frame .clock-analogue .clock .outer-clock-face .marking {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+  left: 49%;
+}
+.frame .clock-analogue .clock .outer-clock-face .marking {
+  background: transparent;
+  width: 3px;
+}
+.frame .clock-analogue .clock .outer-clock-face .marking.marking-one {
+  transform: rotate(30deg);
+}
+.frame .clock-analogue .clock .outer-clock-face .marking.marking-two {
+  transform: rotate(60deg);
+}
+.frame .clock-analogue .clock .outer-clock-face .marking.marking-three {
+  transform: rotate(120deg);
+}
+.frame .clock-analogue .clock .outer-clock-face .marking.marking-four {
+  transform: rotate(150deg);
+}
+.frame .clock-analogue .clock .inner-clock-face {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 210px;
+  height: 210px;
+  background: transparent;
+  border-radius: 100%;
+  z-index: 1;
+}
+.frame .clock-analogue .clock .inner-clock-face::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background: transparent;
+  z-index: 11;
+}
+.frame .clock-analogue .clock .inner-clock-face .hand {
+  width: 50%;
+  right: 50%;
+  height: 6px;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.frame .clock-analogue .clock .inner-clock-face .hand.hour-hand {
+  width: 30%;
+  z-index: 3;
+}
+.frame .clock-analogue .clock .inner-clock-face .hand.min-hand {
+  height: 3px;
+  z-index: 10;
+  width: 40%;
+}
+.frame .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: transparent;
+  width: 45%;
+  height: 2px;
+}
+.frame .clock-analogue .clock .triangle {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 100px solid transparent;
+  position: absolute;
+  top: 25px;
+  left: 120px;
+  z-index: 2;
+}
+.frame .clock-analogue .clock .triangle:hover {
+  border-top-color: transparent;
+  cursor: pointer;
+}
+.frame .clock-analogue .clock .triangle.t0 {
+  transform: rotate(0deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t1 {
+  transform: rotate(6deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t2 {
+  transform: rotate(12deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t3 {
+  transform: rotate(18deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t4 {
+  transform: rotate(24deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t5 {
+  transform: rotate(30deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t6 {
+  transform: rotate(36deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t7 {
+  transform: rotate(42deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t8 {
+  transform: rotate(48deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t9 {
+  transform: rotate(54deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t10 {
+  transform: rotate(60deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t11 {
+  transform: rotate(66deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t12 {
+  transform: rotate(72deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t13 {
+  transform: rotate(78deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t14 {
+  transform: rotate(84deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t15 {
+  transform: rotate(90deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t16 {
+  transform: rotate(96deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t17 {
+  transform: rotate(102deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t18 {
+  transform: rotate(108deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t19 {
+  transform: rotate(114deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t20 {
+  transform: rotate(120deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t21 {
+  transform: rotate(126deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t22 {
+  transform: rotate(132deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t23 {
+  transform: rotate(138deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t24 {
+  transform: rotate(144deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t25 {
+  transform: rotate(150deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t26 {
+  transform: rotate(156deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t27 {
+  transform: rotate(162deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t28 {
+  transform: rotate(168deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t29 {
+  transform: rotate(174deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t30 {
+  transform: rotate(180deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t31 {
+  transform: rotate(186deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t32 {
+  transform: rotate(192deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t33 {
+  transform: rotate(198deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t34 {
+  transform: rotate(204deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t35 {
+  transform: rotate(210deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t36 {
+  transform: rotate(216deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t37 {
+  transform: rotate(222deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t38 {
+  transform: rotate(228deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t39 {
+  transform: rotate(234deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t40 {
+  transform: rotate(240deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t41 {
+  transform: rotate(246deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t42 {
+  transform: rotate(252deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t43 {
+  transform: rotate(258deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t44 {
+  transform: rotate(264deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t45 {
+  transform: rotate(270deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t46 {
+  transform: rotate(276deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t47 {
+  transform: rotate(282deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t48 {
+  transform: rotate(288deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t49 {
+  transform: rotate(294deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t50 {
+  transform: rotate(300deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t51 {
+  transform: rotate(306deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t52 {
+  transform: rotate(312deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t53 {
+  transform: rotate(318deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t54 {
+  transform: rotate(324deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t55 {
+  transform: rotate(330deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t56 {
+  transform: rotate(336deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t57 {
+  transform: rotate(342deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t58 {
+  transform: rotate(348deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock .triangle.t59 {
+  transform: rotate(354deg);
+  transform-origin: bottom;
+}
+.frame .clock-analogue .clock-values {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-weight: bolder;
+}
+.frame .clock-analogue .clock-values .ok,
+.frame .clock-analogue .clock-values .clear {
+  color: transparent;
+  cursor: pointer;
+}
+.frame .btn-list {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  margin: 8px auto;
+}
+.frame .btn-list button {
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+.frame .btn-list button:hover {
+  cursor: pointer;
+  color: transparent;
+  box-shadow: 0 0 10px -5px transparent;
+}
+.frame.lightgreen {
+  background-color: white;
+  border-color: #E0F2F1;
+  color: black;
+}
+.frame.lightgreen .title {
+  border-bottom-color: #E0F2F1;
+  color: #009688;
+}
+.frame.lightgreen .selector-year-month {
+  border-bottom-color: #E0F2F1;
+}
+.frame.lightgreen .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: #E0F2F1;
+}
+.frame.lightgreen .selector-year-month .current div:hover {
+  color: #009688;
+}
+.frame.lightgreen .selector-year-month .year-month-list div.prev:hover, .frame.lightgreen .selector-year-month .year-month-list div.next:hover {
+  color: #009688;
+}
+.frame.lightgreen .selector-year-month .year-month-list div.options span:hover {
+  color: #009688;
+  font-weight: bolder;
+}
+.frame.lightgreen .days {
+  border-bottom-color: #E0F2F1;
+}
+.frame.lightgreen .days .values span:nth-of-type(7n), .frame.lightgreen .days .values span.holiday {
+  color: #009688;
+}
+.frame.lightgreen .days .values span.noActive {
+  -webkit-text-decoration-color: #009688;
+          text-decoration-color: #009688;
+  color: #aaa;
+}
+.frame.lightgreen .days .values span.selected {
+  background-color: #009688;
+  color: white;
+}
+.frame.lightgreen .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #009688;
+  -webkit-text-decoration-color: #009688;
+          text-decoration-color: #009688;
+}
+.frame.lightgreen .clock-numeric {
+  border-bottom-color: #E0F2F1;
+}
+.frame.lightgreen .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightgreen .clock-numeric span.add:hover, .frame.lightgreen .clock-numeric span.sub:hover {
+  color: #009688;
+}
+.frame.lightgreen .clock-analogue {
+  border-bottom-color: #E0F2F1;
+}
+.frame.lightgreen .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #80CBC4;
+}
+.frame.lightgreen .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightgreen .clock-analogue .clock .outer-clock-face::after, .frame.lightgreen .clock-analogue .clock .outer-clock-face::before,
+.frame.lightgreen .clock-analogue .clock .outer-clock-face .marking {
+  background: #80CBC4;
+}
+.frame.lightgreen .clock-analogue .clock .outer-clock-face .marking {
+  background: #E0F2F1;
+}
+.frame.lightgreen .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightgreen .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(128, 203, 196, 0.2);
+}
+.frame.lightgreen .clock-analogue .clock .inner-clock-face .hand {
+  background: #80CBC4;
+}
+.frame.lightgreen .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(128, 203, 196, 0.2);
+}
+.frame.lightgreen .clock-analogue .clock .triangle {
+  border-top-color: rgba(0, 150, 136, 0.04);
+}
+.frame.lightgreen .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(0, 150, 136, 0.3);
+}
+.frame.lightgreen .clock-analogue .clock-values .ok,
+.frame.lightgreen .clock-analogue .clock-values .clear {
+  color: #009688;
+}
+.frame.lightgreen .btn-list button {
+  color: #009688;
+  border-color: rgba(128, 203, 196, 0.7);
+}
+.frame.lightgreen .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #009688;
+}
+.frame.lightred {
+  background-color: white;
+  border-color: #FCE4EC;
+  color: black;
+}
+.frame.lightred .title {
+  border-bottom-color: #FCE4EC;
+  color: #D81B60;
+}
+.frame.lightred .selector-year-month {
+  border-bottom-color: #FCE4EC;
+}
+.frame.lightred .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: #FCE4EC;
+}
+.frame.lightred .selector-year-month .current div:hover {
+  color: #D81B60;
+}
+.frame.lightred .selector-year-month .year-month-list div.prev:hover, .frame.lightred .selector-year-month .year-month-list div.next:hover {
+  color: #D81B60;
+}
+.frame.lightred .selector-year-month .year-month-list div.options span:hover {
+  color: #D81B60;
+  font-weight: bolder;
+}
+.frame.lightred .days {
+  border-bottom-color: #FCE4EC;
+}
+.frame.lightred .days .values span:nth-of-type(7n), .frame.lightred .days .values span.holiday {
+  color: #D81B60;
+}
+.frame.lightred .days .values span.noActive {
+  -webkit-text-decoration-color: #D81B60;
+          text-decoration-color: #D81B60;
+  color: #aaa;
+}
+.frame.lightred .days .values span.selected {
+  background-color: #D81B60;
+  color: white;
+}
+.frame.lightred .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #D81B60;
+  -webkit-text-decoration-color: #D81B60;
+          text-decoration-color: #D81B60;
+}
+.frame.lightred .clock-numeric {
+  border-bottom-color: #FCE4EC;
+}
+.frame.lightred .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightred .clock-numeric span.add:hover, .frame.lightred .clock-numeric span.sub:hover {
+  color: #D81B60;
+}
+.frame.lightred .clock-analogue {
+  border-bottom-color: #FCE4EC;
+}
+.frame.lightred .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #F48FB1;
+}
+.frame.lightred .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightred .clock-analogue .clock .outer-clock-face::after, .frame.lightred .clock-analogue .clock .outer-clock-face::before,
+.frame.lightred .clock-analogue .clock .outer-clock-face .marking {
+  background: #F48FB1;
+}
+.frame.lightred .clock-analogue .clock .outer-clock-face .marking {
+  background: #FCE4EC;
+}
+.frame.lightred .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightred .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(244, 143, 177, 0.2);
+}
+.frame.lightred .clock-analogue .clock .inner-clock-face .hand {
+  background: #F48FB1;
+}
+.frame.lightred .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(244, 143, 177, 0.2);
+}
+.frame.lightred .clock-analogue .clock .triangle {
+  border-top-color: rgba(216, 27, 96, 0.04);
+}
+.frame.lightred .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(216, 27, 96, 0.3);
+}
+.frame.lightred .clock-analogue .clock-values .ok,
+.frame.lightred .clock-analogue .clock-values .clear {
+  color: #D81B60;
+}
+.frame.lightred .btn-list button {
+  color: #D81B60;
+  border-color: rgba(244, 143, 177, 0.7);
+}
+.frame.lightred .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #D81B60;
+}
+.frame.lightblue {
+  background-color: white;
+  border-color: #e4e6fc;
+  color: black;
+}
+.frame.lightblue .title {
+  border-bottom-color: #e4e6fc;
+  color: #1565C0;
+}
+.frame.lightblue .selector-year-month {
+  border-bottom-color: #e4e6fc;
+}
+.frame.lightblue .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: #e4e6fc;
+}
+.frame.lightblue .selector-year-month .current div:hover {
+  color: #1565C0;
+}
+.frame.lightblue .selector-year-month .year-month-list div.prev:hover, .frame.lightblue .selector-year-month .year-month-list div.next:hover {
+  color: #1565C0;
+}
+.frame.lightblue .selector-year-month .year-month-list div.options span:hover {
+  color: #1565C0;
+  font-weight: bolder;
+}
+.frame.lightblue .days {
+  border-bottom-color: #e4e6fc;
+}
+.frame.lightblue .days .values span:nth-of-type(7n), .frame.lightblue .days .values span.holiday {
+  color: #1565C0;
+}
+.frame.lightblue .days .values span.noActive {
+  -webkit-text-decoration-color: #1565C0;
+          text-decoration-color: #1565C0;
+  color: #aaa;
+}
+.frame.lightblue .days .values span.selected {
+  background-color: #1565C0;
+  color: white;
+}
+.frame.lightblue .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #1565C0;
+  -webkit-text-decoration-color: #1565C0;
+          text-decoration-color: #1565C0;
+}
+.frame.lightblue .clock-numeric {
+  border-bottom-color: #e4e6fc;
+}
+.frame.lightblue .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightblue .clock-numeric span.add:hover, .frame.lightblue .clock-numeric span.sub:hover {
+  color: #1565C0;
+}
+.frame.lightblue .clock-analogue {
+  border-bottom-color: #e4e6fc;
+}
+.frame.lightblue .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #5C6BC0;
+}
+.frame.lightblue .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightblue .clock-analogue .clock .outer-clock-face::after, .frame.lightblue .clock-analogue .clock .outer-clock-face::before,
+.frame.lightblue .clock-analogue .clock .outer-clock-face .marking {
+  background: #5C6BC0;
+}
+.frame.lightblue .clock-analogue .clock .outer-clock-face .marking {
+  background: #e4e6fc;
+}
+.frame.lightblue .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightblue .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(92, 107, 192, 0.2);
+}
+.frame.lightblue .clock-analogue .clock .inner-clock-face .hand {
+  background: #5C6BC0;
+}
+.frame.lightblue .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(92, 107, 192, 0.2);
+}
+.frame.lightblue .clock-analogue .clock .triangle {
+  border-top-color: rgba(63, 81, 181, 0.04);
+}
+.frame.lightblue .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(21, 101, 192, 0.3);
+}
+.frame.lightblue .clock-analogue .clock-values .ok,
+.frame.lightblue .clock-analogue .clock-values .clear {
+  color: #1565C0;
+}
+.frame.lightblue .btn-list button {
+  color: #3F51B5;
+  border-color: rgba(92, 107, 192, 0.7);
+}
+.frame.lightblue .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #1565C0;
+}
+.frame.lightpurple {
+  background-color: white;
+  border-color: rgba(230, 195, 241, 0.5215686275);
+  color: black;
+}
+.frame.lightpurple .title {
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+  color: #8E24AA;
+}
+.frame.lightpurple .selector-year-month {
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .selector-year-month .current div:hover {
+  color: #8E24AA;
+}
+.frame.lightpurple .selector-year-month .year-month-list div.prev:hover, .frame.lightpurple .selector-year-month .year-month-list div.next:hover {
+  color: #8E24AA;
+}
+.frame.lightpurple .selector-year-month .year-month-list div.options span:hover {
+  color: #8E24AA;
+  font-weight: bolder;
+}
+.frame.lightpurple .days {
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .days .values span:nth-of-type(7n), .frame.lightpurple .days .values span.holiday {
+  color: #8E24AA;
+}
+.frame.lightpurple .days .values span.noActive {
+  -webkit-text-decoration-color: #8E24AA;
+          text-decoration-color: #8E24AA;
+  color: #aaa;
+}
+.frame.lightpurple .days .values span.selected {
+  background-color: #8E24AA;
+  color: white;
+}
+.frame.lightpurple .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #8E24AA;
+  -webkit-text-decoration-color: #8E24AA;
+          text-decoration-color: #8E24AA;
+}
+.frame.lightpurple .clock-numeric {
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightpurple .clock-numeric span.add:hover, .frame.lightpurple .clock-numeric span.sub:hover {
+  color: #8E24AA;
+}
+.frame.lightpurple .clock-analogue {
+  border-bottom-color: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #7E57C2;
+}
+.frame.lightpurple .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightpurple .clock-analogue .clock .outer-clock-face::after, .frame.lightpurple .clock-analogue .clock .outer-clock-face::before,
+.frame.lightpurple .clock-analogue .clock .outer-clock-face .marking {
+  background: #7E57C2;
+}
+.frame.lightpurple .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(230, 195, 241, 0.5215686275);
+}
+.frame.lightpurple .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightpurple .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(126, 87, 194, 0.2);
+}
+.frame.lightpurple .clock-analogue .clock .inner-clock-face .hand {
+  background: #7E57C2;
+}
+.frame.lightpurple .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(126, 87, 194, 0.2);
+}
+.frame.lightpurple .clock-analogue .clock .triangle {
+  border-top-color: rgba(156, 39, 176, 0.04);
+}
+.frame.lightpurple .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(142, 36, 170, 0.3);
+}
+.frame.lightpurple .clock-analogue .clock-values .ok,
+.frame.lightpurple .clock-analogue .clock-values .clear {
+  color: #8E24AA;
+}
+.frame.lightpurple .btn-list button {
+  color: #9C27B0;
+  border-color: rgba(126, 87, 194, 0.7);
+}
+.frame.lightpurple .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #8E24AA;
+}
+.frame.lightorange {
+  background-color: white;
+  border-color: rgba(230, 176, 96, 0.4196078431);
+  color: black;
+}
+.frame.lightorange .title {
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+  color: #FB8C00;
+}
+.frame.lightorange .selector-year-month {
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .selector-year-month .current div:hover {
+  color: #FB8C00;
+}
+.frame.lightorange .selector-year-month .year-month-list div.prev:hover, .frame.lightorange .selector-year-month .year-month-list div.next:hover {
+  color: #FB8C00;
+}
+.frame.lightorange .selector-year-month .year-month-list div.options span:hover {
+  color: #FB8C00;
+  font-weight: bolder;
+}
+.frame.lightorange .days {
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .days .values span:nth-of-type(7n), .frame.lightorange .days .values span.holiday {
+  color: #FB8C00;
+}
+.frame.lightorange .days .values span.noActive {
+  -webkit-text-decoration-color: #FB8C00;
+          text-decoration-color: #FB8C00;
+  color: #aaa;
+}
+.frame.lightorange .days .values span.selected {
+  background-color: #FB8C00;
+  color: white;
+}
+.frame.lightorange .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #FB8C00;
+  -webkit-text-decoration-color: #FB8C00;
+          text-decoration-color: #FB8C00;
+}
+.frame.lightorange .clock-numeric {
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightorange .clock-numeric span.add:hover, .frame.lightorange .clock-numeric span.sub:hover {
+  color: #FB8C00;
+}
+.frame.lightorange .clock-analogue {
+  border-bottom-color: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #FFA726;
+}
+.frame.lightorange .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightorange .clock-analogue .clock .outer-clock-face::after, .frame.lightorange .clock-analogue .clock .outer-clock-face::before,
+.frame.lightorange .clock-analogue .clock .outer-clock-face .marking {
+  background: #FFA726;
+}
+.frame.lightorange .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(230, 176, 96, 0.4196078431);
+}
+.frame.lightorange .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightorange .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(255, 167, 38, 0.2);
+}
+.frame.lightorange .clock-analogue .clock .inner-clock-face .hand {
+  background: #FFA726;
+}
+.frame.lightorange .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(255, 167, 38, 0.2);
+}
+.frame.lightorange .clock-analogue .clock .triangle {
+  border-top-color: rgba(255, 143, 0, 0.04);
+}
+.frame.lightorange .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(251, 140, 0, 0.3);
+}
+.frame.lightorange .clock-analogue .clock-values .ok,
+.frame.lightorange .clock-analogue .clock-values .clear {
+  color: #FB8C00;
+}
+.frame.lightorange .btn-list button {
+  color: #FF8F00;
+  border-color: rgba(255, 167, 38, 0.7);
+}
+.frame.lightorange .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #FB8C00;
+}
+.frame.lightgray {
+  background-color: white;
+  border-color: #bdbdbd;
+  color: #666;
+}
+.frame.lightgray .title {
+  border-bottom-color: #bdbdbd;
+  color: #858585;
+}
+.frame.lightgray .selector-year-month {
+  border-bottom-color: #bdbdbd;
+}
+.frame.lightgray .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: #bdbdbd;
+}
+.frame.lightgray .selector-year-month .current div:hover {
+  color: #858585;
+}
+.frame.lightgray .selector-year-month .year-month-list div.prev:hover, .frame.lightgray .selector-year-month .year-month-list div.next:hover {
+  color: #858585;
+}
+.frame.lightgray .selector-year-month .year-month-list div.options span:hover {
+  color: #858585;
+  font-weight: bolder;
+}
+.frame.lightgray .days {
+  border-bottom-color: #bdbdbd;
+}
+.frame.lightgray .days .values span:nth-of-type(7n), .frame.lightgray .days .values span.holiday {
+  color: #858585;
+}
+.frame.lightgray .days .values span.noActive {
+  -webkit-text-decoration-color: #858585;
+          text-decoration-color: #858585;
+  color: #aaa;
+}
+.frame.lightgray .days .values span.selected {
+  background-color: #858585;
+  color: white;
+}
+.frame.lightgray .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #858585;
+  -webkit-text-decoration-color: #858585;
+          text-decoration-color: #858585;
+}
+.frame.lightgray .clock-numeric {
+  border-bottom-color: #bdbdbd;
+}
+.frame.lightgray .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.lightgray .clock-numeric span.add:hover, .frame.lightgray .clock-numeric span.sub:hover {
+  color: #858585;
+}
+.frame.lightgray .clock-analogue {
+  border-bottom-color: #bdbdbd;
+}
+.frame.lightgray .clock-analogue .clock {
+  border-color: white;
+  box-shadow: 0 0 15px -2px #bebebe;
+}
+.frame.lightgray .clock-analogue .clock .outer-clock-face {
+  background: white;
+}
+.frame.lightgray .clock-analogue .clock .outer-clock-face::after, .frame.lightgray .clock-analogue .clock .outer-clock-face::before,
+.frame.lightgray .clock-analogue .clock .outer-clock-face .marking {
+  background: #bebebe;
+}
+.frame.lightgray .clock-analogue .clock .outer-clock-face .marking {
+  background: #bdbdbd;
+}
+.frame.lightgray .clock-analogue .clock .inner-clock-face {
+  background: white;
+}
+.frame.lightgray .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(190, 190, 190, 0.2);
+}
+.frame.lightgray .clock-analogue .clock .inner-clock-face .hand {
+  background: #bebebe;
+}
+.frame.lightgray .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(190, 190, 190, 0.2);
+}
+.frame.lightgray .clock-analogue .clock .triangle {
+  border-top-color: rgba(114, 114, 114, 0.04);
+}
+.frame.lightgray .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(133, 133, 133, 0.3);
+}
+.frame.lightgray .clock-analogue .clock-values .ok,
+.frame.lightgray .clock-analogue .clock-values .clear {
+  color: #858585;
+}
+.frame.lightgray .btn-list button {
+  color: #727272;
+  border-color: rgba(190, 190, 190, 0.7);
+}
+.frame.lightgray .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #858585;
+}
+.frame.darkgreen {
+  background-color: #263238;
+  border-color: #E0F2F1;
+  color: #E0F2F1;
+}
+.frame.darkgreen .title {
+  border-bottom-color: #E0F2F1;
+  color: #00897B;
+}
+.frame.darkgreen .selector-year-month {
+  border-bottom-color: #E0F2F1;
+}
+.frame.darkgreen .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: #E0F2F1;
+}
+.frame.darkgreen .selector-year-month .current div:hover {
+  color: #00897B;
+}
+.frame.darkgreen .selector-year-month .year-month-list div.prev:hover, .frame.darkgreen .selector-year-month .year-month-list div.next:hover {
+  color: #00897B;
+}
+.frame.darkgreen .selector-year-month .year-month-list div.options span:hover {
+  color: #00897B;
+  font-weight: bolder;
+}
+.frame.darkgreen .days {
+  border-bottom-color: #E0F2F1;
+}
+.frame.darkgreen .days .values span:nth-of-type(7n), .frame.darkgreen .days .values span.holiday {
+  color: #00897B;
+}
+.frame.darkgreen .days .values span.noActive {
+  -webkit-text-decoration-color: #00897B;
+          text-decoration-color: #00897B;
+  color: #aaa;
+}
+.frame.darkgreen .days .values span.selected {
+  background-color: #00897B;
+  color: white;
+}
+.frame.darkgreen .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #00897B;
+  -webkit-text-decoration-color: #00897B;
+          text-decoration-color: #00897B;
+}
+.frame.darkgreen .clock-numeric {
+  border-bottom-color: #E0F2F1;
+}
+.frame.darkgreen .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkgreen .clock-numeric span.add:hover, .frame.darkgreen .clock-numeric span.sub:hover {
+  color: #00897B;
+}
+.frame.darkgreen .clock-analogue {
+  border-bottom-color: #E0F2F1;
+}
+.frame.darkgreen .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #26A69A;
+}
+.frame.darkgreen .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkgreen .clock-analogue .clock .outer-clock-face::after, .frame.darkgreen .clock-analogue .clock .outer-clock-face::before,
+.frame.darkgreen .clock-analogue .clock .outer-clock-face .marking {
+  background: #26A69A;
+}
+.frame.darkgreen .clock-analogue .clock .outer-clock-face .marking {
+  background: #E0F2F1;
+}
+.frame.darkgreen .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkgreen .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(38, 166, 154, 0.2);
+}
+.frame.darkgreen .clock-analogue .clock .inner-clock-face .hand {
+  background: #26A69A;
+}
+.frame.darkgreen .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(38, 166, 154, 0.2);
+}
+.frame.darkgreen .clock-analogue .clock .triangle {
+  border-top-color: rgba(128, 203, 196, 0.04);
+}
+.frame.darkgreen .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(0, 137, 123, 0.3);
+}
+.frame.darkgreen .clock-analogue .clock-values .ok,
+.frame.darkgreen .clock-analogue .clock-values .clear {
+  color: #00897B;
+}
+.frame.darkgreen .btn-list button {
+  color: #80CBC4;
+  border-color: rgba(38, 166, 154, 0.7);
+}
+.frame.darkgreen .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #00897B;
+}
+.frame.darkred {
+  background-color: #263238;
+  border-color: rgba(243, 179, 200, 0.231372549);
+  color: #FCE4EC;
+}
+.frame.darkred .title {
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+  color: #EC407A;
+}
+.frame.darkred .selector-year-month {
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .selector-year-month .current div:hover {
+  color: #EC407A;
+}
+.frame.darkred .selector-year-month .year-month-list div.prev:hover, .frame.darkred .selector-year-month .year-month-list div.next:hover {
+  color: #EC407A;
+}
+.frame.darkred .selector-year-month .year-month-list div.options span:hover {
+  color: #EC407A;
+  font-weight: bolder;
+}
+.frame.darkred .days {
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .days .values span:nth-of-type(7n), .frame.darkred .days .values span.holiday {
+  color: #EC407A;
+}
+.frame.darkred .days .values span.noActive {
+  -webkit-text-decoration-color: #EC407A;
+          text-decoration-color: #EC407A;
+  color: #aaa;
+}
+.frame.darkred .days .values span.selected {
+  background-color: #EC407A;
+  color: white;
+}
+.frame.darkred .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #EC407A;
+  -webkit-text-decoration-color: #EC407A;
+          text-decoration-color: #EC407A;
+}
+.frame.darkred .clock-numeric {
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkred .clock-numeric span.add:hover, .frame.darkred .clock-numeric span.sub:hover {
+  color: #EC407A;
+}
+.frame.darkred .clock-analogue {
+  border-bottom-color: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #E91E63;
+}
+.frame.darkred .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkred .clock-analogue .clock .outer-clock-face::after, .frame.darkred .clock-analogue .clock .outer-clock-face::before,
+.frame.darkred .clock-analogue .clock .outer-clock-face .marking {
+  background: #E91E63;
+}
+.frame.darkred .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(243, 179, 200, 0.231372549);
+}
+.frame.darkred .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkred .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(233, 30, 99, 0.2);
+}
+.frame.darkred .clock-analogue .clock .inner-clock-face .hand {
+  background: #E91E63;
+}
+.frame.darkred .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(233, 30, 99, 0.2);
+}
+.frame.darkred .clock-analogue .clock .triangle {
+  border-top-color: rgba(244, 143, 177, 0.04);
+}
+.frame.darkred .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(236, 64, 122, 0.3);
+}
+.frame.darkred .clock-analogue .clock-values .ok,
+.frame.darkred .clock-analogue .clock-values .clear {
+  color: #EC407A;
+}
+.frame.darkred .btn-list button {
+  color: #F48FB1;
+  border-color: rgba(233, 30, 99, 0.7);
+}
+.frame.darkred .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #EC407A;
+}
+.frame.darkblue {
+  background-color: #263238;
+  border-color: rgba(227, 242, 253, 0.5764705882);
+  color: #BBDEFB;
+}
+.frame.darkblue .title {
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+  color: #0091ea;
+}
+.frame.darkblue .selector-year-month {
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .selector-year-month .current div:hover {
+  color: #0091ea;
+}
+.frame.darkblue .selector-year-month .year-month-list div.prev:hover, .frame.darkblue .selector-year-month .year-month-list div.next:hover {
+  color: #0091ea;
+}
+.frame.darkblue .selector-year-month .year-month-list div.options span:hover {
+  color: #0091ea;
+  font-weight: bolder;
+}
+.frame.darkblue .days {
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .days .values span:nth-of-type(7n), .frame.darkblue .days .values span.holiday {
+  color: #0091ea;
+}
+.frame.darkblue .days .values span.noActive {
+  -webkit-text-decoration-color: #0091ea;
+          text-decoration-color: #0091ea;
+  color: #aaa;
+}
+.frame.darkblue .days .values span.selected {
+  background-color: #0091ea;
+  color: white;
+}
+.frame.darkblue .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #0091ea;
+  -webkit-text-decoration-color: #0091ea;
+          text-decoration-color: #0091ea;
+}
+.frame.darkblue .clock-numeric {
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkblue .clock-numeric span.add:hover, .frame.darkblue .clock-numeric span.sub:hover {
+  color: #0091ea;
+}
+.frame.darkblue .clock-analogue {
+  border-bottom-color: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #2196F3;
+}
+.frame.darkblue .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkblue .clock-analogue .clock .outer-clock-face::after, .frame.darkblue .clock-analogue .clock .outer-clock-face::before,
+.frame.darkblue .clock-analogue .clock .outer-clock-face .marking {
+  background: #2196F3;
+}
+.frame.darkblue .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(227, 242, 253, 0.5764705882);
+}
+.frame.darkblue .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkblue .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(33, 150, 243, 0.2);
+}
+.frame.darkblue .clock-analogue .clock .inner-clock-face .hand {
+  background: #2196F3;
+}
+.frame.darkblue .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(33, 150, 243, 0.2);
+}
+.frame.darkblue .clock-analogue .clock .triangle {
+  border-top-color: rgba(100, 181, 246, 0.04);
+}
+.frame.darkblue .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(0, 145, 234, 0.3);
+}
+.frame.darkblue .clock-analogue .clock-values .ok,
+.frame.darkblue .clock-analogue .clock-values .clear {
+  color: #0091ea;
+}
+.frame.darkblue .btn-list button {
+  color: #64B5F6;
+  border-color: rgba(33, 150, 243, 0.7);
+}
+.frame.darkblue .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #0091ea;
+}
+.frame.darkpurple {
+  background-color: #263238;
+  border-color: rgba(228, 179, 243, 0.231372549);
+  color: #D1C4E9;
+}
+.frame.darkpurple .title {
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+  color: #AB47BC;
+}
+.frame.darkpurple .selector-year-month {
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .selector-year-month .current div:hover {
+  color: #AB47BC;
+}
+.frame.darkpurple .selector-year-month .year-month-list div.prev:hover, .frame.darkpurple .selector-year-month .year-month-list div.next:hover {
+  color: #AB47BC;
+}
+.frame.darkpurple .selector-year-month .year-month-list div.options span:hover {
+  color: #AB47BC;
+  font-weight: bolder;
+}
+.frame.darkpurple .days {
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .days .values span:nth-of-type(7n), .frame.darkpurple .days .values span.holiday {
+  color: #AB47BC;
+}
+.frame.darkpurple .days .values span.noActive {
+  -webkit-text-decoration-color: #AB47BC;
+          text-decoration-color: #AB47BC;
+  color: #aaa;
+}
+.frame.darkpurple .days .values span.selected {
+  background-color: #AB47BC;
+  color: white;
+}
+.frame.darkpurple .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #AB47BC;
+  -webkit-text-decoration-color: #AB47BC;
+          text-decoration-color: #AB47BC;
+}
+.frame.darkpurple .clock-numeric {
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkpurple .clock-numeric span.add:hover, .frame.darkpurple .clock-numeric span.sub:hover {
+  color: #AB47BC;
+}
+.frame.darkpurple .clock-analogue {
+  border-bottom-color: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #AB47BC;
+}
+.frame.darkpurple .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkpurple .clock-analogue .clock .outer-clock-face::after, .frame.darkpurple .clock-analogue .clock .outer-clock-face::before,
+.frame.darkpurple .clock-analogue .clock .outer-clock-face .marking {
+  background: #AB47BC;
+}
+.frame.darkpurple .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(228, 179, 243, 0.231372549);
+}
+.frame.darkpurple .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkpurple .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(171, 71, 188, 0.2);
+}
+.frame.darkpurple .clock-analogue .clock .inner-clock-face .hand {
+  background: #AB47BC;
+}
+.frame.darkpurple .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(171, 71, 188, 0.2);
+}
+.frame.darkpurple .clock-analogue .clock .triangle {
+  border-top-color: rgba(179, 157, 219, 0.04);
+}
+.frame.darkpurple .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(171, 71, 188, 0.3);
+}
+.frame.darkpurple .clock-analogue .clock-values .ok,
+.frame.darkpurple .clock-analogue .clock-values .clear {
+  color: #AB47BC;
+}
+.frame.darkpurple .btn-list button {
+  color: #B39DDB;
+  border-color: rgba(171, 71, 188, 0.7);
+}
+.frame.darkpurple .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #AB47BC;
+}
+.frame.darkorange {
+  background-color: #263238;
+  border-color: rgba(230, 189, 128, 0.231372549);
+  color: #FFF3E0;
+}
+.frame.darkorange .title {
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+  color: #ff9100;
+}
+.frame.darkorange .selector-year-month {
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .selector-year-month .current div:hover {
+  color: #ff9100;
+}
+.frame.darkorange .selector-year-month .year-month-list div.prev:hover, .frame.darkorange .selector-year-month .year-month-list div.next:hover {
+  color: #ff9100;
+}
+.frame.darkorange .selector-year-month .year-month-list div.options span:hover {
+  color: #ff9100;
+  font-weight: bolder;
+}
+.frame.darkorange .days {
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .days .values span:nth-of-type(7n), .frame.darkorange .days .values span.holiday {
+  color: #ff9100;
+}
+.frame.darkorange .days .values span.noActive {
+  -webkit-text-decoration-color: #ff9100;
+          text-decoration-color: #ff9100;
+  color: #aaa;
+}
+.frame.darkorange .days .values span.selected {
+  background-color: #ff9100;
+  color: white;
+}
+.frame.darkorange .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #ff9100;
+  -webkit-text-decoration-color: #ff9100;
+          text-decoration-color: #ff9100;
+}
+.frame.darkorange .clock-numeric {
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkorange .clock-numeric span.add:hover, .frame.darkorange .clock-numeric span.sub:hover {
+  color: #ff9100;
+}
+.frame.darkorange .clock-analogue {
+  border-bottom-color: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #FF9800;
+}
+.frame.darkorange .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkorange .clock-analogue .clock .outer-clock-face::after, .frame.darkorange .clock-analogue .clock .outer-clock-face::before,
+.frame.darkorange .clock-analogue .clock .outer-clock-face .marking {
+  background: #FF9800;
+}
+.frame.darkorange .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(230, 189, 128, 0.231372549);
+}
+.frame.darkorange .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkorange .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(255, 152, 0, 0.2);
+}
+.frame.darkorange .clock-analogue .clock .inner-clock-face .hand {
+  background: #FF9800;
+}
+.frame.darkorange .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(255, 152, 0, 0.2);
+}
+.frame.darkorange .clock-analogue .clock .triangle {
+  border-top-color: rgba(255, 204, 128, 0.04);
+}
+.frame.darkorange .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(255, 145, 0, 0.3);
+}
+.frame.darkorange .clock-analogue .clock-values .ok,
+.frame.darkorange .clock-analogue .clock-values .clear {
+  color: #ff9100;
+}
+.frame.darkorange .btn-list button {
+  color: #FFCC80;
+  border-color: rgba(255, 152, 0, 0.7);
+}
+.frame.darkorange .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #ff9100;
+}
+.frame.darkgray {
+  background-color: #263238;
+  border-color: rgba(202, 202, 202, 0.231372549);
+  color: #FAFAFA;
+}
+.frame.darkgray .title {
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+  color: #90A4AE;
+}
+.frame.darkgray .selector-year-month {
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .selector-year-month .current div {
+  padding: 5px 0;
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .selector-year-month .current div:hover {
+  color: #90A4AE;
+}
+.frame.darkgray .selector-year-month .year-month-list div.prev:hover, .frame.darkgray .selector-year-month .year-month-list div.next:hover {
+  color: #90A4AE;
+}
+.frame.darkgray .selector-year-month .year-month-list div.options span:hover {
+  color: #90A4AE;
+  font-weight: bolder;
+}
+.frame.darkgray .days {
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .days .values span:nth-of-type(7n), .frame.darkgray .days .values span.holiday {
+  color: #90A4AE;
+}
+.frame.darkgray .days .values span.noActive {
+  -webkit-text-decoration-color: #90A4AE;
+          text-decoration-color: #90A4AE;
+  color: #607D8B;
+}
+.frame.darkgray .days .values span.selected {
+  background-color: #90A4AE;
+  color: white;
+}
+.frame.darkgray .days .values span:hover:not(.noActive, .other_month_day, .selected) {
+  color: #90A4AE;
+  -webkit-text-decoration-color: #90A4AE;
+          text-decoration-color: #90A4AE;
+}
+.frame.darkgray .clock-numeric {
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .clock-numeric span {
+  font-weight: bolder;
+}
+.frame.darkgray .clock-numeric span.add:hover, .frame.darkgray .clock-numeric span.sub:hover {
+  color: #90A4AE;
+}
+.frame.darkgray .clock-analogue {
+  border-bottom-color: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .clock-analogue .clock {
+  border-color: #263238;
+  box-shadow: 0 0 15px -2px #90A4AE;
+}
+.frame.darkgray .clock-analogue .clock .outer-clock-face {
+  background: #263238;
+}
+.frame.darkgray .clock-analogue .clock .outer-clock-face::after, .frame.darkgray .clock-analogue .clock .outer-clock-face::before,
+.frame.darkgray .clock-analogue .clock .outer-clock-face .marking {
+  background: #90A4AE;
+}
+.frame.darkgray .clock-analogue .clock .outer-clock-face .marking {
+  background: rgba(202, 202, 202, 0.231372549);
+}
+.frame.darkgray .clock-analogue .clock .inner-clock-face {
+  background: #263238;
+}
+.frame.darkgray .clock-analogue .clock .inner-clock-face::before {
+  background: rgba(144, 164, 174, 0.2);
+}
+.frame.darkgray .clock-analogue .clock .inner-clock-face .hand {
+  background: #90A4AE;
+}
+.frame.darkgray .clock-analogue .clock .inner-clock-face .hand.second-hand {
+  background: rgba(144, 164, 174, 0.2);
+}
+.frame.darkgray .clock-analogue .clock .triangle {
+  border-top-color: rgba(236, 239, 241, 0.04);
+}
+.frame.darkgray .clock-analogue .clock .triangle:hover {
+  border-top-color: rgba(144, 164, 174, 0.3);
+}
+.frame.darkgray .clock-analogue .clock-values .ok,
+.frame.darkgray .clock-analogue .clock-values .clear {
+  color: #90A4AE;
+}
+.frame.darkgray .btn-list button {
+  color: #ECEFF1;
+  border-color: rgba(144, 164, 174, 0.7);
+}
+.frame.darkgray .btn-list button:hover {
+  box-shadow: 0 0 15px -3px #90A4AE;
+}/*# sourceMappingURL=picker.css.map */

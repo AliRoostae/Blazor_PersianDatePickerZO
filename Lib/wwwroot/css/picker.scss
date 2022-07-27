@@ -1,0 +1,511 @@
+@import "partial/_noSelect.scss";
+@import "partial/_theme.scss";
+
+$width_single: 300;
+$width_double: 580;
+$clock_size: 250;
+
+.picker-box,
+.picker-box-range {
+  text-align: center;
+  .input-group-picker {
+    span {
+      font-size: small;
+      margin-left: -30px;
+    }
+  }
+}
+
+.picker-box {
+  .input-group-picker {
+    input {
+      width: $width_single - 35 + px;
+    }
+  }
+}
+
+.picker-box-range {
+  color: transparent;
+  .input-group-picker {
+    input {
+      width: $width_double - 25 + px;
+    }
+  }
+
+  .frame-box {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .title-range,
+  .range-btn-list {
+    margin: 7px 0 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+  }
+  .title-range {
+    font-size: large;
+  }
+  .range-btn-list {
+    padding: 10px 0;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+
+    button {
+      width: 100px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+        color: transparent;
+        box-shadow: 0 0 10px -5px transparent;
+      }
+    }
+  }
+
+  &.lightgreen {
+    @include colorSchemaRange(white, #ccc, #009688, #26A69A);
+  }
+
+  &.lightred {
+    @include colorSchemaRange(white, #ccc, #D81B60, #f48fb1);
+  }
+
+  &.lightblue {
+    @include colorSchemaRange(white, #ccc, #4fc3f7, #0288d1);
+  }
+
+  &.lightpurple {
+    @include colorSchemaRange(white, #ccc, #5E35B1, #B39DDB);
+  }
+
+  &.lightorange {
+    @include colorSchemaRange(white, #ccc, #f57c00, #ffb74d);
+  }
+
+  &.lightgray {
+    @include colorSchemaRange(white, #ccc, #546E7A, #CFD8DC);
+  }
+
+  &.darkgreen {
+    @include colorSchemaRange(#263238, #cfd8dc, #80cbc4, #00695C);
+  }
+
+  &.darkred {
+    @include colorSchemaRange(#263238, #cfd8dc, #F48FB1, #D81B60);
+  }
+
+  &.darkblue {
+    @include colorSchemaRange(#263238, #cfd8dc, #0091ea, #0091ea);
+  }
+
+  &.darkpurple {
+    @include colorSchemaRange(#263238, #cfd8dc, #B39DDB, #5E35B1);
+  }
+
+  &.darkorange {
+    @include colorSchemaRange(#263238, #cfd8dc, #ffb74d, #ff9100);
+  }
+
+  &.darkgray {
+    @include colorSchemaRange(#263238, #cfd8dc, #eceff1, #546E7A);
+  }
+}
+
+.frame {
+  @include noSelect();
+
+  width: $width_single + px;
+  height: 100%;
+  margin-top: 5px;
+  padding: 0 5px;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: transparent;
+  border-radius: 5px;
+
+  .title {
+    border-bottom: 1px solid transparent;
+    letter-spacing: 2px;
+    padding: 5px 0;
+    color: transparent;
+    font-weight: bolder;
+  }
+
+  .selector-year-month {
+    border-bottom: 1px solid transparent;
+    .current {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 5px 0;
+
+      div {
+        width: 120px;
+        padding: 5px 0;
+        border-bottom: 1px solid transparent;
+        font-weight: bolder;
+        &:hover {
+          cursor: pointer;
+          color: transparent;
+          font-weight: bolder;
+        }
+      }
+    }
+
+    .year-month-list {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+
+      div {
+        &.prev,
+        &.next {
+          width: 50px;
+          font-weight: bolder;
+          &:hover {
+            cursor: pointer;
+            color: transparent;
+          }
+        }
+        &.options {
+          width: 250px;
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+
+          span {
+            width: 25%;
+            padding: 5px;
+            margin: 2px auto;
+            font-size: small;
+            &:hover {
+              cursor: pointer;
+              color: transparent;
+              font-weight: bolder;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .days {
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+
+    span {
+      width: 42px;
+      padding: 3px 0;
+    }
+    .names {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      font-weight: bolder;
+    }
+    .values {
+      margin-top: 5px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      span {
+        cursor: pointer;
+
+        &.other_month_day {
+          opacity: 0.2;
+        }
+
+        &:nth-of-type(7n),
+        &.holiday {
+          color: transparent;
+        }
+
+        &.noActive {
+          text-decoration: line-through 2px transparent;
+          color: transparent;
+          cursor: no-drop;
+        }
+
+        &.selected {
+          background-color: transparent;
+          color: white;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          &:not(.noActive, .other_month_day, .selected) {
+            color: transparent;
+            text-decoration: overline underline 2px transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .clock-numeric {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    padding: 10px 0;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+    span {
+      font-weight: bolder;
+      padding: 2px 20px;
+      &.add,
+      &.sub {
+        &:hover {
+          color: transparent;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .clock-analogue {
+    padding: 10px 0;
+    text-align: center;
+
+    border-bottom: 1px solid transparent;
+
+    .clock {
+      margin: auto;
+      width: $clock_size + px;
+      height: $clock_size + px;
+      position: relative;
+      border: 4px solid transparent;
+      border-radius: 50%;
+      box-shadow: 0 0 10px -2px transparent;
+
+      .outer-clock-face {
+        position: relative;
+        background: transparent;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+
+        &::after {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+
+        &::after,
+        &::before,
+        .marking {
+          content: "";
+          position: absolute;
+          width: 5px;
+          height: 100%;
+          background: transparent;
+          z-index: 0;
+          left: 49%;
+        }
+        .marking {
+          background: transparent;
+          width: 3px;
+        }
+        .marking.marking-one {
+          -webkit-transform: rotate(30deg);
+          -moz-transform: rotate(30deg);
+          transform: rotate(30deg);
+        }
+
+        .marking.marking-two {
+          -webkit-transform: rotate(60deg);
+          -moz-transform: rotate(60deg);
+          transform: rotate(60deg);
+        }
+
+        .marking.marking-three {
+          -webkit-transform: rotate(120deg);
+          -moz-transform: rotate(120deg);
+          transform: rotate(120deg);
+        }
+        .marking.marking-four {
+          -webkit-transform: rotate(150deg);
+          -moz-transform: rotate(150deg);
+          transform: rotate(150deg);
+        }
+      }
+
+      .inner-clock-face {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 210px;
+        height: 210px;
+        background: transparent;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+        z-index: 1;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 16px;
+          height: 16px;
+          border-radius: 18px;
+          margin-left: -9px;
+          margin-top: -6px;
+          background: transparent;
+          z-index: 11;
+        }
+
+        .hand {
+          width: 50%;
+          right: 50%;
+          height: 6px;
+          background: transparent;
+          position: absolute;
+          top: 50%;
+          border-radius: 6px;
+          transform-origin: 100%;
+          transform: rotate(90deg);
+          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+          &.hour-hand {
+            width: 30%;
+            z-index: 3;
+          }
+
+          &.min-hand {
+            height: 3px;
+            z-index: 10;
+            width: 40%;
+          }
+
+          &.second-hand {
+            background: transparent;
+            width: 45%;
+            height: 2px;
+          }
+        }
+      }
+
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 100px solid transparent;
+        position: absolute;
+        top: 25px;
+        left: 120px;
+        z-index: 2;
+
+        &:hover {
+          border-top-color: transparent;
+          cursor: pointer;
+        }
+
+        @for $i from 0 through 59 {
+          &.t#{$i} {
+            transform: rotate(($i * 6) + deg);
+            transform-origin: bottom;
+          }
+        }
+      }
+    }
+
+    .clock-values {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-weight: bolder;
+      .ok,
+      .clear {
+        color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .btn-list {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+
+    margin: 8px auto;
+
+    button {
+      width: 100px;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 5px;
+
+      &:hover {
+        cursor: pointer;
+        color: transparent;
+        box-shadow: 0 0 10px -5px transparent;
+      }
+    }
+  }
+
+
+
+  &.lightgreen {
+    @include colorSchemaFrame(white, #E0F2F1, #aaa, #009688, #80CBC4, #eee, #009688, black);
+  }
+
+  &.lightred {
+    @include colorSchemaFrame(white, #FCE4EC, #aaa, #D81B60, #F48FB1, #eee, #D81B60, black);
+  }
+
+  &.lightblue {
+    @include colorSchemaFrame(white, #e4e6fc, #aaa, #1565C0, #5C6BC0, #eee, #3F51B5, black);
+  }
+
+  &.lightpurple {
+    @include colorSchemaFrame(white, #e6c3f185, #aaa, #8E24AA, #7E57C2, #eee, #9C27B0, black);
+  }
+
+  &.lightorange {
+    @include colorSchemaFrame(white, #e6b0606b, #aaa, #FB8C00, #FFA726, #eee, #FF8F00, black);
+  }
+
+  &.lightgray {
+    @include colorSchemaFrame(white, #bdbdbd, #aaa, #858585, #bebebe, #eee, #727272, #666);
+  }
+
+  &.darkgreen {
+    @include colorSchemaFrame(#263238, #E0F2F1, #aaa, #00897B, #26A69A, #eee, #80CBC4, #E0F2F1);
+  }
+
+  &.darkred {
+    @include colorSchemaFrame(#263238, #f3b3c83b, #aaa, #EC407A, #E91E63, #eee, #F48FB1, #FCE4EC);
+  }
+
+  &.darkblue {
+    @include colorSchemaFrame(#263238, #e3f2fd93, #aaa, #0091ea, #2196F3, #eee, #64B5F6, #BBDEFB);
+  }
+
+  &.darkpurple {
+    @include colorSchemaFrame(#263238, #e4b3f33b, #aaa, #AB47BC, #AB47BC, #eee, #B39DDB, #D1C4E9);
+  }
+
+  &.darkorange {
+    @include colorSchemaFrame(#263238, #e6bd803b, #aaa, #ff9100, #FF9800, #eee, #FFCC80, #FFF3E0);
+  }
+
+  &.darkgray {
+    @include colorSchemaFrame(#263238, #cacaca3b, #607D8B, #90A4AE, #90A4AE, #eee, #ECEFF1, #FAFAFA);
+  }
+}

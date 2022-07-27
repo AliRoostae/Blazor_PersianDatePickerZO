@@ -21,8 +21,14 @@ namespace Blazor_PersianDatePickerZO.Component
         double _dgM => SelectTime.Minutes * 6 + 90;
         double _dgS => SelectTime.Seconds * 6 + 90;
 
-
-
+        string _amPm => SelectTime.Hours >= 12 ? "بعدازظهر" : "صبح";
+        void CheangAmPm()
+        {
+            
+                SelectTime = new TimeSpan(SelectTime.Hours >= 12? SelectTime.Hours-12: SelectTime.Hours+12, SelectTime.Minutes, SelectTime.Seconds);
+            SelectTimeChanged.InvokeAsync(SelectTime);
+            _defultSelected = ClockHand.NoSelect;
+        }
         ClockHand _defultSelected = ClockHand.NoSelect;
 
         string _classEditTime => _defultSelected == ClockHand.NoSelect ? string.Empty : "triangle";

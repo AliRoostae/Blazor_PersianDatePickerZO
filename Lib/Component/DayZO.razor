@@ -1,6 +1,8 @@
 ﻿@inherits BaseDatePickerZO
+
+    <div class="picker-box frame @ThemePickerZO">
  <div class="days">
-          <div class="name">
+          <div class="names">
             <span>ش</span>
             <span>ی</span>
             <span>د</span>
@@ -9,7 +11,7 @@
             <span>پ</span>
             <span class="holiday">ج</span>
           </div>
-          <div class="value">
+          <div class="values">
            @{    
                _usInmont = 0;
             for (int i = _contDayMontlast-_strartDayWeek; i <= _contDayMontlast; i++)
@@ -43,6 +45,9 @@
         }
           </div>
  </div>
+ </div>
+ 
+
    
 
 

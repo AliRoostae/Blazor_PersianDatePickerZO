@@ -1,0 +1,180 @@
+@mixin colorSchemaRange($bg, $brdr, $fnt, $btn_bg) {
+  color: $fnt;
+  .title-range,
+  .range-btn-list {
+    background-color: $bg;
+    border-color: $brdr;
+  }
+  .range-btn-list {
+    button {
+      color: $fnt;
+      border-color: rgba($color: $btn_bg, $alpha: 0.6);
+      &:hover {
+        box-shadow: 0 0 10px -3px $fnt;
+      }
+    }
+  }
+}
+
+@mixin colorSchemaFrame(
+  $background_color,
+  $border-color,
+  $incative_color,
+  $hover_color,
+  $hover_alpha,
+  $btn-bg,
+  $clock_degree,
+  $fnt
+) {
+  $hover_alpha_color: rgba(
+    $color: $hover_alpha,
+    $alpha: 0.2,
+  );
+  $clock_degrees_color: rgba(
+    $color: $clock_degree,
+    $alpha: 0.2,
+  );
+
+  background-color: $background_color;
+  border-color: $border-color;
+  color: $fnt;
+
+  .title {
+    border-bottom-color: $border-color;
+    color: $hover_color;
+  }
+
+  .selector-year-month {
+    border-bottom-color: $border-color;
+    .current {
+      div {
+        padding: 5px 0;
+        border-bottom-color: $border-color;
+        &:hover {
+          color: $hover_color;
+        }
+      }
+    }
+
+    .year-month-list {
+      div {
+        &.prev,
+        &.next {
+          &:hover {
+            color: $hover_color;
+          }
+        }
+        &.options {
+          span {
+            &:hover {
+              color: $hover_color;
+              font-weight: bolder;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .days {
+    border-bottom-color: $border-color;
+
+    .values {
+      span {
+        &:nth-of-type(7n),
+        &.holiday {
+          color: $hover_color;
+        }
+
+        &.noActive {
+          text-decoration-color: $hover_color;
+          color: $incative_color;
+        }
+
+        &.selected {
+          background-color: $hover_color;
+          color: white;
+        }
+
+        &:hover {
+          &:not(.noActive, .other_month_day, .selected) {
+            color: $hover_color;
+            text-decoration-color: $hover_color;
+          }
+        }
+      }
+    }
+  }
+
+  .clock-numeric {
+    border-bottom-color: $border-color;
+    span {
+      font-weight: bolder;
+      &.add,
+      &.sub {
+        &:hover {
+          color: $hover_color;
+        }
+      }
+    }
+  }
+
+  .clock-analogue {
+    border-bottom-color: $border-color;
+
+    .clock {
+      border-color: $background_color;
+      box-shadow: 0 0 15px -2px $hover_alpha;
+
+      .outer-clock-face {
+        background: $background_color;
+        &::after,
+        &::before,
+        .marking {
+          background: $hover_alpha;
+        }
+        .marking {
+          background: $border-color;
+        }
+      }
+
+      .inner-clock-face {
+        background: $background_color;
+        &::before {
+          background: $hover_alpha_color;
+        }
+        .hand {
+          background: $hover_alpha;
+          &.second-hand {
+            background: $hover_alpha_color;
+          }
+        }
+      }
+
+      .triangle {
+        border-top-color: rgba($color: $clock_degrees_color, $alpha: .04);
+        &:hover {
+          border-top-color: rgba($color: $hover_color, $alpha: .3);
+        }
+      }
+    }
+
+    .clock-values {
+      .ok,
+      .clear {
+        color: $hover_color;
+      }
+    }
+  }
+
+  .btn-list {
+    button {
+      color: $clock_degree;
+      border-color: rgba($color: $hover_alpha_color, $alpha: 0.7);
+
+      &:hover {
+        box-shadow: 0 0 15px -3px $hover_color;
+      }
+    }
+  }
+}
