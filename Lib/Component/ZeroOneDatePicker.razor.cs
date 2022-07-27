@@ -37,6 +37,7 @@ namespace Blazor_PersianDatePickerZO.Component
         void ColsePopup()
         {
             _show = false;
+             _olddate= SelectDate;
             Change();
         }
         void Change()
@@ -44,11 +45,14 @@ namespace Blazor_PersianDatePickerZO.Component
 
             SelectDateChanged.InvokeAsync(SelectDate);
             DateFa.InvokeAsync(_dateFa);
+
+      
         }
         void GetToday()
         {
             SelectDate = DateTime.Now;
-            Change();
+           
+            ColsePopup();
         }
 
         protected override void OnAfterRender(bool firstRender)

@@ -43,8 +43,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
 
 
-        [Parameter]
-        public ThemeDatePickerZO ThemePickerZO { get; set; } = ThemeDatePickerZO.lightgreen;
+       
 
 
         // yyyy/MM/dd hh:mm:ss 1359/04/09 21:00:00

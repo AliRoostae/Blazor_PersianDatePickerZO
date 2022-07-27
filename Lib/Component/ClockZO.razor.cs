@@ -21,7 +21,7 @@ namespace Blazor_PersianDatePickerZO.Component
         double _dgM => SelectTime.Minutes * 6 + 90;
         double _dgS => SelectTime.Seconds * 6 + 90;
 
-        string _amPm => SelectTime.Hours >= 12 ? "بعدازظهر" : "صبح";
+        string _amPm => SelectTime.Hours >= 12 ? "ب.ظ 🌓" : "ق.ظ 🌘";
         void CheangAmPm()
         {
             

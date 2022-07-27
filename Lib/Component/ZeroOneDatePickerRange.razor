@@ -1,5 +1,79 @@
-﻿@inherits BaseDatePickerRangeZO 
-@if (PupupDatePickerZO)
+﻿@inherits BaseDatePickerRangeZO
+
+<div class="picker-pack">
+    <div class="picker-box-range darkred">
+        @if (PupupDatePickerZO)
+        {
+             <div class="input-group-picker">
+            <input type="text" value="@_dateFa" readonly/>
+            <span @onclick="ShowPicker">&#128197;</span>
+            </div>
+            if (_show)
+            {
+                <div class="range-box">
+            <div class="title-range">@_dateFa</div>
+            <div class="frame-box">
+                <div class="frame from @ThemePickerZO">
+                    <div class="title">شروع : @_dateFaFirst</div>
+                    <YearMonth @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                    <DayZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                    <TimeZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                </div>
+                <div class="frame to @ThemePickerZO">
+                    <div class="title">پایان : @_dateFaLast</div>
+                    <YearMonth @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                    <DayZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                    <TimeZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                </div>
+            </div>
+            <div class="range-btn-list">
+               <button  class="close" @onclick="ColsePopup">تأیید</button>
+                <button  @onclick="GetDayRange" class="select-today">یک روزه</button>
+                <button  @onclick="GetWeekRange" class="select-today">یک هفته</button>
+                <button  @onclick="GetMonthRange" class="select-today">یک ماه</button>
+                <button  @onclick="GetYearRange" class="select-today">یک سال</button>
+                </div>  </div>
+            }
+            
+        }
+        else
+        {
+            
+
+ <div class="range-box">
+            <div class="title-range">@_dateFa</div>
+            <div class="frame-box">
+                <div class="frame from @ThemePickerZO">
+                    <div class="title">شروع : @_dateFaFirst</div>
+                    <YearMonth @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                    <DayZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                    <TimeZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                </div>
+                <div class="frame to @ThemePickerZO">
+                    <div class="title">پایان : @_dateFaLast</div>
+                    <YearMonth @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                    <DayZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                    <TimeZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                </div>
+            </div>
+            <div class="range-btn-list">
+               <button  class="close" @onclick="Change">تأیید</button>
+                <button  @onclick="GetDayRange" class="select-today">یک روزه</button>
+                <button  @onclick="GetWeekRange" class="select-today">یک هفته</button>
+                <button  @onclick="GetMonthRange" class="select-today">یک ماه</button>
+                <button  @onclick="GetYearRange" class="select-today">یک سال</button>
+                </div>  </div>
+
+
+
+        }
+
+
+      
+    </div>
+</div>
+
+@*@if (PupupDatePickerZO)
 {
     <div class="datepicker-input-group">
         <input readonly class="picker-text-input" value="@_dateFa">
@@ -7,7 +81,7 @@
         <div  class="frame-popup">
             @if (_show)
             {
-                <PickerRange @bind-SelectDateFirst="@SelectDateFirst"  @bind-SelectDateLast="@SelectDateLast" ThemePickerZO="@ThemePickerZO" />  
+                <PickerRange @bind-SelectDateFirst="@SelectDateFirst"  @bind-SelectDateLast="@SelectDateLast" ThemePickerZO="@ThemePickerZO" />
                 <div class="footer">
                 <button  class="close" @onclick="ColsePopup">تأیید</button>
                 <button  @onclick="GetDayRange" class="select-today">یک روزه</button>
@@ -17,7 +91,7 @@
             </div>
             }
 
-          
+
         </div>
     </div>
 }
@@ -31,7 +105,7 @@ else
                 <button  @onclick="GetMonthRange" class="select-today">یک ماه</button>
                 <button  @onclick="GetYearRange" class="select-today">یک سال</button>
             </div>
-}
+}*@
 
 
 

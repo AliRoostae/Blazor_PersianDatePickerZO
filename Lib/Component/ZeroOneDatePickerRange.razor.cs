@@ -40,26 +40,22 @@ namespace Blazor_PersianDatePickerZO.Component
 
         void GetDayRange()
         {
-            SelectDateFirst = DateTime.Now.AddDays(-1);
-            SelectDateLast = DateTime.Now;
+            SelectDateFirst = SelectDateLast.AddDays(-1);
             Change();
         }
         void GetWeekRange()
         {
-            SelectDateFirst = DateTime.Now.AddDays(-7);
-            SelectDateLast = DateTime.Now;
+            SelectDateFirst = SelectDateLast.AddDays(-7);
             Change();
         }
         void GetMonthRange()
         {
-            SelectDateFirst = DateTime.Now.AddMonths(-1);
-            SelectDateLast = DateTime.Now;
+            SelectDateFirst = SelectDateLast.AddMonths(-1);
             Change();
         }
         void GetYearRange()
         {
-            SelectDateFirst = DateTime.Now.AddYears(-1);
-            SelectDateLast = DateTime.Now;
+            SelectDateFirst = SelectDateLast.AddYears(-1);
             Change();
         }
 

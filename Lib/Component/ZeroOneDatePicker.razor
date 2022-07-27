@@ -1,58 +1,49 @@
 ﻿@inherits BaseDatePickerZO
-   <div class="picker-pack">
-<div class="picker-box"> 
-@* 
-@if (PupupDatePickerZO)
-{
-    <div class="datepicker-input-group">
-        <input readonly class="picker-text-input" value="@_dateFa">
-        <span class="show-picker-btn" @onclick="ShowPicker">&#x1F4C5;</span>
-        <div  class="frame-popup">
-            @if (_show)
-            {
-                <div class="date-picker-frame @ThemePickerZO">
-                    <div class="date-picker-content">
-                        <div class="top">
-                            <div class="title">@_dateFa</div>
-                        </div>
-                        <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <MonthZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />
-                        <div class="footer">
-                            <div class="close" @onclick="ColsePopup">تأیید</div>
-                            <div @onclick="GetToday" class="select-today">امروز</div>
-                        </div>
-                    </div>
-                </div>
-            }
+<div class="picker-pack">
+    <div class="picker-box">
 
-
-        </div>
-    </div>
-}
-else
-{  <div class="input-group-picker">
-          <input type="text" value="@_dateFa"/>
-          <span>&#128197;</span>
-        </div>*@
- <div class="frame @ThemePickerZO">
-
-                <div class="title">@_dateFa</div>
+      
         
-           @* <YearZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" />*@
-            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO"/>
+            @if (PupupDatePickerZO)
+            {
+                <div class="input-group-picker">
+                    <input type="text" value="@_dateFa" readonly/>
+                    <span @onclick="ShowPicker">&#128197;</span>
+                </div>
+                if (_show)
+                {<div class="frame @ThemePickerZO">
+                    <div class="title">@_dateFa</div>
+            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
             <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate"  ThemePickerZO="@ThemePickerZO"/>
+            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
             <div class="btn-list">
-                <button  @onclick="Change">تأیید</button>
-                <button @onclick="GetToday" >امروز</button>
-            </div>
-        </div>
-   
-  
+                <button @onclick="ColsePopup">تأیید</button>
+                <button @onclick="GetToday">امروز</button>
+            </div> 
+                </div>
 
-@*}*@
- </div>
+            }
+        }
+        else
+        {
+            <div class="frame @ThemePickerZO">
+                    <div class="title">@_dateFa</div>
+            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <div class="btn-list">
+                <button @onclick="ColsePopup">تأیید</button>
+                <button @onclick="GetToday">امروز</button>
+            </div> 
+                </div>
+        }
+           
+        
+
+
+
+
+
     </div>
+</div>
 
