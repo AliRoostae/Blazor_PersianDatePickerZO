@@ -13,9 +13,9 @@
                 if (_show)
                 {<div class="frame @ThemePickerZO">
                     <div class="title">@_dateFa</div>
-            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <YearMonth SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <DayZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <TimeZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
             <div class="btn-list">
                 <button @onclick="ColsePopup">تأیید</button>
                 <button @onclick="GetToday">امروز</button>
@@ -28,9 +28,9 @@
         {
             <div class="frame @ThemePickerZO">
                     <div class="title">@_dateFa</div>
-            <YearMonth @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-            <DayZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-            <TimeZO @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <YearMonth SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <DayZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+            <TimeZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
             <div class="btn-list">
                 <button @onclick="ColsePopup">تأیید</button>
                 <button @onclick="GetToday">امروز</button>

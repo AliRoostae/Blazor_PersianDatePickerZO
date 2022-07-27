@@ -6,8 +6,8 @@ namespace Blazor_PersianDatePickerZO.Component
     partial class ZeroOneDatePicker : BaseDatePickerZO
     {
 
+        private new bool SingelUs { get; set; }
 
-        
         [Parameter]
         public bool PupupDatePickerZO { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿@inherits BaseDatePickerZO
 
 
-<div class="picker-box frame @ThemePickerZO">
+<div class="@(SingelUs?"picker-box frame":string.Empty) @ThemePickerZO">
     <div class="selector-year-month">
         <div class="current">
             <div class="year" @onclick="(e=> ShowPanel(true))">@YearSelect</div>

@@ -4,6 +4,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 {
     public abstract class BaseDatePickerRangeZO : BaseDatePickerZO
     {
+        private new bool SingelUs { get; set; }
         private new DateTime SelectDate { get; set; }
         private new EventCallback<DateTime> SelectDateChanged { get; set; }
         private new DateTime MinDate { get; set; } = DatePickerZeroOneHellper.Persian.MinSupportedDateTime;

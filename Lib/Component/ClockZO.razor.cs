@@ -5,6 +5,8 @@ namespace Blazor_PersianDatePickerZO.Component
 {
     partial class ClockZO
     {
+        [Parameter]
+        public virtual bool SingelUs { get; set; } = true;
 
         [Parameter]
         public virtual TimeSpan SelectTime { get; set; } = DateTime.Now.TimeOfDay;

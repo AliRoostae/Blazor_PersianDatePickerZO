@@ -1,5 +1,5 @@
 ﻿@inherits BaseDatePickerZO
-   <div class="picker-box frame @ThemePickerZO">
+   <div class="@(SingelUs?"picker-box frame":string.Empty) @ThemePickerZO">
  <div class="clock-numeric">
           <div class="hour">
             <span @onclick="@(e => NextElement(TimeSelect.Hours))" class="add">+</span>
