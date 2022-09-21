@@ -6,14 +6,59 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>1894518-200.ico</ApplicationIcon>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageIcon>1894518-200.png</PackageIcon>
+    <PackageIcon>calendar.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO</RepositoryUrl>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
+    <Company>PZOMK</Company>
+    <Description>Add 
+ &lt;link href="_content/Blazor_PersianDatePickerZO/AppDtaePickerZeroOne.css" rel="stylesheet" /&gt;
+
+calendar use 
+&lt; ZeroOneDatePicker PupupDatePickerZO="true OR false" @bind-SelectDate="@value"&gt;
+
+calendar  range use 
+&lt;ZeroOneDatePickerRange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast"  /&gt;
+
+color themplate
+enum ThemeDatePickerZO
+ThemePickerZO="ThemeDatePickerZO.darkblue"
+
+use single part 
+Time Only
+ &lt;TimeZO   @bind-SelectDate="@value"/&gt;
+&lt;ClockZO  @bind-SelectDate="@value" /&gt;
+
+Day Only
+&lt;DayZO     @bind-SelectDate="@value" /&gt;
+
+year and month 
+ &lt;YearMonth   @bind-SelectDate="@value" /&gt;
+
+chang format
+Format="TypeFormat"
+yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or .. 
+
+for example
+&lt;ZeroOneDatePicker  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  /&gt;
+
+ download the sample project from the repository
+
+
+</Description>
+    <PackageProjectUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO/</PackageProjectUrl>
+    <Copyright></Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <NeutralLanguage>fa</NeutralLanguage>
+    <PackageLicenseFile>..\license</PackageLicenseFile>
+    <PackageTags>Blazor , Persian , Date Picker</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="1894518-200.ico" />
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 
@@ -26,7 +71,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="1894518-200.png">
+    <None Update="calendar.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

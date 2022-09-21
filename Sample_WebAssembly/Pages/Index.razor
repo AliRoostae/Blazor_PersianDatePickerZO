@@ -5,9 +5,15 @@
 <div class="container">
     <div class="row">
         <h6 class="text-black float-end m-2"><span>تقویم دارای پارامتر هایی برای حالت نمایش تقویم ،تم های مختلف و تقویم برای محدود کردن بازه زمانی است</span></h6>
-        <h6 class="text-black float-end m-2"><span>برای استفاده از این تقویم میتوانید <span>nuget packege </span>را نصب کنید و لینک <span>css </span>را به صفحه <span>index </span>اضافه کنید</span></h6>
-        <h6 class="text-black float-end m-2"><span>این تقویم هیچ لینک جاوا اسکریپتی ندارد</span></h6>
-        <h6 class="text-black float-end m-2"><span>تمامی ابزار های در دسترس به صورت <span>componnet </span>است، برای مشاهده نمونه به صفحات مراجعه کنید</span></h6>
+        <h6 class="text-black float-end m-2"><span>برای استفاده از این تقویم میتوانید <span>Install-Package Blazor_PersianDatePickerZO</span>را نصب کنید و لینک <span>css </span>را به صفحه <span>index </span>اضافه کنید</span></h6>
+        <pre>
+            <code>
+                 link href="_content/Blazor_PersianDatePickerZO/AppDtaePickerZeroOne.css" rel="stylesheet" 
+            </code>
+        </pre>
+        
+        <h6 class="text-black float-end m-2"><span> هیچ لینک جاوا اسکریپتی ندارد</span></h6>
+       
         <h6 class="text-black float-end m-2"><span>رنگ بندی تم با استفاده از <span>enum</span> انجام میشود، برای مشاهده مقادیر به صفحه <a href="Theme">Theme</a> بروید</span></h6>
         <h6 class="text-black float-end m-2"><span>برای آسودگی در محدود کردن بین دو زمان خاصیتی اضافه کردیم تا بتوانید بین دو تاریخ را فیلتر کنید جهت استفاده به صفحه <a href="RangeDate">RangeDate</a> مراجعه کنید</span></h6>
         <h6 class="text-black float-end m-2"><span>در این پروژه گزینه ای آورده شده برای تنظیم و نمایش ساعت که میتوانید در  <a href="Clock">Clock</a> بیشتر راجب انها بدانید</span></h6>
@@ -22,7 +28,7 @@
             </code>
         </pre>
         <div class="col-md-4 col-sm-12 align-commponent">
-            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="false" />
+            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  PupupDatePickerZO="false" />
         </div>
         <div class="col-md-4 col-sm-12 align-commponent">
             <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" />
