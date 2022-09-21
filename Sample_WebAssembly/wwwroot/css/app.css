@@ -62,3 +62,22 @@ a, .btn-link {
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+
+
+.spacingWord {
+    word-spacing: 30px;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 8px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    margin: 8px;
+    color: #006285;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}

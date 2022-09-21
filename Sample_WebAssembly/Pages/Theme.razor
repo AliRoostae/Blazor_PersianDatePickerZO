@@ -1,4 +1,74 @@
-﻿@page "/"
+﻿
+@page "/Theme"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+
+<div class="container-fluid">
+    <div class="row ">
+        <h6 class="text-black float-end m-2">
+            <span>تم های این تقویم فارسی در یک  <span>enum</span> تعریف میشود که عبارت اند از:</span>
+        </h6>
+        <pre>
+        <code>
+                 public enum ThemeDatePickerZO
+                 {
+                     lightgreen,
+                     lightred,
+                     lightblue,
+                     lightpurple,
+                     lightorange,
+                     lightgray,
+                     darkgreen,
+                     darkred,
+                     darkblue,
+                     darkpurple,
+                     darkorange,
+                     darkgray    
+                 }
+            </code>
+        </pre>
+
+
+        
+
+        
+
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <p class="text-center mt-4">@_date</p>
+                <hr class="divider">
+                <p class="text-center">@_dateFa</p>
+                <hr class="divider">
+                <span class="text-center"><strong>default theme</strong></span>
+                <hr class="divider">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="false" />
+            </div>
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="false" ThemePickerZO="ThemeDatePickerZO.lightorange" />
+            </div>
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="false" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    DateTime _date = DateTime.Now;
+    string _dateFa = string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+}
+
+
+
+
+
+@*@page "/"
 @using Blazor_PersianDatePickerZO.Component
 @using Blazor_PersianDatePickerZO.Hellper
 <div class="row">
@@ -74,3 +144,4 @@
 
 
 }
+*@

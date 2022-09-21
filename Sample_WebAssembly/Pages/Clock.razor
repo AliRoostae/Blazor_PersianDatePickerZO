@@ -1,6 +1,99 @@
 ﻿@page "/Clock"
 @using Blazor_PersianDatePickerZO.Component
 @using Blazor_PersianDatePickerZO.Hellper
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-md-4 col-12">
+            <img src="/css/Gif/changeClock.gif" />
+        </div>
+        <div class="col-4"></div>
+        <pre>
+        <code>
+                < ClockZO SelectTime="YourProperty" SelectTimeChanged="YourFunction" />
+            </code>
+        </pre>
+        <h6 class="text-black float-end m-2"><span>ساعت ها نیز مانند تقویم تمام تم هارا ارث برده اند</span></h6>
+        <pre>
+        <code>
+                < ClockZO ThemePickerZO="ThemeDatePickerZO.Color" />
+            </code>
+        </pre>
+        <h6 class="text-black float-end m-2"><span>برای عدم تغییر در ساعت از این ویژگی استفاده کنید</span></h6>
+        <pre>
+        <code>
+                < ClockZO NoChangeClock="true" />
+            </code>
+        </pre>
+        <h6 class="text-black float-end m-2"><span>حالت کوچک برای تنظیم ساعت</span></h6>
+        <pre>
+        <code>
+                < TimeZO  ThemePickerZO="ThemeDatePickerZO.Color"/>
+            </code>
+        </pre>
+        <div class="col-4"></div>
+        <div class="col-md-4 col-sm-12 p-1 mt-3 mr-2 align-commponent">
+            <TimeZO ThemePickerZO="ThemeDatePickerZO.darkgreen" />
+        </div>
+    </div>
+    <hr />
+    <div class="row mt-3">
+        <div class="col-md-3 col-sm-12 p-1 mt-3">
+            <h6 class="text-center">فقط برای نمایش است و نمیتوان تغییر داد</h6>
+            <h4 class="text-center">@_clock0</h4>
+            <div class=" align-commponent">
+                <ClockZO @bind-SelectTime="@_clock0" ThemePickerZO="ThemeDatePickerZO.darkblue" NoChangeClock="true" />
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12 p-1 mt-3 align-commponent">
+            <h4 class="text-center">@_clock</h4>
+            <ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.darkgray" />
+        </div>
+        <div class="col-md-3 col-sm-12 p-1 mt-3 align-commponent">
+            <h4 class="text-center">@_clock</h4>
+            <ClockZO @bind-SelectTime="@_clock" ThemePickerZO="ThemeDatePickerZO.lightred" />
+        </div>
+    </div>
+</div>
+
+@code {
+    TimeSpan _clock0 = DateTime.Now.TimeOfDay;
+    TimeSpan _clock = DateTime.Now.TimeOfDay;
+
+
+
+
+    private System.Timers.Timer _timer;
+    private int counter = 60;
+    void StartTimer()
+    {
+        _timer = new System.Timers.Timer(1000);
+        _timer.Enabled = true;
+        _timer.Elapsed += NewTimeSet;
+    }
+
+    void NewTimeSet(Object source, System.Timers.ElapsedEventArgs e)
+    {
+        _clock0 = DateTime.Now.TimeOfDay;
+        InvokeAsync(StateHasChanged);
+    }
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+        if (firstRender) StartTimer();
+
+    }
+}
+
+
+
+
+
+
+@*@page "/Clock"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
 <h2>@_clock0</h2>
 <br/>
 <h2>@_clock</h2>
@@ -26,18 +119,11 @@
 
 
 
-
-
-
-
-
-
-
 @code {
     TimeSpan _clock0 = DateTime.Now.TimeOfDay;
     TimeSpan _clock = DateTime.Now.TimeOfDay;
 
-   
+
 
     private  System.Timers.Timer _timer;
     private int counter = 60;
@@ -57,6 +143,7 @@
     {
 
         if (firstRender) StartTimer();
-       
+
     }
 }
+*@
