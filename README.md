@@ -1,4 +1,4 @@
-﻿# ![PersianDatePicker](img/PersianDatePicker.png)
+﻿# ![PersianDatePicker](img/PersianDatePicker.jpg)
 
 
 ## Prerequisites
