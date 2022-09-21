@@ -50,8 +50,8 @@ for example
     <Copyright></Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <NeutralLanguage>fa</NeutralLanguage>
-    <PackageLicenseFile>..\license</PackageLicenseFile>
     <PackageTags>Blazor , Persian , Date Picker</PackageTags>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
