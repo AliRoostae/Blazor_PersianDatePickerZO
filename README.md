@@ -22,7 +22,7 @@ Add the following to `_Imports.razor`
 ```
 
 ## Usage
-###calendar use 
+### calendar use 
 ```
 < ZeroOneDatePicker PupupDatePickerZO="true OR false" @bind-SelectDate="@value">
 
@@ -31,7 +31,7 @@ Add the following to `_Imports.razor`
 }
 ```
 
-###calendar range use 
+### calendar range use 
 ```
 <ZeroOneDatePickerRange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast"  />
 
@@ -41,7 +41,7 @@ Add the following to `_Imports.razor`
 }
 ```
 
-###color themplate
+### color themplate
 ```
 < ZeroOneDatePicker ThemePickerZO="ThemeDatePickerZO.darkblue">
 ```
@@ -64,26 +64,26 @@ enum ThemeDatePickerZO
 ```
 
 
-###use single part  
-####Time Only
+### use single part  
+#### Time Only
 ```
  <TimeZO   @bind-SelectDate="@value"/>
 <ClockZO  @bind-SelectDate="@value" />
 ```
 
-####Day Only
+#### Day Only
 ```
 <DayZO  @bind-SelectDate="@value" />
 ```
 
 
 
-####year and month
+#### year and month
 ```
 <YearMonth   @bind-SelectDate="@value" />
 ```
 
-####chang format
+#### chang format
 Format="TypeFormat"
 yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or ..
 ```
