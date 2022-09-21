@@ -1,4 +1,4 @@
-﻿# ![PersianDatePicker](img/PersianDatePicker.jpg)
+﻿# ![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/PersianDatePicker.jpg)
 
 
 ## Prerequisites
@@ -90,7 +90,7 @@ yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or ..
 <ZeroOneDatePicker  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  />
 ```
 
-# ![PersianDatePicker](img/changeClock.gif)
+# ![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/changeClock.gif)
 
 
 
