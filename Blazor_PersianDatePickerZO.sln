@@ -5,8 +5,6 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor_PersianDatePickerZO", "Lib\Blazor_PersianDatePickerZO.csproj", "{B0A99274-5A98-4805-A96E-9CD9ED06150D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample_WebAssembly", "Sample_WebAssembly\Sample_WebAssembly.csproj", "{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{83AE75F0-A9A1-4015-B8AA-7118CED17487}"
 	ProjectSection(SolutionItems) = preProject
 		img\changeClock.gif = img\changeClock.gif
@@ -25,10 +23,6 @@ Global
 		{B0A99274-5A98-4805-A96E-9CD9ED06150D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0A99274-5A98-4805-A96E-9CD9ED06150D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0A99274-5A98-4805-A96E-9CD9ED06150D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EE9204E-8FE2-46ED-B2BD-DE230FFBAFBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
