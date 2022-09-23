@@ -5,9 +5,22 @@ $width_single: 300;
 $width_double: 580;
 $clock_size: 250;
 
+.picker-pack {
+  float: left;
+  margin: 10px;
+  font-family: "Vazirmatn FD";
+}
+
+.frame-position-zo{
+  z-index:999;
+     position:absolute;
+ 
+ }
+
 .picker-box,
 .picker-box-range {
   text-align: center;
+  direction: ltr !important;
   .input-group-picker {
     span {
       font-size: small;
@@ -19,7 +32,7 @@ $clock_size: 250;
 .picker-box {
   .input-group-picker {
     input {
-      width: $width_single - 35 + px;
+      width: $width_single +px;
     }
   }
 }
@@ -28,7 +41,7 @@ $clock_size: 250;
   color: transparent;
   .input-group-picker {
     input {
-      width: $width_double - 25 + px;
+      width: $width_single+30 + px;
     }
   }
 
@@ -39,7 +52,7 @@ $clock_size: 250;
 
   .title-range,
   .range-btn-list {
-    margin: 7px 0 0;
+    margin: 1px;
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -59,7 +72,7 @@ $clock_size: 250;
       background-color: transparent;
       border: 1px solid transparent;
       border-radius: 5px;
-
+      font-family: "Vazirmatn FD";
       &:hover {
         cursor: pointer;
         color: transparent;
@@ -122,8 +135,7 @@ $clock_size: 250;
 
   width: $width_single + px;
   height: 100%;
-  margin-top: 5px;
-  padding: 0 5px;
+
 
   background-color: transparent;
   border: 1px solid transparent;
@@ -201,7 +213,7 @@ $clock_size: 250;
     border-bottom: 1px solid transparent;
 
     span {
-      width: 42px;
+      width: 41px;
       padding: 3px 0;
     }
     .names {
@@ -508,4 +520,52 @@ $clock_size: 250;
   &.darkgray {
     @include colorSchemaFrame(#263238, #cacaca3b, #607D8B, #90A4AE, #90A4AE, #eee, #ECEFF1, #FAFAFA);
   }
+}
+
+
+@media (max-width: 768px) {
+  .picker-pack .picker-box-range .title-range {
+      width: 100%;
+  }
+
+  .picker-pack .picker-box-range .frame-box {
+      display: block !important;
+  }
+
+  .picker-pack .picker-box-range .range-btn-list {
+      display: block !important;
+      padding: 4px;
+      margin: 4px;
+  }
+
+  .picker-pack .picker-box-range .input-group-picker input {
+      min-width: 300px;
+      width: 100px;
+      margin-right: 3px;
+      margin-left: 3px;
+  }
+
+  .picker-pack .picker-box-range .input-group-picker {
+      width: 100%;
+      position: relative;
+  }
+
+
+
+      /*show button click*/
+      .picker-pack .picker-box-range .input-group-picker .title-range {
+          width: 100%;
+      }
+
+      .picker-pack .picker-box-range .input-group-picker .range-btn-list {
+          display: block !important;
+          padding: 4px;
+          margin: 4px;
+      }
+
+
+      .frame-position-zo{
+           max-height:520px !important;
+           max-width: $width_single+px;
+       }
 }

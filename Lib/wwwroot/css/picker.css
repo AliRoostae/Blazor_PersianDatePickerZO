@@ -1,6 +1,18 @@
+.picker-pack {
+  float: left;
+  margin: 10px;
+  font-family: "Vazirmatn FD";
+}
+
+.frame-position-zo {
+  z-index: 999;
+  position: absolute;
+}
+
 .picker-box,
 .picker-box-range {
   text-align: center;
+  direction: ltr !important;
 }
 .picker-box .input-group-picker span,
 .picker-box-range .input-group-picker span {
@@ -9,14 +21,14 @@
 }
 
 .picker-box .input-group-picker input {
-  width: 265px;
+  width: 300px;
 }
 
 .picker-box-range {
   color: transparent;
 }
 .picker-box-range .input-group-picker input {
-  width: 555px;
+  width: 330px;
 }
 .picker-box-range .frame-box {
   display: flex;
@@ -24,7 +36,7 @@
 }
 .picker-box-range .title-range,
 .picker-box-range .range-btn-list {
-  margin: 7px 0 0;
+  margin: 1px;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -43,6 +55,7 @@
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 5px;
+  font-family: "Vazirmatn FD";
 }
 .picker-box-range .range-btn-list button:hover {
   cursor: pointer;
@@ -238,8 +251,6 @@
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   width: 300px;
   height: 100%;
-  margin-top: 5px;
-  padding: 0 5px;
   background-color: transparent;
   border: 1px solid transparent;
   color: transparent;
@@ -307,7 +318,7 @@
   border-bottom: 1px solid transparent;
 }
 .frame .days span {
-  width: 42px;
+  width: 41px;
   padding: 3px 0;
 }
 .frame .days .names {
@@ -1963,4 +1974,41 @@
 }
 .frame.darkgray .btn-list button:hover {
   box-shadow: 0 0 15px -3px #90A4AE;
+}
+
+@media (max-width: 768px) {
+  .picker-pack .picker-box-range .title-range {
+    width: 100%;
+  }
+  .picker-pack .picker-box-range .frame-box {
+    display: block !important;
+  }
+  .picker-pack .picker-box-range .range-btn-list {
+    display: block !important;
+    padding: 4px;
+    margin: 4px;
+  }
+  .picker-pack .picker-box-range .input-group-picker input {
+    min-width: 300px;
+    width: 100px;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+  .picker-pack .picker-box-range .input-group-picker {
+    width: 100%;
+    position: relative;
+  }
+  /*show button click*/
+  .picker-pack .picker-box-range .input-group-picker .title-range {
+    width: 100%;
+  }
+  .picker-pack .picker-box-range .input-group-picker .range-btn-list {
+    display: block !important;
+    padding: 4px;
+    margin: 4px;
+  }
+  .frame-position-zo {
+    max-height: 520px !important;
+    max-width: 300px;
+  }
 }/*# sourceMappingURL=picker.css.map */
