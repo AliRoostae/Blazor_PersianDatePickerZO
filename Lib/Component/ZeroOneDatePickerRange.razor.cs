@@ -6,7 +6,7 @@ namespace Blazor_PersianDatePickerZO.Component
     partial class ZeroOneDatePickerRange : BaseDatePickerRangeZO
     {
         [Parameter]
-        public bool PupupDatePickerZO { get; set; }
+        public bool PopupDatePickerZO { get; set; }
 
         [Parameter]
         public EventCallback<string> DateFa { get; set; }

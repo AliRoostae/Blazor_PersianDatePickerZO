@@ -9,7 +9,7 @@ namespace Blazor_PersianDatePickerZO.Component
         private new bool SingelUs { get; set; }
 
         [Parameter]
-        public bool PupupDatePickerZO { get; set; }
+        public bool PopupDatePickerZO { get; set; }
 
         [Parameter]
         public EventCallback<string> DateFa { get; set; }

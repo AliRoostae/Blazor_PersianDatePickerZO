@@ -29,9 +29,22 @@ button {
         width: 300px !important;
     }
 
+.frame-position-zo{
+ z-index:999;
+    position:absolute;
+    max-height:510px !important;
+}
+
+.frame{
+    margin-top :0px;
+    padding:0px;
+}
+
+.picker-box-range .title-range, .picker-box-range .range-btn-list{
+    margin:1px;
+}
+
 @media (max-width: 768px) {
-
-
     .picker-pack .picker-box-range .title-range {
         width: 100%;
     }
