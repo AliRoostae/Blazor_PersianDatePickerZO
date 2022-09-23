@@ -1,9 +1,9 @@
-﻿## ZO Blazor Persian Date Picker
+## ZO Blazor Persian Date Picker
 This Date picker is a blazor component written using C# only and no javascript. This date picker only works with jalali calender.
 We created this component for the personal use but we decided to publish it on github for other people that feel the need for a persian date picker 
 component like us. Note that we didn't use culture in this calender since it was going to be used only for the jalali/persian calender. 
 
-# ![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/PersianDatePicker.jpg)
+![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/PersianDatePicker.jpg) | ![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/changeClock.gif) |
 
 
 ## Prerequisites
@@ -97,12 +97,3 @@ yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or ..
 ```
 <ZeroOneDatePicker  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  />
 ```
-
-# ![PersianDatePicker](https://raw.githubusercontent.com/AliRoostae/Blazor_PersianDatePickerZO/master/img/changeClock.gif)
-
-
-
-
-
-
-
