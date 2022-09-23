@@ -13,7 +13,7 @@ component like us. Note that we didn't use culture in this calender since it was
  
 
 ### Quick Installation Guide
-Install Package
+[Install Package](https://www.nuget.org/packages/Blazor_PersianDatePickerZO/ "nuget")
 ```
 Install-Package Blazor_PersianDatePickerZO
 ```
