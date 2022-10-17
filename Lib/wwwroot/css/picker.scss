@@ -32,7 +32,8 @@ $clock_size: 250;
 .picker-box {
   .input-group-picker {
     input {
-      width: $width_single +px;
+      max-width: $width_single +px;
+      width: 100%;
     }
   }
 }
@@ -41,7 +42,8 @@ $clock_size: 250;
   color: transparent;
   .input-group-picker {
     input {
-      width: $width_single+30 + px;
+      max-width: $width_single + px;
+      width: 100%;
     }
   }
 

@@ -21,14 +21,16 @@
 }
 
 .picker-box .input-group-picker input {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .picker-box-range {
   color: transparent;
 }
 .picker-box-range .input-group-picker input {
-  width: 330px;
+  max-width: 300px;
+  width: 100%;
 }
 .picker-box-range .frame-box {
   display: flex;
