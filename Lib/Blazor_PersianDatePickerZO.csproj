@@ -9,7 +9,7 @@
     <PackageIcon>calendar.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO</RepositoryUrl>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <Company>PZOMK</Company>
     <Description>Persian  DatePicker Blazor Library</Description>
     <PackageProjectUrl>https://github.com/AliRoostae/Blazor_PersianDatePickerZO/</PackageProjectUrl>
