@@ -14,14 +14,16 @@
   text-align: center;
   direction: ltr !important;
 }
-.picker-box .input-group-picker span,
-.picker-box-range .input-group-picker span {
+.picker-box .input-group-picker,
+.picker-box-range .input-group-picker {
+  display: flex;
+}
+.picker-box .input-group-picker button,
+.picker-box-range .input-group-picker button {
   font-size: small;
-  margin-left: -30px;
 }
 
 .picker-box .input-group-picker input {
-  max-width: 300px;
   width: 100%;
 }
 
@@ -29,7 +31,6 @@
   color: transparent;
 }
 .picker-box-range .input-group-picker input {
-  max-width: 300px;
   width: 100%;
 }
 .picker-box-range .frame-box {

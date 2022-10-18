@@ -22,9 +22,10 @@ $clock_size: 250;
   text-align: center;
   direction: ltr !important;
   .input-group-picker {
-    span {
+    display: flex;
+    button {
       font-size: small;
-      margin-left: -30px;
+      
     }
   }
 }
@@ -32,7 +33,7 @@ $clock_size: 250;
 .picker-box {
   .input-group-picker {
     input {
-      max-width: $width_single +px;
+      
       width: 100%;
     }
   }
@@ -42,7 +43,7 @@ $clock_size: 250;
   color: transparent;
   .input-group-picker {
     input {
-      max-width: $width_single + px;
+     
       width: 100%;
     }
   }
