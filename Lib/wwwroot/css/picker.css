@@ -1991,12 +1991,7 @@
     padding: 4px;
     margin: 4px;
   }
-  .picker-pack .picker-box-range .input-group-picker input {
-    min-width: 300px;
-    width: 100px;
-    margin-right: 3px;
-    margin-left: 3px;
-  }
+ 
   .picker-pack .picker-box-range .input-group-picker {
     width: 100%;
     position: relative;
