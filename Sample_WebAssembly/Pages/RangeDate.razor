@@ -17,14 +17,16 @@
             </code>
         </pre>
 
+
+
     </div>
     <div class="row mt-3">
 
         <div class="col-md-6 col-sm-12 p-1 align-commponent">
-            <ZeroOneDatePickerRange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+            <ZeroOneDatePickerRange @bind-SelectDateFirst="@dateFirst" @bind-SelectDateLast="@dateLast" ThemePickerZO="ThemeDatePickerZO.darkblue" />
         </div>
         <div class="col-md-6 col-sm-12 p-1 ">
-            <ZeroOneDatePickerRange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast" ThemePickerZO="ThemeDatePickerZO.darkblue" PopupDatePickerZO="true" />
+            <ZeroOneDatePickerRange @bind-SelectDateFirst="@dateFirst" @bind-SelectDateLast="@dateLast" ThemePickerZO="ThemeDatePickerZO.darkblue" PopupDatePickerZO="true" />
         </div>
     </div>
 </div>
