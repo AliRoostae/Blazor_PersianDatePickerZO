@@ -1,0 +1,127 @@
+﻿@page "/FormatDate"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+
+<div class="container-fluid">
+    <div class="row">
+        <h6 class="text-black float-end m-2"><span>با استفاده از <span>Parameter Format </span>میتوانید نوع خروجی خود را مشخص کنید</span></h6>
+        <pre>
+            <code>
+                < ZeroOneDatePickerRange Format="TypeFormat" />
+            </code>
+        </pre>
+        <div class="col-md-6 col-sm-12 align-commponent">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="yy/MM/dd" />
+            </div>
+            <div class="col-md-6 col-sm-12 align-commponent">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PopupDatePickerZO="true" />
+            </div>
+            <div class="col-md-6 col-sm-12 align-commponent">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM" ThemePickerZO="ThemeDatePickerZO.lightorange" />
+            </div>
+            <div class="col-md-6 col-sm-12 align-commponent">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM سال yyyy ساعت hh:mm:ss" ThemePickerZO="ThemeDatePickerZO.lightblue" />
+            </div>
+    </div>
+    <br />
+    <br />
+
+    <div class="row">
+        <p class="text-center">
+            <span class="text-center spacingWord">yyyy/MM/dd hh:mm:ss         1359/04/09 21:00:00  </span>
+            <hr class="divider"> <br />
+            <span class="text-center spacingWord">  yy/MM/dd hh:mm:ss            59/09/04 21:00:00   </span>
+            <hr class="divider"> <br />
+            <span class="text-center spacingWord">  yyyy/M/d hh:mm:ss            1359/4/9 21:00:00     </span>
+            <hr class="divider"> <br />
+            <span class="text-center spacingWord">  MMM                           تیر   </span>
+            <hr class="divider"> <br />
+            <span class="text-center spacingWord">ddd                           یک شنبه  </span>
+            <hr class="divider"> <br />
+            <span class="text-center spacingWord">D                                نهم  </span>
+        </p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+@code {
+
+    DateTime _date = DateTime.Now;
+    string _dateFa = string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+
+
+
+}
+
+@*
+
+@page "/FormatDate"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+
+
+<div class="container-fluid">
+    <div class="row">
+        <pre>
+            <code>
+                < ZeroOneDatePicker Format="TypeFormat" />
+            </code>
+        </pre>
+        <h6 class="text-black float-end m-2"><span>نمونه های فرمت را در اینجا ببنید</span></h6>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4 col-sm-12 text-center p-1 pr-5 mt-3">
+            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="yy/MM/dd" />
+        </div>
+        <div class="col-md-4 col-sm-12 text-center p-1 pr-5 mt-3">
+            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">yyyy/MM/dd hh:mm:ss  1359/04/09 21:00:00  </p>
+        </div>
+        <hr class="divider">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">  yy/MM/dd hh:mm:ss  59/09/04 21:00:00   </p>
+        </div>
+        <hr class="divider">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">  yyyy/M/d hh:mm:ss   1359/4/9 21:00:00     </p>
+        </div>
+        <hr class="divider">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">  MMM     تیر   </p>
+        </div>
+        <hr class="divider">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">ddd  یکشنبه  </p>
+        </div>
+        <hr class="divider">
+        <div class="col-12 text-center mt-2">
+            <p class="spacingWord">D    نهم  </p>
+        </div>
+    </div>
+</div>
+
+
+@code {
+
+    DateTime _date = DateTime.Now;
+    string _dateFa = string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+
+}*@

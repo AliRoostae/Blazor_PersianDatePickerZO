@@ -1,0 +1,147 @@
+﻿
+@page "/Theme"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+
+<div class="container-fluid">
+    <div class="row ">
+        <h6 class="text-black float-end m-2">
+            <span>تم های این تقویم فارسی در یک  <span>enum</span> تعریف میشود که عبارت اند از:</span>
+        </h6>
+        <pre>
+        <code>
+                 public enum ThemeDatePickerZO
+                 {
+                     lightgreen,
+                     lightred,
+                     lightblue,
+                     lightpurple,
+                     lightorange,
+                     lightgray,
+                     darkgreen,
+                     darkred,
+                     darkblue,
+                     darkpurple,
+                     darkorange,
+                     darkgray    
+                 }
+            </code>
+        </pre>
+
+
+        
+
+        
+
+        <div class="row mt-3">
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <p class="text-center mt-4">@_date</p>
+                <hr class="divider">
+                <p class="text-center">@_dateFa</p>
+                <hr class="divider">
+                <span class="text-center"><strong>default theme</strong></span>
+                <hr class="divider">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="false" />
+            </div>
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="false" ThemePickerZO="ThemeDatePickerZO.lightorange" />
+            </div>
+            <div class="col-md-4 col-sm-6 text-center p-2">
+                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="false" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+    DateTime _date = DateTime.Now;
+    string _dateFa = string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+}
+
+
+
+
+
+@*@page "/"
+@using Blazor_PersianDatePickerZO.Component
+@using Blazor_PersianDatePickerZO.Hellper
+<div class="row">
+    <div class="col text-center">
+           <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" />
+    <br/>
+    <br/>
+       <div >@_date</div>
+     <hr class="divider">
+       <div >@_dateFa</div>
+       <hr class="divider">
+       <span>test theme default</span>
+       <hr class="divider">
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" />
+    </div>
+    <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.lightorange"/>
+      
+     <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/> 
+      <br/>
+      <br/>
+ 
+       <hr class="divider">
+    
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  ThemePickerZO="ThemeDatePickerZO.darkorange" />
+    </div>
+    <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" ThemePickerZO="ThemeDatePickerZO.lightblue"/>
+      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/> 
+      <br/>
+      <br/>
+       <hr class="divider">
+
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.darkblue" />
+    </div>
+    <div class="col text-center">
+          <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
+        
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/> 
+      <br/>
+      <br/>
+       <hr class="divider">
+   
+     <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa"  ThemePickerZO="ThemeDatePickerZO.darkred" />
+    </div>
+
+</div>
+
+
+@code{
+    DateTime _date = DateTime.Now;
+    string _dateFa=string.Empty;
+    void DateFa(string argo)
+    {
+        _dateFa = argo;
+    }
+
+
+}
+*@
