@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class YearMonth :  BaseDatePickerZO
+    partial class YearMonthZO :  BaseDatePickerZO
     {
 
         bool _monthShow;

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class ZeroOneDatePicker : BaseDatePickerZO
+    partial class DatePickerZO : BaseDatePickerZO
     {
 
         private new bool SingelUs { get; set; }

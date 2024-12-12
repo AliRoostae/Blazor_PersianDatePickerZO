@@ -7,20 +7,20 @@
         <h6 class="text-black float-end m-2"><span>با استفاده از <span>Parameter Format </span>میتوانید نوع خروجی خود را مشخص کنید</span></h6>
         <pre>
             <code>
-                < ZeroOneDatePickerRange Format="TypeFormat" />
+                < DatePickerZORange Format="TypeFormat" />
             </code>
         </pre>
         <div class="col-md-6 col-sm-12 align-commponent">
-                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="yy/MM/dd" />
+                <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="yy/MM/dd" />
             </div>
             <div class="col-md-6 col-sm-12 align-commponent">
-                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PopupDatePickerZO="true" />
+                <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PopupDatePickerZO="true" />
             </div>
             <div class="col-md-6 col-sm-12 align-commponent">
-                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM" ThemePickerZO="ThemeDatePickerZO.lightorange" />
+                <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM" ThemePickerZO="ThemeDatePickerZO.lightorange" />
             </div>
             <div class="col-md-6 col-sm-12 align-commponent">
-                <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM سال yyyy ساعت hh:mm:ss" ThemePickerZO="ThemeDatePickerZO.lightblue" />
+                <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="ddd D MMM سال yyyy ساعت hh:mm:ss" ThemePickerZO="ThemeDatePickerZO.lightblue" />
             </div>
     </div>
     <br />
@@ -74,17 +74,17 @@
     <div class="row">
         <pre>
             <code>
-                < ZeroOneDatePicker Format="TypeFormat" />
+                < DatePickerZO Format="TypeFormat" />
             </code>
         </pre>
         <h6 class="text-black float-end m-2"><span>نمونه های فرمت را در اینجا ببنید</span></h6>
     </div>
     <div class="row mt-3">
         <div class="col-md-4 col-sm-12 text-center p-1 pr-5 mt-3">
-            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="yy/MM/dd" />
+            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PupupDatePickerZO="true" Format="yy/MM/dd" />
         </div>
         <div class="col-md-4 col-sm-12 text-center p-1 pr-5 mt-3">
-            <ZeroOneDatePicker @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
+            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" ThemePickerZO="ThemeDatePickerZO.lightorange" PupupDatePickerZO="true" />
         </div>
     </div>
     <div class="row mt-3">

@@ -7,7 +7,7 @@ component like us. Note that we didn't use culture in this calender since it was
 
 
 ## Prerequisites
-- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0) for v6.x.x 
+- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0) 
 
 
  
@@ -32,7 +32,7 @@ Add the following imports to `_Imports.razor`
 ## Usage
 ### Date Picker Usage 
 ```
-< ZeroOneDatePicker PupupDatePickerZO="true OR false" @bind-SelectDate="@value">
+< DatePickerZO PupupDatePickerZO="true OR false" @bind-SelectDate="@value">
 
 @code {
   public DateTime value { get; set; } 
@@ -41,7 +41,7 @@ Add the following imports to `_Imports.razor`
 
 ### Range Date Picker Usage 
 ```
-<ZeroOneDatePickerRange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast"  />
+<DatePickerZORange SelectDateFirst="@dateFirst" SelectDateLast="@dateLast"  />
 
 @code {
   public DateTime dateFirst { get; set; } 
@@ -52,7 +52,7 @@ Add the following imports to `_Imports.razor`
 ### Theming
 use one of the following enum members to change the theme of the date picker
 ```
-< ZeroOneDatePicker ThemePickerZO="ThemeDatePickerZO.darkblue">
+< DatePickerZO ThemePickerZO="ThemeDatePickerZO.darkblue">
 ```
 ```
 enum ThemeDatePickerZO
@@ -91,12 +91,12 @@ There are 2 different time picker components with different looks that can be us
 
 #### year and month
 ```
-<YearMonth   @bind-SelectDate="@value" />
+<YearMonthZO   @bind-SelectDate="@value" />
 ```
 
 #### chang format
 Format="TypeFormat"
 yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or ..
 ```
-<ZeroOneDatePicker  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  />
+<DatePickerZO  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  />
 ```
