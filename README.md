@@ -22,6 +22,9 @@ Add the following link to `index.html` (client-side) or `_Host.cshtml` (server-s
 ```
 <link href="_content/Blazor_PersianDatePickerZO/AppDatePickerZeroOne.css" rel="stylesheet" />
 ```
+```
+<script src="_content/Blazor_PersianDatePickerZO/AppDatePickerZeroOne.js"></script>
+```
 
 Add the following imports to `_Imports.razor`
 ```
@@ -100,3 +103,6 @@ yyyy/MM/dd  Or  yy/MM/dd  Or  MMM  Or ddd Or ..
 ```
 <DatePickerZO  Format="ddd D MMM سال yyyy ساعت hh:mm:ss"  />
 ```
+
+
+

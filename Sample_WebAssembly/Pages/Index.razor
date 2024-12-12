@@ -31,7 +31,19 @@
             <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa"  PopupDatePickerZO="false" />
         </div>
         <div class="col-md-4 col-sm-12 align-commponent">
-            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" />
+            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true"  />
+        </div>
+        <h6 class="text-black float-end m-2"><span>برای عدم نمایش زمان در فرمت زمان را حذف کنید</span></h6>
+        <pre>
+        <code>
+                < DatePickerZO  Format="yyyy/MM/DD"/>
+            </code>
+        </pre>
+        <div class="col-md-4 col-sm-12 align-commponent">
+            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="false" Format="yyyy/MM/dd" />
+        </div>
+        <div class="col-md-4 col-sm-12 align-commponent">
+            <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="yyyy/MM/dd" />
         </div>
     </div>
 </div>

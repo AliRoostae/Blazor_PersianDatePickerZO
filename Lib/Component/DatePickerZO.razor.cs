@@ -1,10 +1,51 @@
 ﻿using Blazor_PersianDatePickerZO.Hellper;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
+using System.Threading.Tasks;
 
 namespace Blazor_PersianDatePickerZO.Component
 {
-    partial class DatePickerZO : BaseDatePickerZO
+    partial class DatePickerZO : BaseDatePickerZO, IAsyncDisposable
     {
+        static int Id = 0;
+        internal string _dpID { get; set; } = $"DatePickerzoID{++Id}";
+       
+        private DotNetObjectReference<DatePickerZO> dotNetHelper;
+        [Inject]
+        private IJSRuntime JS { get; set; } 
+        protected override async Task OnAfterRenderAsync(bool firstRender) {
+            if (firstRender)
+            {
+                try
+                {
+                    dotNetHelper = DotNetObjectReference.Create(this);
+                    await JS.InvokeVoidAsync("outsideClickHandler", dotNetHelper, _dpID);
+                }
+                catch 
+                {
+
+                    Console.WriteLine("The DatePicker --AppDatePickerZeroOne-- file is missing or not imported.");
+                }
+               
+            }
+        }
+        public async ValueTask DisposeAsync()
+        {
+            if (dotNetHelper != null)
+            {
+                dotNetHelper.Dispose();
+            }
+        }
+       [JSInvokable]
+        public void OnOutsideClick()
+        {
+            if(_show)
+            ColsePopup();
+
+
+
+         }
+
 
         private new bool SingelUs { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿@inherits BaseDatePickerZO
-<div class="picker-pack">
+
+<div class="picker-pack" id=@_dpID>
     <div class="picker-box">
 
 
@@ -12,7 +13,7 @@
             </div>
             if (_show)
             {
-                <div class="frame-position-zo frame @ThemePickerZO">
+                <div class="frame-position-zo frame @ThemePickerZO"  >
                     <div class="title">@_dateFa</div>
                     <YearMonthZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
                     <DayZO SingelUs="false" @bind-SelectDate="@SelectDate" MaxDate="@MaxDate" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" Close="ColsePopup" />
