@@ -11,6 +11,9 @@ namespace Blazor_PersianDatePickerZO.Component
         [Parameter]
         public bool PopupDatePickerZO { get; set; }
 
+
+        
+
         [Parameter]
         public EventCallback<string> DateFa { get; set; }
 
@@ -25,6 +28,7 @@ namespace Blazor_PersianDatePickerZO.Component
         public string Format { get; set; } = "yyyy/MM/dd hh:mm:ss";
 
         string _dateFa => SelectDate.FormatDate(Format);
+        bool _timeShowZO => Format.ShowTimeZoDP();
         DateTime _olddate;
         bool _show;
         void ShowPicker()

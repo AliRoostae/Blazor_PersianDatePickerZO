@@ -23,35 +23,46 @@ namespace Blazor_PersianDatePickerZO.Hellper
             , "بیست و یکم"  , "بیست و دوم" , "بیست و سوم" , "بیست و چهارم" , "بیست و پنجم" , "بیست و ششم" , "بیست و هفتم", "بیست و هشتم" , "بیست و نهم" , "سی ام" , "سی و یکم"
         };
 
-        public static string WeekDayPersian(this DateTime argo)
+        /// <summary>
+        /// Converts the day of the week to Persian.
+        /// </summary>
+        public static string WeekDayPersian(this DateTime argo) => argo.DayOfWeek switch
         {
-            switch (argo.DayOfWeek)
-            {
-                case DayOfWeek.Sunday: return "یک شنبه";
-                case DayOfWeek.Monday: return "دو شنبه";
-                case DayOfWeek.Tuesday: return "سه شنبه";
-                case DayOfWeek.Wednesday: return "چهار شنبه";
-                case DayOfWeek.Thursday: return "پنج شنبه";
-                case DayOfWeek.Friday: return "جمعه";
-                case DayOfWeek.Saturday: return "شنبه";
-                default: return "خطا";
-            }
-        }
-        public static string FormatDate(this DateTime date, string format)
-        {
-            return format.Replace("Y", "y")
-                          .Replace("yyyy", date.YearFa().ToString("D4"))
-                          .Replace("yy", date.YearFa().ToString("D2"))
-                          .Replace("MMM", MonthFaName[date.MonthFa()])
-                          .Replace("MM", date.MonthFa().ToString("D2"))
-                          .Replace("M", date.MonthFa().ToString())
-                          .Replace("D", NmeDayPersian[date.DayFa()])
-                          .Replace("ddd", date.WeekDayPersian())
-                          .Replace("dd", date.DayFa().ToString("D2"))
-                          .Replace("d", date.DayFa().ToString())
-                          .Replace("hh", date.Hour.ToString("D2"))
-                          .Replace("mm", date.Minute.ToString("D2"))
-                          .Replace("ss", date.Second.ToString("D2"));
-        }
+            DayOfWeek.Sunday => "یک شنبه",
+            DayOfWeek.Monday => "دو شنبه",
+            DayOfWeek.Tuesday => "سه شنبه",
+            DayOfWeek.Wednesday => "چهار شنبه",
+            DayOfWeek.Thursday => "پنج شنبه",
+            DayOfWeek.Friday => "جمعه",
+            DayOfWeek.Saturday => "شنبه",
+            _ => "خطا",
+        };
+
+
+        /// <summary>
+        /// Formats the Persian date based on the specified format.
+        /// </summary>
+        public static string FormatDate(this DateTime date, string format) => format.Replace("Y", "y")
+                         .Replace("yyyy", date.YearFa().ToString("D4"))
+                         .Replace("yy", date.YearFa().ToString("D2"))
+                         .Replace("MMM", MonthFaName[date.MonthFa()])
+                         .Replace("MM", date.MonthFa().ToString("D2"))
+                         .Replace("M", date.MonthFa().ToString())
+                         .Replace("D", NmeDayPersian[date.DayFa()])
+                         .Replace("ddd", date.WeekDayPersian())
+                         .Replace("dd", date.DayFa().ToString("D2"))
+                         .Replace("d", date.DayFa().ToString())
+                         .Replace("hh", date.Hour.ToString("D2"))
+                         .Replace("mm", date.Minute.ToString("D2"))
+                         .Replace("ss", date.Second.ToString("D2"));
+
+        public static bool ShowTimeZoDP(this string format) =>
+            !string.IsNullOrEmpty(format) &&
+            format.Contains("ss") &&
+            format.Contains("mm") &&
+            format.Contains("hh");
+
+
+
     }
 }
