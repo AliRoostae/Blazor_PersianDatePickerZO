@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace Blazor_PersianDatePickerZO.Hellper
+namespace Blazor_PersianDatePickerZO.Helper
 {
     internal static class DatePickerZeroOneHellper
     {

@@ -1,4 +1,4 @@
-﻿using Blazor_PersianDatePickerZO.Hellper;
+﻿using Blazor_PersianDatePickerZO.Helper;
 using Microsoft.AspNetCore.Components;
 
 namespace Blazor_PersianDatePickerZO.Component

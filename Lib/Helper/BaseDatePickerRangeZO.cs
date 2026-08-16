@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor_PersianDatePickerZO.Hellper
+namespace Blazor_PersianDatePickerZO.Helper
 {
     public abstract class BaseDatePickerRangeZO : BaseDatePickerZO
     {

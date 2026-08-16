@@ -1,4 +1,4 @@
-﻿namespace Blazor_PersianDatePickerZO.Hellper
+﻿namespace Blazor_PersianDatePickerZO.Helper
 {
 
     internal enum TimeSelect
