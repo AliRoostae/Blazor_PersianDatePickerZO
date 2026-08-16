@@ -19,8 +19,14 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Restore
+        run: dotnet restore Lib/Blazor_PersianDatePickerZO.csproj
+
+      - name: Build
+        run: dotnet build Lib/Blazor_PersianDatePickerZO.csproj -c Release --no-restore
+
       - name: Pack
-        run: dotnet pack Lib/Blazor_PersianDatePickerZO.csproj -c Release -o nupkg
+        run: dotnet pack Lib/Blazor_PersianDatePickerZO.csproj -c Release --no-build -o nupkg
 
       - name: NuGet login (Trusted Publishing)
         uses: NuGet/login@v1
