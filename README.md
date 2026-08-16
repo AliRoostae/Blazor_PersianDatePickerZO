@@ -7,7 +7,7 @@ component like us. Note that we didn't use culture in this calender since it was
 
 
 ## Prerequisites
-- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0) 
+- [.NET 10.0](https://dotnet.microsoft.com/download/dotnet/10.0)
 
 
  
