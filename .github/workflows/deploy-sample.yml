@@ -1,0 +1,51 @@
+name: Deploy Sample to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Publish sample
+        run: dotnet publish Sample_WebAssembly/Sample_WebAssembly.csproj -c Release -o release
+
+      - name: Fix base href for GitHub Pages
+        run: sed -i 's|<base href="/" />|<base href="/Blazor_PersianDatePickerZO/" />|g' release/wwwroot/index.html
+
+      - name: Add 404 fallback for client-side routing
+        run: cp release/wwwroot/index.html release/wwwroot/404.html
+
+      - name: Add .nojekyll
+        run: touch release/wwwroot/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: release/wwwroot
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment
