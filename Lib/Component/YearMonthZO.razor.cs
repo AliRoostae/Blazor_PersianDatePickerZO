@@ -14,6 +14,35 @@ namespace Blazor_PersianDatePickerZO.Component
         bool _monthShow;
         bool _yearhShow;
 
+
+        private int _lastYearFa;
+        private int _lastMonthFa;
+        private ThemeDatePickerZO _lastTheme;
+        private bool _lastSingelUs;
+        private bool _lastYearhShow;
+        private bool _lastMonthShow;
+
+        protected override bool ShouldRender()
+        {
+            var yearFa = SelectDate.YearFa();
+            var monthFa = SelectDate.MonthFa();
+
+            bool changed = yearFa != _lastYearFa
+                        || monthFa != _lastMonthFa
+                        || ThemePickerZO != _lastTheme
+                        || SingelUs != _lastSingelUs
+                        || _yearhShow != _lastYearhShow
+                        || _monthShow != _lastMonthShow;
+
+            _lastYearFa = yearFa;
+            _lastMonthFa = monthFa;
+            _lastTheme = ThemePickerZO;
+            _lastSingelUs = SingelUs;
+            _lastYearhShow = _yearhShow;
+            _lastMonthShow = _monthShow;
+
+            return changed;
+        }
         void ShowPanel(bool yearT_monthF)
         {
             if (yearT_monthF)

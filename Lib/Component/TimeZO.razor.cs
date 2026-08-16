@@ -6,6 +6,29 @@ namespace Blazor_PersianDatePickerZO.Component
     partial class TimeZO : BaseDatePickerZO
     {
 
+
+        private int _lastHour;
+        private int _lastMinute;
+        private int _lastSecond;
+        private ThemeDatePickerZO _lastTheme;
+        private bool _lastSingelUs;
+
+        protected override bool ShouldRender()
+        {
+            bool changed = SelectDate.Hour != _lastHour
+                        || SelectDate.Minute != _lastMinute
+                        || SelectDate.Second != _lastSecond
+                        || ThemePickerZO != _lastTheme
+                        || SingelUs != _lastSingelUs;
+
+            _lastHour = SelectDate.Hour;
+            _lastMinute = SelectDate.Minute;
+            _lastSecond = SelectDate.Second;
+            _lastTheme = ThemePickerZO;
+            _lastSingelUs = SingelUs;
+
+            return changed;
+        }
         int Hours
         {
             get => SelectDate.Hour;

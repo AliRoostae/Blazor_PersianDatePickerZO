@@ -10,33 +10,52 @@ namespace Blazor_PersianDatePickerZO.Component
         static int Id = 0;
         internal string _dpID { get; set; } = $"DatePickerzoID{++Id}";
        
-        private DotNetObjectReference<DatePickerZO> dotNetHelper;
+       
         [Inject]
-        private IJSRuntime JS { get; set; } 
-        protected override async Task OnAfterRenderAsync(bool firstRender) {
+        private IJSRuntime JS { get; set; }
+        private IJSObjectReference? _module;
+        private DotNetObjectReference<DatePickerZO>? dotNetHelper;
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
             if (firstRender)
             {
                 try
                 {
-                    dotNetHelper = DotNetObjectReference.Create(this);
-                    await JS.InvokeVoidAsync("outsideClickHandler", dotNetHelper, _dpID);
-                }
-                catch 
-                {
+                    _module = await JS.InvokeAsync<IJSObjectReference>(
+                        "import", "./_content/Blazor_PersianDatePickerZO/AppDatePickerZeroOne.js");
 
-                    Console.WriteLine("The DatePicker --AppDatePickerZeroOne-- file is missing or not imported.");
+                    dotNetHelper = DotNetObjectReference.Create(this);
+                    await _module.InvokeVoidAsync("outsideClickHandler", dotNetHelper, _dpID);
                 }
-               
+                catch (JSDisconnectedException) { }
+                catch (JSException ex)
+                {
+                    Console.WriteLine($"Failed to cleanup DatePicker JS listener: {ex.Message}");
+                }
             }
         }
+
         public async ValueTask DisposeAsync()
         {
             if (dotNetHelper != null)
             {
+                try
+                {
+                    if (_module != null)
+                    {
+                        await _module.InvokeVoidAsync("removeOutsideClickHandler", _dpID);
+                        await _module.DisposeAsync();
+                    }
+                }
+                catch (JSDisconnectedException) { }
+
                 dotNetHelper.Dispose();
+                dotNetHelper = null;
             }
         }
-       [JSInvokable]
+
+        [JSInvokable]
         public void OnOutsideClick()
         {
             if(_show)

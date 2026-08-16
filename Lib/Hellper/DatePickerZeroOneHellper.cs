@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Blazor_PersianDatePickerZO.Hellper
 {
@@ -14,9 +15,8 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
         public static int OneDayMonthDayWeek(this DateTime argo) => (int)Persian.ToDateTime(argo.YearFa(), argo.MonthFa(), 1, 0, 0, 0, 1, PersianCalendar.PersianEra).DayOfWeek;
 
-        internal static string[] MonthFaName => new[]
-        { "", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
-        internal static string[] NmeDayPersian => new[]
+        internal static readonly string[] MonthFaName = { "", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
+        internal static readonly string[] NmeDayPersian =
          {
           "",  "اول" ,"دوم" , "سوم"  , "چهارم"  , "پنجم"  , "ششم"  , "هفتم"  , "هشتم"  , "نهم"  , "دهم"
             , "یازدهم"  , "دوازدهم"  , "سیزدهم"  , "چهاردهم"  , "پانزدهم"  , "شانزدهم"  , "هفدهم"  , "هجدهم"  , "نوزدهم"  , "بیستم"
@@ -37,24 +37,29 @@ namespace Blazor_PersianDatePickerZO.Hellper
             DayOfWeek.Saturday => "شنبه",
             _ => "خطا",
         };
+        // با Regex  فقط روی ‌ ‌  
 
+        private static readonly Regex TokenRegex = new(@"yyyy|yy|MMM|MM|M|ddd|dd|d|D|hh|mm|ss", RegexOptions.Compiled);
 
-        /// <summary>
-        /// Formats the Persian date based on the specified format.
-        /// </summary>
-        public static string FormatDate(this DateTime date, string format) => format.Replace("Y", "y")
-                         .Replace("yyyy", date.YearFa().ToString("D4"))
-                         .Replace("yy", date.YearFa().ToString("D2"))
-                         .Replace("MMM", MonthFaName[date.MonthFa()])
-                         .Replace("MM", date.MonthFa().ToString("D2"))
-                         .Replace("M", date.MonthFa().ToString())
-                         .Replace("D", NmeDayPersian[date.DayFa()])
-                         .Replace("ddd", date.WeekDayPersian())
-                         .Replace("dd", date.DayFa().ToString("D2"))
-                         .Replace("d", date.DayFa().ToString())
-                         .Replace("hh", date.Hour.ToString("D2"))
-                         .Replace("mm", date.Minute.ToString("D2"))
-                         .Replace("ss", date.Second.ToString("D2"));
+        public static string FormatDate(this DateTime date, string format)
+        {
+            return TokenRegex.Replace(format, m => m.Value switch
+            {
+                "yyyy" => date.YearFa().ToString("D4"),
+                "yy" => date.YearFa().ToString("D2"),
+                "MMM" => MonthFaName[date.MonthFa()],
+                "MM" => date.MonthFa().ToString("D2"),
+                "M" => date.MonthFa().ToString(),
+                "ddd" => date.WeekDayPersian(),
+                "dd" => date.DayFa().ToString("D2"),
+                "d" => date.DayFa().ToString(),
+                "D" => NmeDayPersian[date.DayFa()],
+                "hh" => date.Hour.ToString("D2"),
+                "mm" => date.Minute.ToString("D2"),
+                "ss" => date.Second.ToString("D2"),
+                _ => m.Value
+            });
+        }
 
         public static bool ShowTimeZoDP(this string format) =>
             !string.IsNullOrEmpty(format) &&
@@ -65,4 +70,7 @@ namespace Blazor_PersianDatePickerZO.Hellper
 
 
     }
+
+
+
 }
