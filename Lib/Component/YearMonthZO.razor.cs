@@ -95,7 +95,7 @@ namespace Blazor_PersianDatePickerZO.Component
           
             var tempselect = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), argo, 1, 0, 0, 0, 1, PersianCalendar.PersianEra);
             var day = SelectDate.DayFa() > tempselect.DaysInMonth() ? tempselect.DaysInMonth() : SelectDate.DayFa();
-            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), argo, day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
+            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), argo, day, Hour, Minute, Second, 0, PersianCalendar.PersianEra);
 
             SelectDateChanged.InvokeAsync(SelectDate);
             _monthShow = _yearhShow = false;
@@ -142,7 +142,7 @@ namespace Blazor_PersianDatePickerZO.Component
 
             var tempselect = DatePickerZeroOneHellper.Persian.ToDateTime(argo, SelectDate.MonthFa(), 1, 0, 0, 0, 1, PersianCalendar.PersianEra);
             var day = SelectDate.DayFa() > tempselect.DaysInMonth() ? tempselect.DaysInMonth() : SelectDate.DayFa();
-            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(argo, SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
+            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(argo, SelectDate.MonthFa(), day, Hour, Minute, Second, 0, PersianCalendar.PersianEra);
             SelectDateChanged.InvokeAsync(SelectDate);
             
         }

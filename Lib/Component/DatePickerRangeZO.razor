@@ -15,15 +15,15 @@
                     <div class="frame-box">
                         <div class=" frame from @ThemePickerZO">
                             <div class="title">شروع : @_dateFaFirst</div>
-                            <YearMonthZO SingelUs="false" @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-                            <DayZO SingelUs="false" @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-                            <TimeZO SingelUs="false" @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                            <YearMonthZO SingelUs="false" SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
+                            <DayZO SingelUs="false" SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
+                            <TimeZO SingelUs="false" SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
                         </div>
                         <div class="frame to @ThemePickerZO">
                             <div class="title">پایان : @_dateFaLast</div>
-                            <YearMonthZO SingelUs="false" @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
-                            <DayZO SingelUs="false" @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
-                            <TimeZO SingelUs="false" @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                            <YearMonthZO SingelUs="false" SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateLastChanged"/>
+                            <DayZO SingelUs="false" SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO"  SelectDateChanged="OnSelectDateLastChanged" />
+                            <TimeZO SingelUs="false" SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO"  SelectDateChanged="OnSelectDateLastChanged"/>
                         </div>
                     </div>
                     <div class="range-btn-list">
@@ -43,15 +43,15 @@
                 <div class="frame-box">
                     <div class="frame from @ThemePickerZO">
                         <div class="title">شروع : @_dateFaFirst</div>
-                        <YearMonthZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-                        <DayZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
-                        <TimeZO @bind-SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" />
+                        <YearMonthZO SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
+                        <DayZO SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
+                        <TimeZO SelectDate="@SelectDateFirst" MaxDate="@SelectDateLast" MinDate="@MinDate" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateFirstChanged" />
                     </div>
                     <div class="frame to @ThemePickerZO">
                         <div class="title">پایان : @_dateFaLast</div>
-                        <YearMonthZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
-                        <DayZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
-                        <TimeZO @bind-SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" />
+                        <YearMonthZO SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateLastChanged" />
+                        <DayZO SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateLastChanged" />
+                        <TimeZO SelectDate="@SelectDateLast" MaxDate="@MaxDate" MinDate="@SelectDateFirst" ThemePickerZO="@ThemePickerZO" SelectDateChanged="OnSelectDateLastChanged" />
                     </div>
                 </div>
                 <div class="range-btn-list">

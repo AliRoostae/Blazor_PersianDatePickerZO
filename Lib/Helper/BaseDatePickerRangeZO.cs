@@ -4,11 +4,8 @@ namespace Blazor_PersianDatePickerZO.Helper
 {
     public abstract class BaseDatePickerRangeZO : BaseDatePickerZO
     {
-        private new bool SingelUs { get; set; }
-        private new DateTime SelectDate { get; set; }
-        private new EventCallback<DateTime> SelectDateChanged { get; set; }
-        private new DateTime MinDate { get; set; } = DatePickerZeroOneHellper.Persian.MinSupportedDateTime;
-        private new DateTime MaxDate { get; set; } = DatePickerZeroOneHellper.Persian.MaxSupportedDateTime;
+     
+    
 
         DateTime _selectDateFirst = DateTime.Now.AddDays(-1);
         [Parameter]

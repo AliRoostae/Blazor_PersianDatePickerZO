@@ -69,5 +69,21 @@ namespace Blazor_PersianDatePickerZO.Component
                 _olddateLast = SelectDateLast;
             }
         }
+
+        private void OnSelectDateFirstChanged(DateTime? value)
+        {
+            SelectDateFirst = value ?? MinDate;
+
+            if (SelectDateFirst > SelectDateLast)
+                SelectDateFirst = SelectDateLast;
+        }
+        private void OnSelectDateLastChanged(DateTime? value)
+        {
+            SelectDateLast = value ?? MaxDate;
+
+            if (SelectDateLast < SelectDateFirst)
+                SelectDateLast = SelectDateFirst;
+        }
+
     }
 }

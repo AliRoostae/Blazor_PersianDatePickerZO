@@ -27,6 +27,11 @@ namespace Blazor_PersianDatePickerZO.Component
 
                     dotNetHelper = DotNetObjectReference.Create(this);
                     await _module.InvokeVoidAsync("outsideClickHandler", dotNetHelper, _dpID);
+
+                    _olddate = SelectDate ?? MinDate;
+
+                    await Change();
+
                 }
                 catch (JSDisconnectedException) { }
                 catch (JSException ex)
@@ -66,7 +71,7 @@ namespace Blazor_PersianDatePickerZO.Component
          }
 
 
-        private new bool SingelUs { get; set; }
+      
 
         [Parameter]
         public bool PopupDatePickerZO { get; set; }
@@ -91,43 +96,31 @@ namespace Blazor_PersianDatePickerZO.Component
         bool _timeShowZO => Format.ShowTimeZoDP();
         DateTime _olddate;
         bool _show;
-        void ShowPicker()
+        async Task ShowPicker()
         {
             _show = !_show;
             SelectDate = _olddate;
-            Change();
+            await Change();
         }
 
-        void ColsePopup()
+        async Task ColsePopup()
         {
             _show = false;
-             _olddate= SelectDate;
-            Change();
+            _olddate = SelectDate ?? MinDate;
+            await Change();
         }
-        void Change()
+        async Task Change()
         {
-
-            SelectDateChanged.InvokeAsync(SelectDate);
-            DateFa.InvokeAsync(_dateFa);
-
-      
+            await SelectDateChanged.InvokeAsync(SelectDate ?? MinDate);
+            await DateFa.InvokeAsync(_dateFa);
         }
-        void GetToday()
+        async Task GetToday()
         {
             SelectDate = DateTime.Now;
-           
-            ColsePopup();
+            await ColsePopup();
         }
 
-        protected override void OnAfterRender(bool firstRender)
-        {
-            if (firstRender)
-            {
-
-                Change();
-                _olddate = SelectDate;
-            }
-        }
+      
 
     }
 }

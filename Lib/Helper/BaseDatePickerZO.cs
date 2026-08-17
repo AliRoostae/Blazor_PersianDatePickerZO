@@ -9,20 +9,26 @@ namespace Blazor_PersianDatePickerZO.Helper
          [Parameter]
         public virtual bool  SingelUs { get; set; } = true;
 
+     
         [Parameter]
-        public virtual DateTime SelectDate
+        public virtual DateTime? SelectDate
         {
             get => _selectDate; set
             {
-
+                if (value is null)
+                {
+                    _selectDate = null;
+                    return;
+                }
                 if (value < MinDate) value = MinDate;
                 if (value > MaxDate) value = MaxDate;
                 _selectDate = value;
 
             }
         }
+
         [Parameter]
-        public virtual EventCallback<DateTime> SelectDateChanged { get; set; }
+        public virtual EventCallback<DateTime?> SelectDateChanged { get; set; }
 
         DateTime _minFa;
         [Parameter]
@@ -58,7 +64,9 @@ namespace Blazor_PersianDatePickerZO.Helper
 
 
 
-
+        protected int Hour => SelectDate?.Hour ?? 0;
+        protected int Minute => SelectDate?.Minute ?? 0;
+        protected int Second => SelectDate?.Second ?? 0;
 
         protected DateTime _maxFaFix => DatePickerZeroOneHellper.Persian.MaxSupportedDateTime;
         protected DateTime _minFaFix => DatePickerZeroOneHellper.Persian.MinSupportedDateTime;
@@ -66,7 +74,7 @@ namespace Blazor_PersianDatePickerZO.Helper
         protected int _minYearFa => MinDate.YearFa();
         protected int _maxYearFa => MaxDate.YearFa();
 
-        protected DateTime _selectDate = DateTime.Now;
+        protected DateTime? _selectDate = DateTime.Now;
 
 
 

@@ -15,15 +15,15 @@ namespace Blazor_PersianDatePickerZO.Component
 
         protected override bool ShouldRender()
         {
-            bool changed = SelectDate.Hour != _lastHour
-                        || SelectDate.Minute != _lastMinute
-                        || SelectDate.Second != _lastSecond
+            bool changed = Hour != _lastHour
+                        || Minute != _lastMinute
+                        || Second != _lastSecond
                         || ThemePickerZO != _lastTheme
                         || SingelUs != _lastSingelUs;
 
-            _lastHour = SelectDate.Hour;
-            _lastMinute = SelectDate.Minute;
-            _lastSecond = SelectDate.Second;
+            _lastHour = Hour;
+            _lastMinute = Minute;
+            _lastSecond = Second;
             _lastTheme = ThemePickerZO;
             _lastSingelUs = SingelUs;
 
@@ -31,21 +31,21 @@ namespace Blazor_PersianDatePickerZO.Component
         }
         int Hours
         {
-            get => SelectDate.Hour;
+            get => Hour;
             set
             {
                 if (value > 23)
                 {
-                    SelectDate = SelectDate.AddDays(1);
+                    SelectDate = SelectDate?.AddDays(1);
                     value = 0;
                 }
                 if (value < 0)
                 {
-                    SelectDate = SelectDate.AddDays(-1);
+                    SelectDate = SelectDate?.AddDays(-1);
                     value = 23;
                 }
                 var tim = new TimeSpan(value, Minutes, Seconds);
-                var temp = SelectDate.Date.Add(tim);
+                var temp = SelectDate?.Date.Add(tim);
                 if (!IsActiveForTime(temp)) return;
                 SelectDate = temp;
 
@@ -53,7 +53,7 @@ namespace Blazor_PersianDatePickerZO.Component
         }
         int Minutes
         {
-            get => SelectDate.Minute;
+            get => Minute;
             set
             {
                 if (value > 59)
@@ -67,7 +67,7 @@ namespace Blazor_PersianDatePickerZO.Component
                     value = 59;
                 }
                 var tim = new TimeSpan(Hours, value, Seconds);
-                var temp = SelectDate.Date.Add(tim);
+                var temp = SelectDate?.Date.Add(tim);
                 if (!IsActiveForTime(temp)) return;
                 SelectDate = temp;
 
@@ -75,7 +75,7 @@ namespace Blazor_PersianDatePickerZO.Component
         }
         int Seconds
         {
-            get => SelectDate.Second;
+            get => Second;
             set
             {
                 if (value > 59)
@@ -89,7 +89,7 @@ namespace Blazor_PersianDatePickerZO.Component
                     value = 59;
                 }
                 var tim = new TimeSpan(Hours, Minutes, value);
-                var temp = SelectDate.Date.Add(tim);
+                var temp = SelectDate?.Date.Add(tim);
                 if (!IsActiveForTime(temp)) return;
                 SelectDate = temp;
             }
@@ -131,9 +131,10 @@ namespace Blazor_PersianDatePickerZO.Component
             SelectDateChanged.InvokeAsync(SelectDate);
         }
 
-        protected bool IsActiveForTime(DateTime date)
+        protected bool IsActiveForTime(DateTime? date)
         {
-            return date > MinDate && date < MaxDate;
+            
+            return date.HasValue? date > MinDate && date < MaxDate : false;
         }
     }
 }

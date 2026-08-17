@@ -46,7 +46,7 @@ namespace Blazor_PersianDatePickerZO.Component
         void Selected(int day)
         {
             if (!IsActiveDay(day)) return;
-            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
+            SelectDate = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, Hour, Minute,Second, 0, PersianCalendar.PersianEra);
 
             SelectDateChanged.InvokeAsync(SelectDate);
             Close.InvokeAsync();
@@ -62,7 +62,7 @@ namespace Blazor_PersianDatePickerZO.Component
 
         bool IsActiveDay(int day)
         {
-            var temp = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, SelectDate.Hour, SelectDate.Minute, SelectDate.Second, 0, PersianCalendar.PersianEra);
+            var temp = DatePickerZeroOneHellper.Persian.ToDateTime(SelectDate.YearFa(), SelectDate.MonthFa(), day, Hour, Minute, Second, 0, PersianCalendar.PersianEra);
             return temp > MinDate && temp < MaxDate;
         }
 

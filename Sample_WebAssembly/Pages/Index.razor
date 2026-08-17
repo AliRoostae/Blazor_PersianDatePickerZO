@@ -46,14 +46,23 @@
             <DatePickerZO @bind-SelectDate="@_date" DateFa="DateFa" PopupDatePickerZO="true" Format="yyyy/MM/dd" />
         </div>
     </div>
+
+    <button class="btn btn-danger btn-lg w-100 py-4"
+            @onclick="ClearDate">
+        پاک کردن تاریخ
+    </button>
 </div>
 
 
 @code{
-    DateTime _date = DateTime.Now;
+    DateTime? _date = DateTime.Now;
     string _dateFa = string.Empty;
     void DateFa(string argo)
     {
         _dateFa = argo;
+    }
+    private void ClearDate()
+    {
+        _date = null;
     }
 }

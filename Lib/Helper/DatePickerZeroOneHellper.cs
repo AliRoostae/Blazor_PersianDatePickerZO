@@ -7,12 +7,16 @@ namespace Blazor_PersianDatePickerZO.Helper
     {
         public readonly static PersianCalendar Persian = new PersianCalendar();
 
+        public static int YearFa(this DateTime? argo) =>argo.HasValue? argo.Value.YearFa():0;
         public static int YearFa(this DateTime argo) => Persian.GetYear(argo);
+        public static int MonthFa(this DateTime? argo) => argo.HasValue ? argo.Value.MonthFa() : 0;
         public static int MonthFa(this DateTime argo) => Persian.GetMonth(argo);
+        public static int DayFa(this DateTime? argo) => argo.HasValue ? argo.Value.DayFa():0;
         public static int DayFa(this DateTime argo) => Persian.GetDayOfMonth(argo);
 
+        public static int DaysInMonth(this DateTime? argo) =>argo.HasValue? argo.Value.DaysInMonth(): 0;
         public static int DaysInMonth(this DateTime argo) => Persian.GetDaysInMonth(argo.YearFa(), argo.MonthFa(), PersianCalendar.PersianEra);
-
+        public static int OneDayMonthDayWeek(this DateTime? argo) => argo.HasValue?argo.Value.OneDayMonthDayWeek():0;
         public static int OneDayMonthDayWeek(this DateTime argo) => (int)Persian.ToDateTime(argo.YearFa(), argo.MonthFa(), 1, 0, 0, 0, 1, PersianCalendar.PersianEra).DayOfWeek;
 
         internal static readonly string[] MonthFaName = { "", "فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند" };
@@ -60,7 +64,11 @@ namespace Blazor_PersianDatePickerZO.Helper
                 _ => m.Value
             });
         }
-
+        public static string FormatDate(this DateTime? date, string format)
+        {
+            return date.HasValue ? date.Value.FormatDate(format) : Persian.MinSupportedDateTime.FormatDate(format);
+           
+        }
         public static bool ShowTimeZoDP(this string format) =>
             !string.IsNullOrEmpty(format) &&
             format.Contains("ss") &&
