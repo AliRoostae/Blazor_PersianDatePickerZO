@@ -12,7 +12,7 @@ namespace Blazor_PersianDatePickerZO.Component
        
        
         [Inject]
-        private IJSRuntime JS { get; set; }
+        private IJSRuntime JS { get; set; } = default!;
         private IJSObjectReference? _module;
         private DotNetObjectReference<DatePickerZO>? dotNetHelper;
 
@@ -61,10 +61,10 @@ namespace Blazor_PersianDatePickerZO.Component
         }
 
         [JSInvokable]
-        public void OnOutsideClick()
+        public async Task OnOutsideClick()
         {
             if(_show)
-            ColsePopup();
+                await ColsePopup();
 
 
 

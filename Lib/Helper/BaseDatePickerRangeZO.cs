@@ -7,6 +7,8 @@ namespace Blazor_PersianDatePickerZO.Helper
      
     
 
+        #pragma warning disable BL0007 // These parameter setters intentionally keep the range endpoints valid.
+
         DateTime _selectDateFirst = DateTime.Now.AddDays(-1);
         [Parameter]
         public DateTime SelectDateFirst
@@ -35,6 +37,8 @@ namespace Blazor_PersianDatePickerZO.Helper
                 _selectDateLast = value;
             }
         }
+
+        #pragma warning restore BL0007
 
         [Parameter]
         public virtual EventCallback<DateTime> SelectDateLastChanged { get; set; }

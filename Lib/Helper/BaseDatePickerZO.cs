@@ -10,6 +10,8 @@ namespace Blazor_PersianDatePickerZO.Helper
         public virtual bool  SingelUs { get; set; } = true;
 
      
+        #pragma warning disable BL0007 // These parameter setters intentionally clamp values to the supported date range.
+
         [Parameter]
         public virtual DateTime? SelectDate
         {
@@ -61,6 +63,8 @@ namespace Blazor_PersianDatePickerZO.Helper
 
             }
         }
+
+        #pragma warning restore BL0007
 
 
 
