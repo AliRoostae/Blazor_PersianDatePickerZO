@@ -25,28 +25,44 @@ $clock_size: 250;
     display: flex;
     button {
       font-size: small;
-      
     }
   }
 }
 
-.picker-box {
+.picker-box,
+.picker-box-range {
   .input-group-picker {
+    position: relative;
+    display: block;
+
     input {
-      
-      width: 100%;
+      width: auto;
+      min-width: 220px;
+      max-width: min(520px, 90vw);
+      box-sizing: border-box;
+      padding-right: 42px;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 36px;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
   }
 }
 
 .picker-box-range {
   color: transparent;
-  .input-group-picker {
-    input {
-     
-      width: 100%;
-    }
-  }
 
   .frame-box {
     display: flex;
@@ -541,9 +557,11 @@ $clock_size: 250;
       margin: 4px;
   }
 
+  .picker-pack .picker-box .input-group-picker input,
   .picker-pack .picker-box-range .input-group-picker input {
-      min-width: 300px;
-      width: 100px;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
       margin-right: 3px;
       margin-left: 3px;
   }

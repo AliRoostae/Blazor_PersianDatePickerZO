@@ -23,15 +23,38 @@
   font-size: small;
 }
 
-.picker-box .input-group-picker input {
-  width: 100%;
+.picker-box .input-group-picker,
+.picker-box-range .input-group-picker {
+  position: relative;
+  display: block;
+}
+.picker-box .input-group-picker input,
+.picker-box-range .input-group-picker input {
+  width: auto;
+  min-width: 220px;
+  max-width: min(520px, 90vw);
+  box-sizing: border-box;
+  padding-right: 42px;
+}
+.picker-box .input-group-picker button,
+.picker-box-range .input-group-picker button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .picker-box-range {
   color: transparent;
-}
-.picker-box-range .input-group-picker input {
-  width: 100%;
 }
 .picker-box-range .frame-box {
   display: flex;
@@ -1990,6 +2013,14 @@
     display: block !important;
     padding: 4px;
     margin: 4px;
+  }
+  .picker-pack .picker-box .input-group-picker input,
+  .picker-pack .picker-box-range .input-group-picker input {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin-right: 3px;
+    margin-left: 3px;
   }
  
   .picker-pack .picker-box-range .input-group-picker {

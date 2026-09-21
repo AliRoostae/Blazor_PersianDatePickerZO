@@ -8,8 +8,8 @@
         @if (PopupDatePickerZO)
         {
             <div class="input-group-picker">
-                <input type="text" value="@_dateFa" readonly />
-                <button @onclick="ShowPicker">&#128197;</button>
+                <input type="text" value="@_dateFa" size="@Math.Clamp(_dateFa.Length + 2, 18, 42)" readonly />
+                <button type="button" aria-label="نمایش تقویم" @onclick="ShowPicker">&#128197;</button>
             </div>
             if (_show)
             {
